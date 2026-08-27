@@ -1,10 +1,5 @@
-<script>
+<script setup>
 import BusinessProjectsGrid from "@/components/business/BusinessProjectsGrid.vue";
-
-export default {
-  name: "BusinessProjects",
-  components: { BusinessProjectsGrid },
-};
 </script>
 
 <template>
@@ -12,5 +7,3 @@ export default {
     <BusinessProjectsGrid />
   </div>
 </template>
-
-<style scoped></style>

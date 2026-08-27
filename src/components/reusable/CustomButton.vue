@@ -1,15 +1,7 @@
-<script>
-export default {
-    props: ["title"],
-    data: () => {
-        return {
-        };
-    },
-};
+<script setup>
+defineProps({ title: { type: String, required: true } });
 </script>
 
 <template>
-    <button>{{ title }}</button>
+  <button>{{ title }}</button>
 </template>
-
-<style lang="scss" scoped></style>
