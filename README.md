@@ -1,41 +1,59 @@
-# Portfólio Yan Penalva
+# Yan Penalva — Portfolio
 
-My Personal Page 😊
-Access: [penalva.me](https://www.penalva.me/#/)
+Personal portfolio showcasing my software engineering experience, selected projects, technical skills, and professional background.
+
+**Live:** [penalva.me](https://www.penalva.me)
+
+## Tech Stack
+
+- Vue 3
+- Composition API
+- Vue Router
+- Vite
+- Tailwind CSS
 
 ## Features
 
--   Simple and responsive design
--   [Vue.js v3](https://vuejs.org) with [Vue Router](https://router.vuejs.org)
--   [Tailwind CSS v3](https://tailwindcss.com)
--   Theme Switcher with Dark Mode
--   Composition API
--   Bundler Vite.js   
+- Responsive design
+- Dark and light themes
+- Component-based architecture
+- Responsive navigation
+- Optimized production build
 
+## Development
 
-### Want to try it out or change it for yourself? Follow the commands below:
+### Requirements
 
-1. ##### Clone the repo:
+- Node.js 18+
+- npm
 
-```
-git clone git@github.com:yanbrasiliano/yanbrasiliano.github.io.git
-```
+### Setup
 
-3. ##### Open the project folder:
+Clone the repository:
 
-```
-cd /yanbrasiliano.github.io
-```
-
-4. ##### Install packages and dependencies:
-
-```
-npm i
+```bash
+git clone git@github.com:yanpenalva/yanpenalva.github.io.git
+cd yanpenalva.github.io
 ```
 
-5. ##### Start a local dev server at `http://localhost:5000`:
+Install dependencies:
 
+```bash
+npm install
 ```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
+Create a production build:
+
+```bash
+npm run build
+```
+
+## License
+
+This project is licensed under the MIT License.
