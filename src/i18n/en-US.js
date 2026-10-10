@@ -61,6 +61,10 @@ export default {
     contactTitle: "Let's work together",
     contactText: "Have a project, role, or idea? Get in touch.",
     contactButton: "Discuss a role or project",
+    projectButton: "I have a project",
+    jobButton: "I have a role",
+    projectMessage: "Hi, Yan! I have a project: [problem/scope/timeline]. Can we talk?",
+    jobMessage: "Hi, Yan! I have a role: [title/modality/location]. Can we talk?",
     emailButton: "Email me"
   },
   about: {
@@ -69,6 +73,78 @@ export default {
     bio1: "I’m a software engineer with 6 years of experience building and evolving enterprise systems, from architecture and infrastructure to performance, maintainability, and software quality.",
     bio2: "Today I’m a Senior Software Engineer at PRODEB, leading the architecture and evolution of SIIC v2 for SECULT Bahia, with modular design, automated quality, and AI-assisted development workflows.",
     bio3: "Before returning to PRODEB, I spent three years at Netra Tecnologia building Laravel and Vue APIs, and earlier shipped seven production university systems at UEFS, alongside DevOps work with Docker, Kubernetes and GNU/Linux. I also maintain open-source starter kits and study applied AI, from log anomaly detection to agent context tooling.",
+  },
+  creds: {
+    title: "Credentials",
+    items: {
+      ads: {
+        name: "Technology Degree in Systems Analysis and Development",
+        org: "UNIFACS",
+        period: "2019–2022"
+      },
+      softwareEngineering: {
+        name: "Postgraduate in Software Engineering",
+        org: "UNOPAR",
+        period: "2023–2024"
+      },
+      solutionArchitecture: {
+        name: "Postgraduate in Solutions Architecture",
+        org: "UNOPAR",
+        period: "2024–2025"
+      },
+      softwareArchitecture: {
+        name: "Postgraduate in Software Architecture",
+        org: "UNOPAR",
+        period: "2024–2025"
+      },
+      english: {
+        name: "Professional English",
+        org: "EF B2",
+        period: "2022"
+      },
+      datadog: {
+        name: "Datadog Foundation",
+        org: "Datadog",
+        period: "2025"
+      },
+      cleanArchitecture: {
+        name: "Clean Architecture and Clean Code",
+        org: "branas.io",
+        period: "2024"
+      }
+    }
+  },
+  inspect: {
+    title: "Inspect the engineering",
+    text: "Explore implementation details behind the architecture, authorization, testing, and observability decisions.",
+    apiTitle: "API",
+    feTitle: "Frontend",
+    links: {
+      auth: {
+        label: "Authorization and HTTP boundaries",
+        hint: "Review the domain policy alongside the thin login controller to see authorization kept apart from HTTP handling."
+      },
+      rbac: {
+        label: "Aggregate-level RBAC and audit",
+        hint: "Inspect how permission changes are handled through a role aggregate and recorded for audit."
+      },
+      tests: {
+        label: "Tested RBAC matrix",
+        hint: "Check how the RBAC ability matrix exercises authorization behavior."
+      },
+      health: {
+        label: "Health and request correlation",
+        hint: "Review the health endpoint and correlation middleware as the API's observability boundary."
+      },
+      feAuth: {
+        label: "Client-side authorization and generated API",
+        hint: "Review client-side authorization, the auth API client generated through orval.config.ts, and strict TypeScript settings."
+      },
+      feTests: {
+        label: "Co-located Vitest tests",
+        hint: "Review Vitest tests co-located with their implementation files for focused behavior coverage."
+      }
+    }
   },
   metrics: {
     experience: "Years of experience",

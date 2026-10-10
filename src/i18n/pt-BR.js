@@ -61,6 +61,10 @@ export default {
     contactTitle: "Vamos trabalhar juntos",
     contactText: "Tem um projeto, vaga ou ideia? Entre em contato.",
     contactButton: "Conversar sobre vaga ou projeto",
+    projectButton: "Tenho um projeto",
+    jobButton: "Tenho uma vaga",
+    projectMessage: "Olá, Yan! Tenho um projeto: [problema/escopo/prazo]. Podemos conversar?",
+    jobMessage: "Olá, Yan! Tenho uma vaga: [cargo/modalidade/local]. Podemos conversar?",
     emailButton: "Me envie um email"
   },
   about: {
@@ -69,6 +73,78 @@ export default {
     bio1: "Sou engenheiro de software com 6 anos de experiência construindo e evoluindo sistemas corporativos, da arquitetura e infraestrutura ao desempenho, à manutenibilidade e à qualidade de software.",
     bio2: "Hoje sou Engenheiro de Software Sênior na PRODEB, liderando a arquitetura e evolução do SIIC v2 para a SECULT Bahia, com design modular, qualidade automatizada e fluxos de desenvolvimento assistido por IA.",
     bio3: "Antes de voltar à PRODEB, passei três anos na Netra Tecnologia construindo APIs em Laravel e Vue, e antes entreguei sete sistemas universitários em produção na UEFS, além de trabalho DevOps com Docker, Kubernetes e GNU/Linux. Também mantenho starter kits open source e estudo IA aplicada, de detecção de anomalias em logs a ferramentas de contexto para agentes.",
+  },
+  creds: {
+    title: "Formação e certificações",
+    items: {
+      ads: {
+        name: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+        org: "UNIFACS",
+        period: "2019–2022"
+      },
+      softwareEngineering: {
+        name: "Pós-graduação em Engenharia de Software",
+        org: "UNOPAR",
+        period: "2023–2024"
+      },
+      solutionArchitecture: {
+        name: "Pós-graduação em Arquitetura de Soluções",
+        org: "UNOPAR",
+        period: "2024–2025"
+      },
+      softwareArchitecture: {
+        name: "Pós-graduação em Arquitetura de Software",
+        org: "UNOPAR",
+        period: "2024–2025"
+      },
+      english: {
+        name: "Inglês profissional",
+        org: "EF B2",
+        period: "2022"
+      },
+      datadog: {
+        name: "Datadog Foundation",
+        org: "Datadog",
+        period: "2025"
+      },
+      cleanArchitecture: {
+        name: "Clean Architecture e Clean Code",
+        org: "branas.io",
+        period: "2024"
+      }
+    }
+  },
+  inspect: {
+    title: "Inspecione a engenharia",
+    text: "Explore detalhes de implementação por trás das decisões de arquitetura, autorização, testes e observabilidade.",
+    apiTitle: "API",
+    feTitle: "Frontend",
+    links: {
+      auth: {
+        label: "Fronteiras de autorização e HTTP",
+        hint: "Avalie a policy do domínio junto ao controller de login enxuto para ver a autorização separada do tratamento HTTP."
+      },
+      rbac: {
+        label: "RBAC por agregado e auditoria",
+        hint: "Inspecione como as mudanças de permissões são tratadas pelo agregado de função e registradas para auditoria."
+      },
+      tests: {
+        label: "Matriz RBAC testada",
+        hint: "Veja como a matriz de abilities RBAC exercita o comportamento de autorização."
+      },
+      health: {
+        label: "Health e correlação de requisições",
+        hint: "Avalie o endpoint de health e o middleware de correlação como fronteira de observabilidade da API."
+      },
+      feAuth: {
+        label: "Autorização no client e API gerada",
+        hint: "Avalie a autorização no client, o cliente da API de autenticação gerado via orval.config.ts e as configurações estritas de TypeScript."
+      },
+      feTests: {
+        label: "Testes Vitest co-localizados",
+        hint: "Avalie os testes Vitest junto aos arquivos de implementação para verificar comportamentos de forma focada."
+      }
+    }
   },
   metrics: {
     experience: "Anos de experiência",
