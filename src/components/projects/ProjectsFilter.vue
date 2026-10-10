@@ -12,6 +12,12 @@ const { t } = useLocale();
 
 const selected = ref("");
 
+const categoryLabel = (category) => {
+  const key = `projects.categories.${category}`;
+  const translation = t(key);
+  return translation === key ? category : translation;
+};
+
 const categories = computed(() => {
   const unique = [];
   for (const project of projectsData) {
@@ -38,7 +44,7 @@ const onChange = (event) => {
   >
     <option value="">{{ t("projects.allLabel") }}</option>
     <option v-for="category in categories" :key="category" :value="category">
-      {{ t("projects.categories." + category) }}
+      {{ categoryLabel(category) }}
     </option>
   </select>
 </template>

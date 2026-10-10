@@ -6,7 +6,7 @@ export default [
     mode: "Remote",
     period: { start: "2023-09", end: "present" },
     summary:
-      "Improved API performance by 45% through caching and query optimization, and led CI/CD automation that improved efficiency by 80%.",
+      "Improved API performance by 45% through caching and query optimization, and led CI/CD automation that increased deployments by 80%.",
     tags: ["Laravel", "Vue", "PostgreSQL", "CI/CD", "Kubernetes"]
   },
   {
@@ -17,7 +17,7 @@ export default [
     period: { start: "2022-02", end: "2023-09" },
     summary:
       "Delivered Laravel and Vue features and REST APIs, integrating PostgreSQL and Redis and supporting Kubernetes-based microservices.",
-    tags: ["Laravel", "Vue", "PostgreSQL", "Redis", "Microservices"]
+    tags: ["Laravel", "Vue", "PostgreSQL", "Redis"]
   },
   {
     id: "ramiro",

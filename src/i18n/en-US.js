@@ -11,7 +11,9 @@ export default {
     toggleNav: "Toggle navigation",
     language: "Language",
     switchToEnglish: "Switch to English",
-    switchToPortuguese: "Switch to Portuguese"
+    switchToPortuguese: "Switch to Portuguese",
+    englishCode: "EN",
+    portugueseCode: "PT"
   },
   footer: {
     developedBy: "Developed by"
@@ -47,9 +49,13 @@ export default {
   },
   home: {
     role: "Software Engineer",
+    heroStatement: "I build web systems and applied AI, and contribute to open-source software.",
     resumePt: "Resume (PT-BR)",
     resumeEn: "Resume (EN-US)",
     featuredTitle: "Selected work",
+    aiOssTitle: "AI & open source",
+    openProject: "View project",
+    metricsAriaLabel: "Experience and project metrics",
     experienceTitle: "Experience",
     clientsTitle: "Companies I've worked with",
     metricsTitle: "",
@@ -65,6 +71,10 @@ export default {
     bio1: "I am a Software Engineer with a passion for web development, specializing in creating robust, scalable, and user-friendly web applications. As a self-motivated and self-taught professional, I bring a strong work ethic and a track record of delivering high-quality software solutions. My approach combines continuous learning, team collaboration, and a commitment to diversity and inclusion. I excel in problem-solving and a critical thinking. My fast learning and adaptability enable me to embrace new challenges enthusiastically. I am an advocate for open-source software, the open web, and leveraging technology to address real-world issues. I firmly believe in technology's potential to enhance quality of life, promote social justice, and forge a sustainable, equitable future for all.",
     bio2: "As a seasoned Software Engineer, I am adept at navigating the complete system lifecycle. My expertise encompasses maintaining production systems, spearheading new projects, conducting meticulous requirements analysis, crafting comprehensive technical documentation, and managing version control. Proficient in English, I am committed to enhancing my skills daily, striving for a 1% improvement with each passing day. My repertoire includes robust problem-solving abilities and sharp critical thinking aimed at devising effective solutions. Thanks to my extensive experience with a diverse array of tools, technologies, and methodologies, I am well-equipped to deliver superior-quality software solutions."
   },
+  metrics: {
+    experience: "Years of experience",
+    projects: "Projects delivered"
+  },
   projects: {
     title: "Projects",
     hint: "Search projects by title or filter by category",
@@ -74,6 +84,7 @@ export default {
     allLabel: "All Projects",
     moreLabel: "More projects:",
     filterLabel: "Filter by category",
+    deployLabel: "Live deploy",
     categories: {
       "Web Application": "Web Application",
       "API Application": "API Application",
@@ -128,6 +139,7 @@ export default {
       "18": {
         title: "1º Protesto São Luís",
         description: "Official website for the 1st Protest Notary Office of São Luís, Maranhão, built with Laravel 13, Inertia 3, Vue 3, TypeScript, and Tailwind 4.",
+        role: "Developer",
       },
       "19": {
         title: "NeoNews",
@@ -141,7 +153,7 @@ export default {
       org: "Netra Tecnologia",
       mode: "Remote",
       periodLabel: "Sep 2023 – Present",
-      summary: "Improved API performance by 45% through caching and query optimization, and led CI/CD automation that improved efficiency by 80%.",
+      summary: "Improved API performance by 45% through caching and query optimization, and led CI/CD automation that increased deployments by 80%.",
     },
     prodeb: {
       title: "Software Engineer",
@@ -188,6 +200,7 @@ export default {
         description: "System for managing graduate programs and research projects, similar to SISTEX but focused on academic programs and project tracking.",
       },
       "2": {
+        title: "SISTEX",
         role: "System Architect / Senior Software Engineer / DevOps",
         description: "University Extension System. Manages projects, plans and activity reports.",
       },
@@ -217,22 +230,27 @@ export default {
     },
     infra: {
       "1": {
+        title: "Institutional Login Platform",
         role: "System Architect / Senior Software Engineer",
         description: "Implemented the university's unified authentication service, enabling login through institutional credentials and centralized access control across all systems.",
       },
       "2": {
+        title: "SAC Bahia API Orchestration",
         role: "Backend Engineer / API Specialist",
         description: "Participated in the development of APIs and orchestration layer that manage appointments and services for the SAC Bahia network (Prodeb).",
       },
       "3": {
+        title: "FUNDEF Court-Ordered Payments System",
         role: "Backend Engineer / Data Integration Specialist",
         description: "Developed and supported the management of FUNDEF precatory payments for the State of Bahia, ensuring transparency and compliance in resource allocation.",
       },
       "4": {
+        title: "CI/CD Pipelines Modernization",
         role: "DevOps Engineer",
         description: "Created and modernized Jenkins and GitLab CI pipelines to automate deployment, testing, and code quality checks across multiple projects.",
       },
       "5": {
+        title: "Internal Container Registry Implementation",
         role: "DevOps Engineer / System Administrator",
         description: "Designed and deployed internal container registries using Harbor to manage and secure Docker images within the organization’s infrastructure.",
       },
@@ -240,5 +258,8 @@ export default {
   },
   contact: {
     title: "Contact details",
+    location: "Salvador, Bahia, Brazil",
+    whatsappMessage: "Hi, Yan! I saw your portfolio and would like to talk.",
+    whatsappLabel: "WhatsApp",
   }
 };

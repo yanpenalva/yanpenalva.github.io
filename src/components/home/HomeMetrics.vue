@@ -1,13 +1,18 @@
 <script setup>
+import { useLocale } from "@/composables/useLocale";
 import metrics from "@/data/metrics";
+
+const { t } = useLocale();
 </script>
 
 <template>
-  <section>
-    <div class="flex flex-wrap gap-10">
+  <section class="border-y border-border py-6 sm:py-8" :aria-label="t('home.metricsAriaLabel')">
+    <div class="flex flex-wrap gap-x-16 gap-y-6">
       <div v-for="metric in metrics" :key="metric.id">
-        <p class="text-3xl font-semibold text-text">{{ metric.value }}{{ metric.suffix ?? "" }}</p>
-        <p class="text-sm text-muted">{{ metric.label }}</p>
+        <p class="font-mono text-3xl font-semibold tracking-tight text-text sm:text-4xl">
+          {{ metric.value }}{{ metric.suffix ?? "" }}
+        </p>
+        <p class="mt-1 text-sm text-muted">{{ t(`metrics.${metric.id}`) }}</p>
       </div>
     </div>
   </section>

@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import { watch } from "vue";
 import HomePage from "@/views/HomePage.vue";
 import { useLocale } from "@/composables/useLocale";
 
@@ -49,28 +50,24 @@ const router = createRouter({
   },
 });
 
-router.beforeEach((to, from, next) => {
-  try {
-    const { t } = useLocale();
-    const key = to.meta && to.meta.i18n ? to.meta.i18n : "notFound";
-    const title = t("routes." + key + ".title");
-    if (title) {
-      document.title = title;
-    }
-    const description = t("routes." + key + ".description");
-    if (description) {
-      let meta = document.querySelector('meta[name="description"]');
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.setAttribute("name", "description");
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute("content", description);
-    }
-  } catch (error) {
-    void error;
+const { locale, t } = useLocale();
+
+const updateMetadata = (route) => {
+  if (typeof document === "undefined") return;
+
+  const routeKey = route.meta?.i18n ?? "notFound";
+  document.title = t(`routes.${routeKey}.title`);
+
+  let description = document.querySelector('meta[name="description"]');
+  if (!description) {
+    description = document.createElement("meta");
+    description.setAttribute("name", "description");
+    document.head.appendChild(description);
   }
-  next();
-});
+  description.setAttribute("content", t(`routes.${routeKey}.description`));
+};
+
+router.afterEach((to) => updateMetadata(to));
+watch(locale, () => updateMetadata(router.currentRoute.value), { flush: "sync" });
 
 export default router;

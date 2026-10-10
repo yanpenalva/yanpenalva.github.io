@@ -11,7 +11,9 @@ export default {
     toggleNav: "Alternar navegação",
     language: "Idioma",
     switchToEnglish: "Mudar para inglês",
-    switchToPortuguese: "Mudar para português"
+    switchToPortuguese: "Mudar para português",
+    englishCode: "EN",
+    portugueseCode: "PT"
   },
   footer: {
     developedBy: "Desenvolvido por"
@@ -47,9 +49,13 @@ export default {
   },
   home: {
     role: "Engenheiro de Software",
+    heroStatement: "Desenvolvo sistemas web e soluções de IA e contribuo com software de código aberto.",
     resumePt: "Currículo (PT-BR)",
     resumeEn: "Currículo (EN-US)",
     featuredTitle: "Trabalhos selecionados",
+    aiOssTitle: "IA e código aberto",
+    openProject: "Ver projeto",
+    metricsAriaLabel: "Indicadores de experiência e projetos",
     experienceTitle: "Experiência",
     clientsTitle: "Empresas com as quais trabalhei",
     metricsTitle: "",
@@ -65,6 +71,10 @@ export default {
     bio1: "Sou Engenheiro de Software com paixão por desenvolvimento web, especializado na criação de aplicações web robustas, escaláveis e fáceis de usar. Como profissional automotivado e autodidata, trago uma ética de trabalho sólida e um histórico de entrega de soluções de software de alta qualidade. Minha abordagem combina aprendizado contínuo, colaboração em equipe e compromisso com a diversidade e a inclusão. Destaco-me na resolução de problemas e no pensamento crítico. Meu aprendizado rápido e minha adaptabilidade me permitem abraçar novos desafios com entusiasmo. Sou um defensor do software de código aberto, da web aberta e do uso da tecnologia para resolver problemas do mundo real. Acredito firmemente no potencial da tecnologia para melhorar a qualidade de vida, promover a justiça social e construir um futuro sustentável e equitativo para todos.",
     bio2: "Como Engenheiro de Software experiente, sou hábil em percorrer todo o ciclo de vida dos sistemas. Minha expertise abrange a manutenção de sistemas em produção, a liderança de novos projetos, a condução de análises meticulosas de requisitos, a produção de documentação técnica abrangente e o gerenciamento de controle de versão. Proficiente em inglês, tenho o compromisso de aprimorar minhas habilidades diariamente, buscando uma melhoria de 1% a cada dia. Meu repertório inclui sólidas habilidades de resolução de problemas e pensamento crítico aguçado, voltados para a criação de soluções eficazes. Graças à minha vasta experiência com uma grande variedade de ferramentas, tecnologias e metodologias, estou bem preparado para entregar soluções de software de qualidade superior."
   },
+  metrics: {
+    experience: "Anos de experiência",
+    projects: "Projetos entregues"
+  },
   projects: {
     title: "Projetos",
     hint: "Pesquise projetos por título ou filtre por categoria",
@@ -74,6 +84,7 @@ export default {
     allLabel: "Todos os Projetos",
     moreLabel: "Mais projetos:",
     filterLabel: "Filtrar por categoria",
+    deployLabel: "Deploy",
     categories: {
       "Web Application": "Aplicação Web",
       "API Application": "Aplicação API",
@@ -128,6 +139,7 @@ export default {
       "18": {
         title: "1º Protesto São Luís",
         description: "Site institucional do 1º Tabelionato de Protesto de São Luís-MA, desenvolvido com Laravel 13, Inertia 3, Vue 3, TypeScript e Tailwind 4.",
+        role: "Desenvolvedor",
       },
       "19": {
         title: "NeoNews",
@@ -141,7 +153,7 @@ export default {
       org: "Netra Tecnologia",
       mode: "Remoto",
       periodLabel: "Set 2023 – Atual",
-      summary: "Melhorou o desempenho das APIs em 45% com cache e otimização de consultas e liderou a automação de CI/CD, aumentando a eficiência em 80%.",
+      summary: "Melhorou o desempenho das APIs em 45% com cache e otimização de consultas e liderou a automação de CI/CD, aumentando os deploys em 80%.",
     },
     prodeb: {
       title: "Engenheiro de Software",
@@ -188,6 +200,7 @@ export default {
         description: "Sistema para gerenciamento de programas de pós-graduação e projetos de pesquisa, semelhante ao SISTEX, mas com foco em programas acadêmicos e acompanhamento de projetos.",
       },
       "2": {
+        title: "SISTEX",
         role: "Arquiteto de Sistemas / Engenheiro de Software Sênior / DevOps",
         description: "Sistema de Extensão Universitária. Gerencia projetos, planos e relatórios de atividades.",
       },
@@ -217,22 +230,27 @@ export default {
     },
     infra: {
       "1": {
+        title: "Plataforma de Login Institucional",
         role: "Arquiteto de Sistemas / Engenheiro de Software Sênior",
         description: "Implantei o serviço de autenticação unificado da universidade, possibilitando o login com credenciais institucionais e o controle de acesso centralizado em todos os sistemas.",
       },
       "2": {
+        title: "Orquestração das APIs do SAC Bahia",
         role: "Engenheiro de Backend / Especialista em APIs",
         description: "Participei do desenvolvimento das APIs e da camada de orquestração que gerenciam agendamentos e serviços para a rede SAC Bahia (Prodeb).",
       },
       "3": {
+        title: "Sistema de Pagamento dos Precatórios do FUNDEF",
         role: "Engenheiro de Backend / Especialista em Integração de Dados",
         description: "Desenvolvi e apoiei a gestão dos pagamentos de precatórios do FUNDEF para o Estado da Bahia, garantindo transparência e conformidade na alocação de recursos.",
       },
       "4": {
+        title: "Modernização de Pipelines de CI/CD",
         role: "Engenheiro DevOps",
         description: "Criei e modernizei pipelines de CI no Jenkins e no GitLab para automatizar implantação, testes e verificações de qualidade de código em diversos projetos.",
       },
       "5": {
+        title: "Implementação de Registro Interno de Contêineres",
         role: "Engenheiro DevOps / Administrador de Sistemas",
         description: "Projetei e implantei registros internos de contêineres usando Harbor para gerenciar e proteger imagens Docker na infraestrutura da organização.",
       },
@@ -240,5 +258,8 @@ export default {
   },
   contact: {
     title: "Informações de contato",
+    location: "Salvador/BA - Brasil",
+    whatsappMessage: "Olá, Yan! Vi seu portfólio e gostaria de conversar.",
+    whatsappLabel: "WhatsApp",
   }
 };

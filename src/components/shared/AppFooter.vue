@@ -1,18 +1,24 @@
 <script setup>
+import { computed } from "vue";
 import FooterCopyright from "@/components/shared/FooterCopyright.vue";
 import IconBook from "@/components/icons/IconBook.vue";
 import IconGithub from "@/components/icons/IconGithub.vue";
 import IconInstagram from "@/components/icons/IconInstagram.vue";
 import IconLinkedin from "@/components/icons/IconLinkedin.vue";
 import IconMessageCircle from "@/components/icons/IconMessageCircle.vue";
+import { useLocale } from "@/composables/useLocale";
+import { useWhatsApp } from "@/composables/useWhatsApp";
 
-const socials = [
+const { t } = useLocale();
+const { href: whatsappHref } = useWhatsApp();
+
+const socials = computed(() => [
   { name: "GitHub", icon: IconGithub, url: "https://github.com/yanpenalva" },
   { name: "Medium", icon: IconBook, url: "https://medium.com/@yanpenabr" },
   { name: "Instagram", icon: IconInstagram, url: "https://instagram.com/yanbpenalva" },
   { name: "LinkedIn", icon: IconLinkedin, url: "https://www.linkedin.com/in/yanpenalva/" },
-  { name: "WhatsApp", icon: IconMessageCircle, url: "https://wa.me/+5571992432603" },
-];
+  { name: t("contact.whatsappLabel"), icon: IconMessageCircle, url: whatsappHref.value },
+]);
 </script>
 
 <template>

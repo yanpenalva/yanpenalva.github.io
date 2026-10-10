@@ -8,9 +8,9 @@ const { locale, t, toggleLocale } = useLocale();
   <button
     type="button"
     class="font-mono text-xs uppercase tracking-wide text-muted transition-colors duration-150 hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-    :aria-label="locale === 'en-US' ? t('common.switchToPortuguese') : t('common.switchToEnglish')"
+    :aria-label="(locale === 'en-US' ? t('common.portugueseCode') : t('common.englishCode')) + ' – ' + (locale === 'en-US' ? t('common.switchToPortuguese') : t('common.switchToEnglish'))"
     @click="toggleLocale"
   >
-    {{ locale === "en-US" ? "PT" : "EN" }}
+    {{ locale === "en-US" ? t("common.portugueseCode") : t("common.englishCode") }}
   </button>
 </template>

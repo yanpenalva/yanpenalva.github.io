@@ -26,10 +26,13 @@ const cards = computed(() =>
         if (!project) return null;
         return {
           key: `project-${item.id}`,
-          title: project.title,
-          problem: project.description,
+          title: t(`projects.items.${item.id}.title`),
+          problem: t(`projects.items.${item.id}.description`),
           contribution: "",
-          tags: [project.category],
+          tags: [
+            t(`projects.categories.${project.category}`),
+            ...(project.language ? [project.language] : [])
+          ],
           href: project.href,
           evidenceLabel: hostOf(project.href)
         };
@@ -38,12 +41,12 @@ const cards = computed(() =>
       if (item.kind === "business") {
         const system = business.systems.find((entry) => entry.id === item.id);
         if (!system) return null;
-        const isInternal = system.reference.includes("Internal");
+        const isInternal = system.reference.toLowerCase().includes("internal");
         return {
           key: `business-${item.id}`,
-          title: system.title,
-          problem: system.description,
-          contribution: `${system.role} · ${system.tech}`,
+          title: t(`business.systems.${item.id}.title`),
+          problem: t(`business.systems.${item.id}.description`),
+          contribution: t(`business.systems.${item.id}.role`),
           tags: system.tech
             .split(",")
             .map((tag) => tag.trim())
@@ -62,14 +65,16 @@ const cards = computed(() =>
 
 <template>
   <section class="space-y-6">
-    <h2 class="text-xl font-semibold text-text">{{ t("home.featuredTitle") }}</h2>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-12">
+    <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.featuredTitle") }}</h2>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-[repeat(2,minmax(13rem,1fr))]">
       <div
         v-for="(card, index) in cards"
         :key="card.key"
-        :class="index === 0 ? 'md:col-span-7' : 'md:col-span-5'"
+        class="min-h-48"
+        :class="index === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'"
       >
         <ProofCard
+          class="h-full"
           :title="card.title"
           :problem="card.problem"
           :contribution="card.contribution"

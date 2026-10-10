@@ -51,7 +51,7 @@ const filteredProjects = computed(() => {
           type="search"
           :placeholder="t('projects.searchPlaceholder')"
           :aria-label="t('projects.searchAria')"
-          class="w-full bg-transparent font-sans text-sm text-text placeholder:text-muted focus:outline-none"
+          class="w-full bg-transparent font-sans text-sm text-text placeholder:text-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         />
       </div>
       <ProjectsFilter select="projects" @filter="selectedCategory = $event" />

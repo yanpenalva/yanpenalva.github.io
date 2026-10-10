@@ -1,3 +1,5 @@
+export const WHATSAPP_NUMBER = "5571992432603";
+
 export default [
   {
     id: 1,
@@ -22,5 +24,11 @@ export default [
     name: "yanpenalva",
     icon: "linkedin",
     href: "https://www.linkedin.com/in/yanpenalva/"
+  },
+  {
+    id: 5,
+    name: "WhatsApp",
+    icon: "whatsapp",
+    phone: WHATSAPP_NUMBER
   }
 ];

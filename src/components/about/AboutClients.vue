@@ -7,10 +7,10 @@ const { t } = useLocale();
 </script>
 
 <template>
-  <section class="bg-canvas py-14">
-    <div class="mx-auto max-w-5xl px-6">
-      <h2 class="text-center text-xl font-semibold text-text">{{ t("about.clientsHeading") }}</h2>
-      <div class="mt-10 grid grid-cols-2 place-items-center gap-6 md:grid-cols-3 lg:grid-cols-5">
+  <section class="border-y border-border py-8 sm:py-10">
+    <div>
+      <h2 class="text-xl font-semibold tracking-tight text-text sm:text-2xl">{{ t("about.clientsHeading") }}</h2>
+      <div class="mt-6 grid grid-cols-2 items-center gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-5">
         <AboutClientSingle v-for="client in clients" :key="client.id" :client="client" />
       </div>
     </div>
