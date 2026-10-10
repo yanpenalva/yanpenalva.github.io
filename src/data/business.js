@@ -59,10 +59,10 @@ export default {
     },
     {
       id: 8,
-      title: "SIIC",
+      title: "SIIC v2",
       description: "Cultural information and indicators system for Bahia's SECULT",
       tech: "Laravel 13, TypeScript, Vue",
-      reference: "siic.cultura.ba.gov.br",
+      reference: "Internal system (no public URL)",
       status: "in-development"
     }
   ],

@@ -149,9 +149,9 @@ export default {
     "prodeb-senior": {
       title: "Senior Software Engineer",
       org: "PRODEB",
-      mode: "Hybrid",
+      mode: "On-site",
       periodLabel: "Jun 2026 – Present",
-      summary: "Leading the architecture and evolution of SIIC v2 for SECULT-BA: modular design and Clean Architecture with Laravel, Vue.js, PostgreSQL and Redis; DevOps with Docker, Kubernetes and CI/CD; AI-assisted and context engineering workflows adopted across teams; test coverage above 90% with the roadmap about two months ahead of schedule."
+      summary: "Leading the architecture and evolution of SIIC v2 for SECULT-BA: modular design and Clean Architecture with Laravel, Vue.js, PostgreSQL and Redis; DevOps with Docker, Kubernetes (cluster setup and migration), CI/CD and GNU/Linux; AI-assisted and context engineering workflows adopted across teams; test coverage above 90% with the roadmap about two months ahead of schedule."
     },
     netra: {
       title: "Software Engineer",
@@ -231,8 +231,8 @@ export default {
         description: "Institutional Project Management System.",
       },
       "8": {
-        title: "SIIC",
-        description: "Cultural information and indicators system for Bahia's SECULT",
+        title: "SIIC v2",
+        description: "New version of SECULT Bahia's cultural information and indicators system: modular design, Clean Architecture and automated quality.",
       },
     },
     infra: {
