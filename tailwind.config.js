@@ -28,7 +28,9 @@ module.exports = {
 
 				muted: 'rgb(var(--color-muted) / <alpha-value>)',
 
-				accent: 'rgb(var(--color-accent) / <alpha-value>)'
+				accent: 'rgb(var(--color-accent) / <alpha-value>)',
+
+				'on-accent': 'rgb(var(--color-on-accent) / <alpha-value>)'
 
 			},
 
@@ -36,7 +38,7 @@ module.exports = {
 
 				sans: ['GeneralSans', 'system-ui', 'Inter', 'ui-sans-serif', 'sans-serif'],
 
-				mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+				mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
 
 			},
 

@@ -1,23 +1,42 @@
 export default [
   {
-    id: "uefs",
-    title: "System Architect / Senior Software Engineer / DevOps",
-    org: "UEFS",
-    summary: "Architecture, development and DevOps across 7 production university systems (SISPPPG, SISTEX, SIPAE, SIDOC, SIGRH, SIAC, SGP).",
-    tags: ["Laravel", "Vue 3", "PostgreSQL", "DevOps"]
+    id: "netra",
+    title: "Software Engineer",
+    org: "Netra Tecnologia",
+    mode: "Remote",
+    period: { start: "2023-09", end: "present" },
+    summary:
+      "Improved API performance by 45% through caching and query optimization, and led CI/CD automation that improved efficiency by 80%.",
+    tags: ["Laravel", "Vue", "PostgreSQL", "CI/CD", "Kubernetes"]
   },
   {
-    id: "infra",
-    title: "Infrastructure & API Engineer",
-    org: "Prodeb / UEFS",
-    summary: "Unified institutional login (SSO), SAC Bahia API orchestration, FUNDEF payments data pipelines, Jenkins/GitLab CI modernization, Harbor container registry.",
-    tags: ["SSO", "APIs", "CI/CD", "Docker"]
+    id: "prodeb",
+    title: "Software Engineer",
+    org: "PRODEB",
+    mode: "Hybrid",
+    period: { start: "2022-02", end: "2023-09" },
+    summary:
+      "Delivered Laravel and Vue features and REST APIs, integrating PostgreSQL and Redis and supporting Kubernetes-based microservices.",
+    tags: ["Laravel", "Vue", "PostgreSQL", "Redis", "Microservices"]
   },
   {
-    id: "oss",
-    title: "Open-source builder",
-    org: "Independent",
-    summary: "Laravel + Vue starter kits, PHP micro-framework, URL shortener, Whisper subtitle automation and developer tooling.",
-    tags: ["Laravel", "Vue 3", "PHP", "AI"]
+    id: "ramiro",
+    title: "Junior Software Engineer",
+    org: "Grupo Ramiro Campelo",
+    mode: "On-site",
+    period: { start: "2021-11", end: "2022-02" },
+    summary:
+      "Developed e-commerce integrations and reduced order API failures by 25% through improvements to the purchasing system integration.",
+    tags: ["PHP", "APIs"]
+  },
+  {
+    id: "trt5",
+    title: "Intern Software Engineer",
+    org: "TRT5",
+    mode: "Remote",
+    period: { start: "2020-08", end: "2021-11" },
+    summary:
+      "Worked on security incident response and penetration testing, reducing vulnerabilities by 30% and integrating OpenVAS with Zabbix using Python.",
+    tags: ["Python", "OpenVAS", "Zabbix"]
   }
 ];

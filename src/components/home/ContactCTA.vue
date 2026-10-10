@@ -11,7 +11,7 @@ const { t } = useLocale();
     <div class="mt-6 flex flex-wrap gap-3">
       <router-link
         to="/contact"
-        class="rounded-xl bg-accent px-4 py-3 font-sans text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        class="rounded-xl bg-accent px-4 py-3 font-sans text-sm font-medium text-on-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
         {{ t("home.contactButton") }}
       </router-link>

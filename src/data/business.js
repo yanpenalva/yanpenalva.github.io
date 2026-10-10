@@ -3,6 +3,7 @@ export default {
     {
       id: 1,
       title: "SISPPPG",
+      status: "legacy",
       description: "System for managing graduate programs and research projects, similar to SISTEX but focused on academic programs and project tracking.",
       role: "System Architect / Senior Software Engineer / DevOps",
       tech: "Laravel, Vue 3, PostgreSQL, Redis",
@@ -55,6 +56,15 @@ export default {
       role: "Senior Software Engineer / DevOps",
       tech: "Laravel, Blade, SQL Server",
       reference: "Internal system (no public URL)"
+    },
+    {
+      id: 8,
+      title: "SIIC",
+      client: "Prodeb",
+      description: "Cultural information and indicators system for Bahia's SECULT",
+      tech: "Laravel 13, TypeScript, Vue",
+      reference: "siic.cultura.ba.gov.br",
+      status: "in-development"
     }
   ],
   infra: [

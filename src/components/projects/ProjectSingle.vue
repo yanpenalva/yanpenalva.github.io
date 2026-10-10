@@ -17,6 +17,7 @@ const { t } = useLocale();
     class="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
   >
     <img
+      v-if="project.img"
       :src="project.img"
       :alt="project.title"
       loading="lazy"

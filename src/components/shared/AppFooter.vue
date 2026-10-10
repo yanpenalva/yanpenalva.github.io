@@ -7,27 +7,34 @@ import IconLinkedin from "@/components/icons/IconLinkedin.vue";
 import IconMessageCircle from "@/components/icons/IconMessageCircle.vue";
 
 const socials = [
-  { id: 1, name: "GitHub", icon: IconGithub, url: "https://github.com/yanpenalva" },
-  { id: 2, name: "Medium", icon: IconBook, url: "https://medium.com/@yanpenabr" },
-  { id: 3, name: "Instagram", icon: IconInstagram, url: "https://instagram.com/yanbpenalva" },
-  { id: 4, name: "Linkedin", icon: IconLinkedin, url: "https://www.linkedin.com/in/yanpenalva/" },
-  { id: 5, name: "WhatsApp", icon: IconMessageCircle, url: "https://wa.me/+5571992432603" },
+  { name: "GitHub", icon: IconGithub, url: "https://github.com/yanpenalva" },
+  { name: "Medium", icon: IconBook, url: "https://medium.com/@yanpenabr" },
+  { name: "Instagram", icon: IconInstagram, url: "https://instagram.com/yanbpenalva" },
+  { name: "LinkedIn", icon: IconLinkedin, url: "https://www.linkedin.com/in/yanpenalva/" },
+  { name: "WhatsApp", icon: IconMessageCircle, url: "https://wa.me/+5571992432603" },
 ];
 </script>
 
 <template>
-  <div class="container mx-auto">
-    <div class="pt-20 sm:pt-30 pb-8 mt-20 border-t border-border">
-      <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
-        <ul class="flex gap-4 sm:gap-8">
-          <li v-for="social in socials" :key="social.id">
-            <a :href="social.url" target="_blank" rel="noopener noreferrer" :aria-label="social.name" class="flex text-muted hover:text-accent cursor-pointer rounded-xl border border-border bg-surface p-4 transition-colors duration-150">
-              <component :is="social.icon" :size="20" class="w-5 sm:w-8 h-5 sm:h-8" />
-            </a>
-          </li>
-        </ul>
-      </div>
+  <footer class="mt-16 border-t border-border">
+    <div
+      class="mx-auto flex w-full max-w-[1160px] flex-wrap items-center justify-between gap-x-8 gap-y-4 px-4 py-6 sm:px-8 lg:px-0"
+    >
+      <ul class="flex flex-wrap items-center gap-x-5 gap-y-2">
+        <li v-for="social in socials" :key="social.name">
+          <a
+            :href="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="social.name"
+            class="inline-flex items-center gap-2 rounded-sm text-sm font-medium text-muted transition-colors duration-150 hover:text-accent"
+          >
+            <component :is="social.icon" :size="16" class="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span>{{ social.name }}</span>
+          </a>
+        </li>
+      </ul>
       <FooterCopyright />
     </div>
-  </div>
+  </footer>
 </template>

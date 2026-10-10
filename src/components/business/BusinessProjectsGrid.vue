@@ -14,6 +14,8 @@ const resumeHref = computed(() =>
 
 const beyond2Parts = computed(() => t("business.beyond2").split("{resume}"));
 
+const roleKey = (item, section) => "business." + section + "." + item.id + ".role";
+
 const isInternal = (reference) => String(reference).toLowerCase().includes("internal");
 </script>
 
@@ -31,10 +33,14 @@ const isInternal = (reference) => String(reference).toLowerCase().includes("inte
           class="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5"
         >
           <h3 class="font-semibold text-text">{{ item.title }}</h3>
+          <p
+            v-if="item.status"
+            class="font-mono text-xs uppercase tracking-wide text-muted"
+          >{{ t(item.status === "in-development" ? "business.statusDev" : "business.statusLegacy") }}</p>
           <p class="text-sm text-muted">{{ t("business.systems." + item.id + ".description") }}</p>
-          <div class="flex gap-2 text-sm text-muted">
+          <div v-if="item.role" class="flex gap-2 text-sm text-muted">
             <span>{{ t("business.roleLabel") }}</span>
-            <span>{{ item.role }}</span>
+            <span>{{ t(roleKey(item, 'systems')) }}</span>
           </div>
           <div class="flex gap-2 text-sm text-muted">
             <span>{{ t("business.techLabel") }}</span>
@@ -71,10 +77,14 @@ const isInternal = (reference) => String(reference).toLowerCase().includes("inte
           class="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5"
         >
           <h3 class="font-semibold text-text">{{ item.title }}</h3>
+          <p
+            v-if="item.status"
+            class="font-mono text-xs uppercase tracking-wide text-muted"
+          >{{ t(item.status === "in-development" ? "business.statusDev" : "business.statusLegacy") }}</p>
           <p class="text-sm text-muted">{{ t("business.infra." + item.id + ".description") }}</p>
-          <div class="flex gap-2 text-sm text-muted">
+          <div v-if="item.role" class="flex gap-2 text-sm text-muted">
             <span>{{ t("business.roleLabel") }}</span>
-            <span>{{ item.role }}</span>
+            <span>{{ t(roleKey(item, 'infra')) }}</span>
           </div>
           <div class="flex gap-2 text-sm text-muted">
             <span>{{ t("business.techLabel") }}</span>

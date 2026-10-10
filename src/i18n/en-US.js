@@ -41,7 +41,6 @@ export default {
       title: "Not found — Yan Penalva",
       description: "Page not found.",
       heading: "Page not found",
-      heading: "Page not found",
       message: "The page you are looking for does not exist.",
       backHome: "Back to home"
     }
@@ -64,7 +63,6 @@ export default {
     metricsProjects: "Projects completed",
     clientsHeading: "Companies I've worked with",
     bio1: "I am a Software Engineer with a passion for web development, specializing in creating robust, scalable, and user-friendly web applications. As a self-motivated and self-taught professional, I bring a strong work ethic and a track record of delivering high-quality software solutions. My approach combines continuous learning, team collaboration, and a commitment to diversity and inclusion. I excel in problem-solving and a critical thinking. My fast learning and adaptability enable me to embrace new challenges enthusiastically. I am an advocate for open-source software, the open web, and leveraging technology to address real-world issues. I firmly believe in technology's potential to enhance quality of life, promote social justice, and forge a sustainable, equitable future for all.",
-    bio2: "As a seasoned Software Engineer, I am adept at navigating the complete system lifecycle. My expertise encompasses maintaining production systems, spearheading new projects, conducting meticulous requirements analysis, crafting comprehensive technical documentation, and managing version control. Proficient in English, I am committed to enhancing my skills daily, striving for a 1% improvement with each passing day. My repertoire includes robust problem-solving abilities and sharp critical thinking aimed at devising effective solutions. Thanks to my extensive experience with a diverse array of tools, technologies, and methodologies, I am well-equipped to deliver superior-quality software solutions.",
     bio2: "As a seasoned Software Engineer, I am adept at navigating the complete system lifecycle. My expertise encompasses maintaining production systems, spearheading new projects, conducting meticulous requirements analysis, crafting comprehensive technical documentation, and managing version control. Proficient in English, I am committed to enhancing my skills daily, striving for a 1% improvement with each passing day. My repertoire includes robust problem-solving abilities and sharp critical thinking aimed at devising effective solutions. Thanks to my extensive experience with a diverse array of tools, technologies, and methodologies, I am well-equipped to deliver superior-quality software solutions."
   },
   projects: {
@@ -83,10 +81,6 @@ export default {
       "Themes": "Themes",
     },
     items: {
-      "10": {
-        title: "Starterkit Laravue",
-        description: "The LaraVue Starter Kit is an advanced project template that combines Laravel 12 on the backend and Vue 3 with Quasar Framework on the frontend, providing a solid foundation for scalable and modern web applications.",
-      },
       "1": {
         title: "PHPenalva",
         description: "A micro-framework for PHP with MVC pattern and REST API.",
@@ -107,35 +101,73 @@ export default {
         title: "Suitability System",
         description: "The Suitability System was developed to run both on the client's website and in the application. It offers a set of questions and answers that, when completed, determine the client's investment profile.",
       },
-      "2": {
-        title: "Make Your Burguer Vue",
-        description: "A project to manage a hamburger restaurant with Vue 3 + TailwindCSS + JSON Server.",
-      },
-      "6": {
-        title: "Blog PHP",
-        description: "Responsive scope for a technology-themed news blog. Stack: PHP + HTML + CSS.",
-      },
-      "7": {
-        title: "Daily Notes",
-        description: "Web app similar to google keep and with its functions made with Javascript.",
-      },
-      "3": {
-        title: "Climate Weather",
-        description: "A Javascript, HTML and CSS project to consult the weather.",
-      },
-      "4": {
-        title: "To Do List",
-        description: "A fully featured To Do List in Javascript, HTML and CSS.",
-      },
       "11": {
         title: "PenPen Deep Focus VsCode Theme",
         description: "The PenPen Deep Focus theme for Visual Studio Code is designed to provide a distraction-free coding environment, with a focus on clarity and readability.",
       },
+      "13": {
+        title: "Starter Kit API",
+        description: "Laravel REST API starter kit with authentication, RBAC, testing, and observability.",
+      },
+      "14": {
+        title: "Starter Kit Frontend",
+        description: "Vue 3 starter kit with Vue, Quasar, TypeScript, and automated testing.",
+      },
+      "15": {
+        title: "Log Anomaly Detector",
+        description: "Log anomaly detection with PHP, Flight and PHP-ML using machine learning and clustering techniques.",
+      },
+      "16": {
+        title: "Anki Lingo",
+        description: "AI-powered daily English flashcards automatically generated and synced with Anki.",
+      },
+      "17": {
+        title: "Context Spec Develop",
+        description: "Installable, agent-neutral context and delivery workflow for AI coding agents.",
+      },
+      "18": {
+        title: "1º Protesto São Luís",
+        description: "Official website for the 1st Protest Notary Office of São Luís, Maranhão, built with Laravel 13, Inertia 3, Vue 3, TypeScript, and Tailwind 4.",
+      },
+      "19": {
+        title: "NeoNews",
+        description: "News portal hosting the Suitability appraisal application.",
+      },
+    },
+  },
+  experience: {
+    netra: {
+      title: "Software Engineer",
+      org: "Netra Tecnologia",
+      mode: "Remote",
+      periodLabel: "Sep 2023 – Present",
+      summary: "Improved API performance by 45% through caching and query optimization, and led CI/CD automation that improved efficiency by 80%.",
+    },
+    prodeb: {
+      title: "Software Engineer",
+      org: "PRODEB",
+      mode: "Hybrid",
+      periodLabel: "Feb 2022 – Sep 2023",
+      summary: "Delivered Laravel and Vue features and REST APIs, integrating PostgreSQL and Redis and supporting Kubernetes-based microservices.",
+    },
+    ramiro: {
+      title: "Junior Software Engineer",
+      org: "Grupo Ramiro Campelo",
+      mode: "On-site",
+      periodLabel: "Nov 2021 – Feb 2022",
+      summary: "Developed e-commerce integrations and reduced order API failures by 25% through improvements to the purchasing system integration.",
+    },
+    trt5: {
+      title: "Intern Software Engineer",
+      org: "TRT5",
+      mode: "Remote",
+      periodLabel: "Aug 2020 – Nov 2021",
+      summary: "Worked on security incident response and penetration testing, reducing vulnerabilities by 30% and integrating OpenVAS with Zabbix using Python.",
     },
   },
   business: {
     enterpriseTitle: "Enterprise Projects",
-    enterpriseHint: "Enterprise systems currently in production",
+    enterpriseHint: "Enterprise systems",
     infraTitle: "Infrastructure & API Projects",
     infraHint: "Key contributions to system modernization, authentication, and API orchestration",
     beyondTitle: "Beyond the listed projects",
@@ -146,44 +178,62 @@ export default {
     roleLabel: "Role:",
     techLabel: "Tech:",
     referenceLabel: "Reference:",
+    deployLabel: "Live deploy",
+    statusDev: "In development",
+    statusLegacy: "Not in production",
     internalTag: "Internal system",
     systems: {
       "1": {
+        role: "System Architect / Senior Software Engineer / DevOps",
         description: "System for managing graduate programs and research projects, similar to SISTEX but focused on academic programs and project tracking.",
       },
       "2": {
+        role: "System Architect / Senior Software Engineer / DevOps",
         description: "University Extension System. Manages projects, plans and activity reports.",
       },
       "3": {
+        role: "System Architect / Senior Software Engineer / DevOps",
         description: "Integrated Student Aid System. Manages scholarships and student benefits.",
       },
       "4": {
+        role: "Senior Software Engineer / DevOps",
         description: "Document management and administrative workflow system.",
       },
       "5": {
+        role: "Senior Software Engineer / DevOps",
         description: "Human Resources Management System for academic and technical staff.",
       },
       "6": {
+        role: "Senior Software Engineer / DevOps",
         description: "Academic and Cultural Activities System. Manages public courses, workshops and events offered by the university.",
       },
       "7": {
+        role: "Senior Software Engineer / DevOps",
         description: "Institutional Project Management System.",
+      },
+      "8": {
+        description: "Cultural information and indicators system for Bahia's SECULT",
       },
     },
     infra: {
       "1": {
+        role: "System Architect / Senior Software Engineer",
         description: "Implemented the university's unified authentication service, enabling login through institutional credentials and centralized access control across all systems.",
       },
       "2": {
+        role: "Backend Engineer / API Specialist",
         description: "Participated in the development of APIs and orchestration layer that manage appointments and services for the SAC Bahia network (Prodeb).",
       },
       "3": {
+        role: "Backend Engineer / Data Integration Specialist",
         description: "Developed and supported the management of FUNDEF precatory payments for the State of Bahia, ensuring transparency and compliance in resource allocation.",
       },
       "4": {
+        role: "DevOps Engineer",
         description: "Created and modernized Jenkins and GitLab CI pipelines to automate deployment, testing, and code quality checks across multiple projects.",
       },
       "5": {
+        role: "DevOps Engineer / System Administrator",
         description: "Designed and deployed internal container registries using Harbor to manage and secure Docker images within the organization’s infrastructure.",
       },
     },
