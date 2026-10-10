@@ -1,28 +1,33 @@
 <script setup>
+import { useLocale } from "@/composables/useLocale";
+
 defineProps({
-	project: { type: Object, required: true },
+  project: { type: Object, required: true },
 });
+
+const { t } = useLocale();
 </script>
 
 <template>
-	<a :href="project.href" target="_blank" rel="noopener noreferrer"
-		class="rounded-2xl shadow-lg shadow-black hover:shadow-2xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark shadow-white"
-		aria-label="Single Project">
-		<div>
-			<img :src="project.img" :alt="project.title" loading="lazy" width="400" height="225" class="rounded-t-xl border-none w-full object-cover" />
-		</div>
-		<div class="text-center px-4 py-6">
-			<p class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2">
-				{{ project.title }}
-			</p>
-			<span class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light">{{ project.category }}</span>
-
-		</div>
-		<span class="font-general-medium text-base p-4 text-ternary-dark dark:text-ternary-light">{{ project.description
-		}}</span>
-	</a>
+  <a
+    :href="project.href"
+    target="_blank"
+    rel="noopener noreferrer"
+    :aria-label="project.title"
+    class="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+  >
+    <img
+      :src="project.img"
+      :alt="project.title"
+      loading="lazy"
+      class="w-full rounded-t-xl object-cover"
+    />
+    <div class="flex flex-col gap-2 p-5">
+      <h3 class="font-semibold text-text">{{ t("projects.items." + project.id + ".title") }}</h3>
+      <span class="font-mono text-xs uppercase tracking-wide text-muted">
+        {{ t("projects.categories." + project.category) }}
+      </span>
+      <p class="text-sm text-muted">{{ t("projects.items." + project.id + ".description") }}</p>
+    </div>
+  </a>
 </template>
-
-<style lang="scss" scoped>
-
-</style>

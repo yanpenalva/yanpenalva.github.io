@@ -1,25 +1,41 @@
 <script setup>
+import IconMapPin from "@/components/icons/IconMapPin.vue";
+import IconMail from "@/components/icons/IconMail.vue";
 import IconGithub from "@/components/icons/IconGithub.vue";
 import IconLinkedin from "@/components/icons/IconLinkedin.vue";
-import IconMail from "@/components/icons/IconMail.vue";
-import IconMapPin from "@/components/icons/IconMapPin.vue";
+import { useLocale } from "@/composables/useLocale";
 
-defineProps({ contacts: { type: Array, required: true } });
+defineProps({
+  contacts: { type: Array, required: true },
+});
 
-const iconMap = { "map-pin": IconMapPin, mail: IconMail, github: IconGithub, linkedin: IconLinkedin };
+const { t } = useLocale();
+
+const icons = {
+  "map-pin": IconMapPin,
+  mail: IconMail,
+  github: IconGithub,
+  linkedin: IconLinkedin,
+};
+
+const isExternal = (href) => String(href).startsWith("http");
 </script>
 
 <template>
-  <div class="w-full md:w-1/2">
-    <div class="text-left max-w-xl px-6">
-      <h2 class="font-general-medium text-2xl text-primary-dark dark:text-primary-light mt-12 mb-8">Contact details</h2>
-      <ul class="font-general-regular">
-        <li class="flex items-center" v-for="contact in contacts" :key="contact.id">
-          <component :is="iconMap[contact.icon]" :size="20" class="text-gray-500 dark:text-gray-400 mr-4 shrink-0" />
-          <a v-if="contact.href" :href="contact.href" :target="contact.href.startsWith('http') ? '_blank' : undefined" :rel="contact.href.startsWith('http') ? 'noopener noreferrer' : undefined" class="text-lg mb-4 text-ternary-dark dark:text-ternary-light hover:underline">{{ contact.name }}</a>
-          <span v-else class="text-lg mb-4 text-ternary-dark dark:text-ternary-light">{{ contact.name }}</span>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <section class="flex flex-col gap-6">
+    <h2 class="text-2xl font-semibold text-text">{{ t("contact.title") }}</h2>
+    <ul class="flex flex-col gap-3">
+      <li v-for="contact in contacts" :key="contact.id" class="flex items-center gap-3">
+        <component v-if="icons[contact.icon]" :is="icons[contact.icon]" class="h-5 w-5 shrink-0 text-accent" />
+        <a
+          v-if="contact.href"
+          :href="contact.href"
+          :target="isExternal(contact.href) ? '_blank' : undefined"
+          :rel="isExternal(contact.href) ? 'noopener noreferrer' : undefined"
+          class="text-text hover:text-accent hover:underline"
+        >{{ contact.name }}</a>
+        <span v-else class="text-text">{{ contact.name }}</span>
+      </li>
+    </ul>
+  </section>
 </template>

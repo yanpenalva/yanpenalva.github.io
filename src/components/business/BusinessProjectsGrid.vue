@@ -1,63 +1,115 @@
 <script setup>
+import { computed } from "vue";
+import business from "@/data/business.js";
 import IconLink2 from "@/components/icons/IconLink2.vue";
-import { ref } from "vue";
+import { useLocale } from "@/composables/useLocale";
 
-const businessProjects = ref([
-  { id: 1, title: "SISPPPG", description: "System for managing graduate programs and research projects, similar to SISTEX but focused on academic programs and project tracking.", role: "System Architect / Senior Software Engineer / DevOps", tech: "Laravel, Vue 3, PostgreSQL, Redis", reference: "sispppg.uefs.br" },
-  { id: 2, title: "SISTEX", description: "University Extension System. Manages projects, plans and activity reports.", role: "System Architect / Senior Software Engineer / DevOps", tech: "Laravel, Vue 3, PostgreSQL, Redis", reference: "sistex.uefs.br" },
-  { id: 3, title: "SIPAE", description: "Integrated Student Aid System. Manages scholarships and student benefits.", role: "System Architect / Senior Software Engineer / DevOps", tech: "Laravel, Vue 3, PostgreSQL, Redis, Docker", reference: "sipae.uefs.br" },
-  { id: 4, title: "SIDOC", description: "Document management and administrative workflow system.", role: "Senior Software Engineer / DevOps", tech: "Laravel, Vue 3, PostgreSQL", reference: "sidoc.uefs.br" },
-  { id: 5, title: "SIGRH", description: "Human Resources Management System for academic and technical staff.", role: "Senior Software Engineer / DevOps", tech: "Laravel, Vue 3, PostgreSQL", reference: "sigrh.uefs.br" },
-  { id: 6, title: "SIAC", description: "Academic and Cultural Activities System. Manages public courses, workshops and events offered by the university.", role: "Senior Software Engineer / DevOps", tech: "Laravel, Blade, SQL Server", reference: "siac.uefs.br" },
-  { id: 7, title: "SGP", description: "Institutional Project Management System.", role: "Senior Software Engineer / DevOps", tech: "Laravel, Blade, SQL Server", reference: "Internal system (no public URL)" },
-]);
+const { t, locale } = useLocale();
 
-const infraProjects = ref([
-  { id: 1, title: "Institutional Login Platform", description: "Implemented the university's unified authentication service, enabling login through institutional credentials and centralized access control across all systems.", role: "System Architect / Senior Software Engineer", tech: "OAuth2, Laravel, Vue 3, SSO, Keycloak" },
-  { id: 2, title: "SAC Bahia API Orchestration", description: "Participated in the development of APIs and orchestration layer that manage appointments and services for the SAC Bahia network (Prodeb).", role: "Backend Engineer / API Specialist", tech: "Node.js, Express, PostgreSQL, Redis, Kubernetes" },
-  { id: 3, title: "FUNDEF Court-Ordered Payments System", description: "Developed and supported the management of FUNDEF precatory payments for the State of Bahia, ensuring transparency and compliance in resource allocation.", role: "Backend Engineer / Data Integration Specialist", tech: "Laravel, PostgreSQL, REST APIs, Data Pipelines" },
-  { id: 4, title: "CI/CD Pipelines Modernization", description: "Created and modernized Jenkins and GitLab CI pipelines to automate deployment, testing, and code quality checks across multiple projects.", role: "DevOps Engineer", tech: "Jenkins, GitLab CI, Docker, SonarQube, Shell scripting" },
-  { id: 5, title: "Internal Container Registry Implementation", description: "Designed and deployed internal container registries using Harbor to manage and secure Docker images within the organization’s infrastructure.", role: "DevOps Engineer / System Administrator", tech: "Harbor, Docker, Nginx, LDAP, SSL" },
-]);
+const resumeHref = computed(() =>
+  String(locale.value).toLowerCase().startsWith("pt")
+    ? "/files/Yan_Penalva_Curriculo_PTBR.pdf"
+    : "/files/Yan_Penalva_Resume_EN.pdf"
+);
+
+const beyond2Parts = computed(() => t("business.beyond2").split("{resume}"));
+
+const isInternal = (reference) => String(reference).toLowerCase().includes("internal");
 </script>
 
 <template>
-  <section class="pt-10 sm:pt-14">
-    <div class="text-center">
-      <p class="font-general-semibold text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light">Enterprise Projects</p>
-      <h3 class="font-general-regular text-secondary-dark dark:text-ternary-light text-md sm:text-xl font-normal mb-4">Enterprise systems currently in production</h3>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-      <div v-for="project in businessProjects" :key="project.id" class="group relative rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 bg-secondary-light dark:bg-ternary-dark p-6 transform hover:-translate-y-1">
-        <h3 class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light mb-2">{{ project.title }}</h3>
-        <p class="font-general-medium text-base text-primary-dark dark:text-ternary-light mb-4">{{ project.description }}</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-1"><span class="font-semibold">Role:</span><br />{{ project.role }}</p>
-        <p class="text-sm text-gray-500 dark:text-gray-400 mb-1"><span class="font-semibold">Tech:</span><br />{{ project.tech }}</p>
-        <div class="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm text-indigo-300 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-2xl">
-          <IconLink2 :size="16" class="inline mr-2" />{{ project.reference }}
-        </div>
+  <section class="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 py-16">
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <h2 class="text-2xl font-semibold text-text">{{ t("business.enterpriseTitle") }}</h2>
+        <p class="text-muted">{{ t("business.enterpriseHint") }}</p>
+      </div>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <article
+          v-for="item in business.systems"
+          :key="item.id"
+          class="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5"
+        >
+          <h3 class="font-semibold text-text">{{ item.title }}</h3>
+          <p class="text-sm text-muted">{{ t("business.systems." + item.id + ".description") }}</p>
+          <div class="flex gap-2 text-sm text-muted">
+            <span>{{ t("business.roleLabel") }}</span>
+            <span>{{ item.role }}</span>
+          </div>
+          <div class="flex gap-2 text-sm text-muted">
+            <span>{{ t("business.techLabel") }}</span>
+            <span>{{ item.tech }}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span
+              v-if="isInternal(item.reference)"
+              class="rounded border border-border px-2 py-0.5 font-mono text-xs uppercase text-muted"
+            >{{ t("business.internalTag") }}</span>
+            <a
+              v-else
+              :href="'https://' + item.reference"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-accent hover:underline"
+            >
+              <IconLink2 class="h-4 w-4 shrink-0" />
+              <span>{{ item.reference }}</span>
+            </a>
+          </div>
+        </article>
       </div>
     </div>
-
-    <div class="mt-20 text-center">
-      <p class="font-general-semibold text-2xl sm:text-4xl font-semibold mb-4 text-ternary-dark dark:text-ternary-light">Infrastructure &amp; API Projects</p>
-      <h3 class="font-general-regular text-secondary-dark dark:text-ternary-light text-md sm:text-lg font-normal mb-10">Key contributions to system modernization, authentication, and API orchestration</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-10">
-        <div v-for="project in infraProjects" :key="project.id" class="rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 bg-secondary-light dark:bg-ternary-dark p-6 transform hover:-translate-y-1">
-          <h3 class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light mb-2">{{ project.title }}</h3>
-          <p class="font-general-medium text-base text-primary-dark dark:text-ternary-light mb-4">{{ project.description }}</p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1"><span class="font-semibold">Role:</span><br />{{ project.role }}</p>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-1"><span class="font-semibold">Tech:</span><br />{{ project.tech }}</p>
-        </div>
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <h2 class="text-2xl font-semibold text-text">{{ t("business.infraTitle") }}</h2>
+        <p class="text-muted">{{ t("business.infraHint") }}</p>
+      </div>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <article
+          v-for="item in business.infra"
+          :key="item.id"
+          class="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5"
+        >
+          <h3 class="font-semibold text-text">{{ item.title }}</h3>
+          <p class="text-sm text-muted">{{ t("business.infra." + item.id + ".description") }}</p>
+          <div class="flex gap-2 text-sm text-muted">
+            <span>{{ t("business.roleLabel") }}</span>
+            <span>{{ item.role }}</span>
+          </div>
+          <div class="flex gap-2 text-sm text-muted">
+            <span>{{ t("business.techLabel") }}</span>
+            <span>{{ item.tech }}</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span
+              v-if="isInternal(item.reference)"
+              class="rounded border border-border px-2 py-0.5 font-mono text-xs uppercase text-muted"
+            >{{ t("business.internalTag") }}</span>
+            <a
+              v-else
+              :href="'https://' + item.reference"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-accent hover:underline"
+            >
+              <IconLink2 class="h-4 w-4 shrink-0" />
+              <span>{{ item.reference }}</span>
+            </a>
+          </div>
+        </article>
       </div>
     </div>
-
-    <div class="mt-24 text-center max-w-4xl mx-auto">
-      <p class="font-general-semibold text-2xl sm:text-3xl text-ternary-dark dark:text-ternary-light mb-4">Beyond the listed projects</p>
-      <p class="font-general-regular text-base sm:text-lg text-secondary-dark dark:text-ternary-light leading-relaxed">The projects shown here represent only a small part of my professional journey. Over the years, I have contributed to several enterprise systems and infrastructure initiatives, always focusing on performance, maintainability, and fast, high-quality delivery.</p>
-      <p class="font-general-regular text-base sm:text-lg text-secondary-dark dark:text-ternary-light leading-relaxed mt-4">For a complete overview of my experience, you can download my <router-link to="/" class="text-indigo-500 hover:text-indigo-400 font-semibold transition-colors">resume here</router-link>. You can also reach out through my <span class="text-indigo-500 font-semibold">social media</span> to discuss projects, collaborations, or more technical details.</p>
-      <p class="font-general-regular text-base sm:text-lg text-secondary-dark dark:text-ternary-light leading-relaxed mt-4">I value professionalism, clear communication, and clean architecture. My goal is always to deliver solutions that balance speed, reliability, and technical excellence.</p>
+    <div class="flex flex-col gap-3">
+      <h2 class="text-2xl font-semibold text-text">{{ t("business.beyondTitle") }}</h2>
+      <p class="text-muted">{{ t("business.beyond1") }}</p>
+      <p class="text-muted">
+        {{ beyond2Parts[0] }}<a
+          :href="resumeHref"
+          download
+          class="text-accent hover:underline"
+        >{{ t("business.beyondResume") }}</a>{{ beyond2Parts[1] }}
+      </p>
+      <p class="text-muted">{{ t("business.beyond3") }}</p>
     </div>
   </section>
 </template>
