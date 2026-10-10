@@ -13,8 +13,6 @@ try {
 function applyTheme(value) {
   const root = document.documentElement;
   root.classList.toggle("dark", value === "dark");
-  document.body.classList.toggle("bg-primary-dark", value === "dark");
-  document.body.classList.toggle("bg-secondary-light", value !== "dark");
 }
 
 applyTheme(theme.value);

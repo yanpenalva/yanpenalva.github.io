@@ -16,8 +16,14 @@ function toggleTheme() {
 </script>
 
 <template>
-  <button type="button" @click="toggleTheme" aria-label="Toggle theme">
-    <IconMoon v-if="isLight" :size="20" class="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light" />
-    <IconSun v-else :size="20" class="text-gray-200 hover:text-gray-50" />
+  <button
+    type="button"
+    @click="toggleTheme"
+    :aria-pressed="!isLight"
+    aria-label="Toggle theme"
+    class="text-muted transition-colors duration-150 hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+  >
+    <IconMoon v-if="isLight" :size="20" aria-hidden="true" />
+    <IconSun v-else :size="20" aria-hidden="true" />
   </button>
 </template>
