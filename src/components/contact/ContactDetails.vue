@@ -51,7 +51,7 @@ const contactLabel = (contact) => {
           class="text-text hover:text-accent hover:underline"
         >{{ contactLabel(contact) }}</a>
         <span v-else class="text-text">{{ contactLabel(contact) }}</span>
-        <span v-if="contact.icon === 'map-pin'" class="font-mono text-xs text-muted">{{ t("contact.timezone") }}</span>
+        <span v-if="contact.icon === 'map-pin'" class="font-mono text-xs text-muted">{{ t("contact.timezone") }} · {{ t("contact.modality") }}</span>
       </li>
     </ul>
   </section>
