@@ -318,15 +318,15 @@ export default {
   hireFaq: {
     "1": {
       q: "What are your typical project timelines?",
-      a: "[NEEDS-USER]"
+      a: "I reply within 24 hours. After a short discovery call, you get an estimate within 3 business days, with a first delivery typically in 1–2 weeks — depending on scope."
     },
     "2": {
       q: "Are you open to signing an NDA or contract?",
-      a: "[NEEDS-USER]"
+      a: "Yes. I work with service contracts — freelance and PJ — and I sign NDAs whenever the project requires it."
     },
     "3": {
       q: "How do you structure your pricing and billing?",
-      a: "[NEEDS-USER]"
+      a: "Flexible and to be agreed: hourly, fixed scope or monthly — always with fast deliveries."
     }
   },
   hireCtaTitle: "Have a project in mind?",

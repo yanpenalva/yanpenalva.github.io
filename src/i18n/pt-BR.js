@@ -318,15 +318,15 @@ export default {
   hireFaq: {
     "1": {
       q: "Quais são os prazos típicos dos projetos?",
-      a: "[NEEDS-USER]"
+      a: "Respondo em até 24 horas. Após uma conversa inicial, você recebe a estimativa em até 3 dias úteis, com a primeira entrega normalmente em 1–2 semanas — dependendo do escopo."
     },
     "2": {
       q: "Você aceita assinar um NDA ou contrato?",
-      a: "[NEEDS-USER]"
+      a: "Sim. Trabalho com contrato de prestação de serviços — freelas e PJ — e assino NDA sempre que o projeto exigir."
     },
     "3": {
       q: "Como você estrutura seus valores e a cobrança?",
-      a: "[NEEDS-USER]"
+      a: "Flexível e a combinar: hora, escopo fechado ou mensalidade — sempre com entregas bem rápidas."
     }
   },
   hireCtaTitle: "Tem um projeto em mente?",
