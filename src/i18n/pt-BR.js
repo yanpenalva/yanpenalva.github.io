@@ -270,7 +270,7 @@ export default {
     location: "Salvador/BA - Brasil",
     whatsappMessage: "Olá, Yan! Vi seu portfólio e gostaria de conversar.",
     timezone: "UTC−3 · America/Bahia",
-    modality: "Preferência: remoto · aceito presencial/híbrido",
+    modality: "Preferência: remoto · aceito presencial/híbrido · disponível para realocação se necessário",
     whatsappLabel: "WhatsApp",
   },
   hireTitle: "Vamos construir algo confiável.",

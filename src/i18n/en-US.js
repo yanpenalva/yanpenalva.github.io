@@ -270,7 +270,7 @@ export default {
     location: "Salvador, Bahia, Brazil",
     whatsappMessage: "Hi, Yan! I saw your portfolio and would like to talk.",
     timezone: "UTC−3 · America/Bahia",
-    modality: "Preferred: remote · open to on-site/hybrid",
+    modality: "Preferred: remote · open to on-site/hybrid · available for relocation if needed",
     whatsappLabel: "WhatsApp",
   },
   hireTitle: "Let's build something reliable.",
