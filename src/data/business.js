@@ -79,7 +79,7 @@ export default {
       title: "SAC Bahia API Orchestration",
       description: "Participated in the development of APIs and orchestration layer that manage appointments and services for the SAC Bahia network (Prodeb).",
       role: "Backend Engineer / API Specialist",
-      tech: "Node.js, Express, PostgreSQL, Redis, Kubernetes"
+      tech: "Laravel, Laravel Octane, PostgreSQL, Redis"
     },
     {
       id: 3,
