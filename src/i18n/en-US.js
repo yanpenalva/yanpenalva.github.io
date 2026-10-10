@@ -272,5 +272,65 @@ export default {
     timezone: "UTC−3 · America/Bahia",
     modality: "Preferred: remote · open to on-site/hybrid",
     whatsappLabel: "WhatsApp",
-  }
+  },
+  hireTitle: "Let's build something reliable.",
+  hireText: "I build and evolve web systems, APIs, infrastructure, and applied AI solutions. Tell me what you're working on and what needs to move forward.",
+  hireServicesTitle: "Ways I can help",
+  hireServices: {
+    "1": {
+      title: "Web systems",
+      text: "Modular web applications built and evolved with Laravel and Vue, with PostgreSQL and Redis when the project calls for them."
+    },
+    "2": {
+      title: "REST APIs",
+      text: "API design and implementation, including integrations, authentication, testing, and observability."
+    },
+    "3": {
+      title: "DevOps",
+      text: "Containerized infrastructure and delivery with Docker, Kubernetes, CI/CD, and GNU/Linux—from cluster setup to automated pipelines."
+    },
+    "4": {
+      title: "Applied AI",
+      text: "Practical AI work, from log anomaly detection and AI-assisted development to context tooling for coding agents."
+    }
+  },
+  hireStepsTitle: "How we work",
+  hireSteps: {
+    "1": {
+      title: "Conversation",
+      text: "We discuss your context, goals, and constraints."
+    },
+    "2": {
+      title: "Scope",
+      text: "We align on requirements, priorities, and what is included."
+    },
+    "3": {
+      title: "Proposal",
+      text: "I present an approach and proposal based on the agreed scope."
+    },
+    "4": {
+      title: "Delivery",
+      text: "I execute the agreed work and share progress through delivery."
+    }
+  },
+  hireAvailabilityTitle: "Availability",
+  hireFaqTitle: "Frequently asked questions",
+  hireFaq: {
+    "1": {
+      q: "What are your typical project timelines?",
+      a: "[NEEDS-USER]"
+    },
+    "2": {
+      q: "Are you open to signing an NDA or contract?",
+      a: "[NEEDS-USER]"
+    },
+    "3": {
+      q: "How do you structure your pricing and billing?",
+      a: "[NEEDS-USER]"
+    }
+  },
+  hireCtaTitle: "Have a project in mind?",
+  hireCtaText: "Share a little context and let's discuss the next step.",
+  hireWhatsAppCta: "Start a conversation on WhatsApp",
+  hireEmailCta: "Send me an email"
 };

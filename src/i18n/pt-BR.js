@@ -272,5 +272,65 @@ export default {
     timezone: "UTC−3 · America/Bahia",
     modality: "Preferência: remoto · aceito presencial/híbrido",
     whatsappLabel: "WhatsApp",
-  }
+  },
+  hireTitle: "Vamos construir algo confiável.",
+  hireText: "Construo e evoluo sistemas web, APIs, infraestrutura e soluções de IA aplicada. Conte o que você está desenvolvendo e o que precisa avançar.",
+  hireServicesTitle: "Como posso ajudar",
+  hireServices: {
+    "1": {
+      title: "Sistemas web",
+      text: "Aplicações web modulares desenvolvidas e evoluídas com Laravel e Vue, com PostgreSQL e Redis quando o projeto precisar."
+    },
+    "2": {
+      title: "APIs REST",
+      text: "Desenvolvimento e implementação de APIs, incluindo integrações, autenticação, testes e observabilidade."
+    },
+    "3": {
+      title: "DevOps",
+      text: "Infraestrutura e entrega conteinerizadas com Docker, Kubernetes, CI/CD e GNU/Linux, da criação de clusters à automação de pipelines."
+    },
+    "4": {
+      title: "IA aplicada",
+      text: "Trabalho prático com IA, de detecção de anomalias em logs e desenvolvimento assistido por IA a ferramentas de contexto para agentes de programação."
+    }
+  },
+  hireStepsTitle: "Como funciona",
+  hireSteps: {
+    "1": {
+      title: "Conversa",
+      text: "Conversamos sobre seu contexto, objetivos e restrições."
+    },
+    "2": {
+      title: "Escopo",
+      text: "Alinhamos requisitos, prioridades e o que será incluído."
+    },
+    "3": {
+      title: "Proposta",
+      text: "Apresento uma abordagem e proposta com base no escopo acordado."
+    },
+    "4": {
+      title: "Entrega",
+      text: "Executo o trabalho acordado e compartilho o andamento até a entrega."
+    }
+  },
+  hireAvailabilityTitle: "Disponibilidade",
+  hireFaqTitle: "Perguntas frequentes",
+  hireFaq: {
+    "1": {
+      q: "Quais são os prazos típicos dos projetos?",
+      a: "[NEEDS-USER]"
+    },
+    "2": {
+      q: "Você aceita assinar um NDA ou contrato?",
+      a: "[NEEDS-USER]"
+    },
+    "3": {
+      q: "Como você estrutura seus valores e a cobrança?",
+      a: "[NEEDS-USER]"
+    }
+  },
+  hireCtaTitle: "Tem um projeto em mente?",
+  hireCtaText: "Conte um pouco sobre o contexto e vamos conversar sobre o próximo passo.",
+  hireWhatsAppCta: "Conversar pelo WhatsApp",
+  hireEmailCta: "Me envie um e-mail"
 };
