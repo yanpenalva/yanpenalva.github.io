@@ -318,7 +318,7 @@ export default {
   hireFaq: {
     "1": {
       q: "Quais são os prazos típicos dos projetos?",
-      a: "Respondo em até 24 horas. Após uma conversa inicial, você recebe a estimativa em até 3 dias úteis, com a primeira entrega normalmente em 1–2 semanas — dependendo do escopo."
+      a: "Respondo em até 24 horas. Após conversar com você, envio a estimativa em até 3 dias úteis. Os prazos variam com o escopo: algo simples pode ir ao ar em poucos dias, algo complexo leva mais tempo — depende do tamanho da entrega."
     },
     "2": {
       q: "Você aceita assinar um NDA ou contrato?",

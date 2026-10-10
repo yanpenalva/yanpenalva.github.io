@@ -318,7 +318,7 @@ export default {
   hireFaq: {
     "1": {
       q: "What are your typical project timelines?",
-      a: "I reply within 24 hours. After a short discovery call, you get an estimate within 3 business days, with a first delivery typically in 1–2 weeks — depending on scope."
+      a: "I reply within 24 hours. After talking with you, I send an estimate within 3 business days. Timelines vary with scope: something simple can go live in a few days, something complex takes longer — it depends on the size of the delivery."
     },
     "2": {
       q: "Are you open to signing an NDA or contract?",
