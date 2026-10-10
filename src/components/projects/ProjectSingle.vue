@@ -44,7 +44,7 @@ const projectText = (field) => t(`projects.items.${props.project.id}.${field}`);
           rel="noopener noreferrer"
           class="inline-flex min-w-0 flex-col gap-1 rounded-sm text-sm text-accent underline decoration-border underline-offset-4 hover:decoration-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
-          <span>{{ t("business.referenceLabel") }}</span>
+          <span>{{ t("projects.viewCode") }}</span>
           <span class="break-all text-text">{{ project.href }}</span>
         </a>
         <a

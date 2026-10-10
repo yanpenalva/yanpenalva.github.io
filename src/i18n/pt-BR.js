@@ -60,7 +60,7 @@ export default {
     metricsTitle: "",
     contactTitle: "Vamos trabalhar juntos",
     contactText: "Tem um projeto, vaga ou ideia? Entre em contato.",
-    contactButton: "Contato",
+    contactButton: "Conversar sobre vaga ou projeto",
     emailButton: "Me envie um email"
   },
   about: {
@@ -83,7 +83,8 @@ export default {
     allLabel: "Todos os Projetos",
     moreLabel: "Mais projetos:",
     filterLabel: "Filtrar por categoria",
-    deployLabel: "Deploy",
+    deployLabel: "Abrir demonstração",
+    viewCode: "Ver código",
     categories: {
       "Web Application": "Aplicação Web",
       "API Application": "Aplicação API",
@@ -268,6 +269,7 @@ export default {
     title: "Informações de contato",
     location: "Salvador/BA - Brasil",
     whatsappMessage: "Olá, Yan! Vi seu portfólio e gostaria de conversar.",
+    timezone: "UTC−3 · America/Bahia",
     whatsappLabel: "WhatsApp",
   }
 };
