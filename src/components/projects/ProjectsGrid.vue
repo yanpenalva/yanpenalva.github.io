@@ -24,7 +24,8 @@ const filteredProjects = computed(() => {
       project.title.toLowerCase().includes(term) ||
       t("projects.items." + project.id + ".title").toLowerCase().includes(term) ||
       project.description.toLowerCase().includes(term) ||
-      t("projects.items." + project.id + ".description").toLowerCase().includes(term)
+      t("projects.items." + project.id + ".description").toLowerCase().includes(term) ||
+      (project.language || "").toLowerCase().includes(term)
     );
   });
 });
