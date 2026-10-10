@@ -15,6 +15,7 @@ const { t } = useLocale();
     <div class="flex flex-col gap-4 text-left">
       <p class="text-lg leading-relaxed text-text">{{ t("about.bio1") }}</p>
       <p class="text-lg leading-relaxed text-text">{{ t("about.bio2") }}</p>
+      <p class="text-lg leading-relaxed text-text">{{ t("about.bio3") }}</p>
     </div>
   </div>
 </template>

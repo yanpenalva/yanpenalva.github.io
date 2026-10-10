@@ -67,7 +67,8 @@ export default {
     metricsExperience: "Years of experience",
     metricsProjects: "Projects completed",
     bio1: "I’m a software engineer with 6 years of experience building and evolving enterprise systems, from architecture and infrastructure to performance, maintainability, and software quality.",
-    bio2: "I also contribute to open source and apply AI-assisted development and context engineering in collaborative teams, communicating clearly to turn complex needs into reliable software."
+    bio2: "Today I’m a Senior Software Engineer at PRODEB, leading the architecture and evolution of SIIC v2 for SECULT Bahia, with modular design, automated quality, and AI-assisted development workflows.",
+    bio3: "Before returning to PRODEB, I spent three years at Netra Tecnologia building Laravel and Vue APIs, and earlier shipped seven production university systems at UEFS, alongside DevOps work with Docker, Kubernetes and GNU/Linux. I also maintain open-source starter kits and study applied AI, from log anomaly detection to agent context tooling.",
   },
   metrics: {
     experience: "Years of experience",
