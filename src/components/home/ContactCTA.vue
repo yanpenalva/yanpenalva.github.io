@@ -5,7 +5,7 @@ const { t } = useLocale();
 </script>
 
 <template>
-  <section class="rounded-md border border-border bg-surface p-6 sm:p-10">
+  <section v-reveal class="rounded-md border border-border bg-surface p-6 sm:p-10">
     <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.contactTitle") }}</h2>
     <p class="mt-3 max-w-2xl leading-relaxed text-muted">{{ t("home.contactText") }}</p>
     <div class="mt-6 flex flex-wrap gap-3">

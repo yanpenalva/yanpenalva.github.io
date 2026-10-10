@@ -8,6 +8,7 @@ import IconLinkedin from "@/components/icons/IconLinkedin.vue";
 import IconMessageCircle from "@/components/icons/IconMessageCircle.vue";
 import { useLocale } from "@/composables/useLocale";
 import { useWhatsApp } from "@/composables/useWhatsApp";
+import { isValidHttpUrl } from "@/utils/urls";
 
 const { t } = useLocale();
 const { href: whatsappHref } = useWhatsApp();
@@ -29,6 +30,7 @@ const socials = computed(() => [
       <ul class="flex flex-wrap items-center gap-x-5 gap-y-2">
         <li v-for="social in socials" :key="social.name">
           <a
+            v-if="isValidHttpUrl(social.url)"
             :href="social.url"
             target="_blank"
             rel="noopener noreferrer"
@@ -38,6 +40,13 @@ const socials = computed(() => [
             <component :is="social.icon" :size="16" class="h-4 w-4 shrink-0" aria-hidden="true" />
             <span>{{ social.name }}</span>
           </a>
+          <span
+            v-else
+            class="inline-flex items-center gap-2 text-sm font-medium text-muted"
+          >
+            <component :is="social.icon" :size="16" class="h-4 w-4 shrink-0" aria-hidden="true" />
+            <span>{{ social.name }}</span>
+          </span>
         </li>
       </ul>
       <FooterCopyright />

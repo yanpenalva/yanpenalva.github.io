@@ -31,7 +31,7 @@ const filteredProjects = computed(() => {
 </script>
 
 <template>
-  <section class="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-16">
+  <section v-reveal class="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-16">
     <div class="flex items-center justify-end gap-2 font-sans text-sm">
       <span class="text-muted">{{ t("projects.moreLabel") }}</span>
       <a
@@ -57,7 +57,9 @@ const filteredProjects = computed(() => {
       <ProjectsFilter select="projects" @filter="selectedCategory = $event" />
     </div>
     <div v-if="filteredProjects.length > 0" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <ProjectSingle v-for="project in filteredProjects" :key="project.id" :project="project" />
+      <div v-for="project in filteredProjects" :key="project.id" v-reveal class="h-full">
+        <ProjectSingle :project="project" />
+      </div>
     </div>
     <p v-else class="py-12 text-center text-muted">{{ t("projects.empty") }}</p>
   </section>

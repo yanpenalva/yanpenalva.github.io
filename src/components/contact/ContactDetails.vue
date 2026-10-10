@@ -6,6 +6,7 @@ import IconLinkedin from "@/components/icons/IconLinkedin.vue";
 import IconMessageCircle from "@/components/icons/IconMessageCircle.vue";
 import { useLocale } from "@/composables/useLocale";
 import { useWhatsApp } from "@/composables/useWhatsApp";
+import { isValidHttpUrl, isValidUrl } from "@/utils/urls";
 
 defineProps({
   contacts: { type: Array, required: true },
@@ -22,7 +23,6 @@ const icons = {
   whatsapp: IconMessageCircle,
 };
 
-const isExternal = (href) => String(href).startsWith("http");
 const contactLabel = (contact) => {
   if (contact.icon === "whatsapp") return t("contact.whatsappLabel");
   if (contact.icon === "map-pin") return t("contact.location");
@@ -37,17 +37,17 @@ const contactLabel = (contact) => {
       <li v-for="contact in contacts" :key="contact.id" class="flex items-center gap-3">
         <component v-if="icons[contact.icon]" :is="icons[contact.icon]" class="h-5 w-5 shrink-0 text-accent" />
         <a
-          v-if="contact.icon === 'whatsapp'"
+          v-if="contact.icon === 'whatsapp' && isValidHttpUrl(whatsappHref)"
           :href="whatsappHref"
           target="_blank"
           rel="noopener noreferrer"
           class="text-text hover:text-accent hover:underline"
         >{{ contactLabel(contact) }}</a>
         <a
-          v-else-if="contact.href"
+          v-else-if="isValidUrl(contact.href)"
           :href="contact.href"
-          :target="isExternal(contact.href) ? '_blank' : undefined"
-          :rel="isExternal(contact.href) ? 'noopener noreferrer' : undefined"
+          :target="isValidHttpUrl(contact.href) ? '_blank' : undefined"
+          :rel="isValidHttpUrl(contact.href) ? 'noopener noreferrer' : undefined"
           class="text-text hover:text-accent hover:underline"
         >{{ contactLabel(contact) }}</a>
         <span v-else class="text-text">{{ contactLabel(contact) }}</span>

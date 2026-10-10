@@ -25,7 +25,7 @@ export default {
     },
     about: {
       title: "Sobre — Yan Penalva",
-      description: "Sobre Yan Penalva: experiência, clientes e trajetória."
+      description: "Sobre Yan Penalva: experiência e trajetória."
     },
     projects: {
       title: "Projetos — Yan Penalva",
@@ -57,7 +57,6 @@ export default {
     openProject: "Ver projeto",
     metricsAriaLabel: "Indicadores de experiência e projetos",
     experienceTitle: "Experiência",
-    clientsTitle: "Empresas com as quais trabalhei",
     metricsTitle: "",
     contactTitle: "Vamos trabalhar juntos",
     contactText: "Tem um projeto, vaga ou ideia? Entre em contato.",
@@ -67,9 +66,8 @@ export default {
   about: {
     metricsExperience: "Anos de experiência",
     metricsProjects: "Projetos concluídos",
-    clientsHeading: "Empresas com as quais trabalhei",
-    bio1: "Sou Engenheiro de Software com paixão por desenvolvimento web, especializado na criação de aplicações web robustas, escaláveis e fáceis de usar. Como profissional automotivado e autodidata, trago uma ética de trabalho sólida e um histórico de entrega de soluções de software de alta qualidade. Minha abordagem combina aprendizado contínuo, colaboração em equipe e compromisso com a diversidade e a inclusão. Destaco-me na resolução de problemas e no pensamento crítico. Meu aprendizado rápido e minha adaptabilidade me permitem abraçar novos desafios com entusiasmo. Sou um defensor do software de código aberto, da web aberta e do uso da tecnologia para resolver problemas do mundo real. Acredito firmemente no potencial da tecnologia para melhorar a qualidade de vida, promover a justiça social e construir um futuro sustentável e equitativo para todos.",
-    bio2: "Como Engenheiro de Software experiente, sou hábil em percorrer todo o ciclo de vida dos sistemas. Minha expertise abrange a manutenção de sistemas em produção, a liderança de novos projetos, a condução de análises meticulosas de requisitos, a produção de documentação técnica abrangente e o gerenciamento de controle de versão. Proficiente em inglês, tenho o compromisso de aprimorar minhas habilidades diariamente, buscando uma melhoria de 1% a cada dia. Meu repertório inclui sólidas habilidades de resolução de problemas e pensamento crítico aguçado, voltados para a criação de soluções eficazes. Graças à minha vasta experiência com uma grande variedade de ferramentas, tecnologias e metodologias, estou bem preparado para entregar soluções de software de qualidade superior."
+    bio1: "Sou engenheiro de software com 6 anos de experiência construindo e evoluindo sistemas corporativos, da arquitetura e infraestrutura ao desempenho, à manutenibilidade e à qualidade de software.",
+    bio2: "Também contribuo com projetos de código aberto e aplico desenvolvimento assistido por IA e engenharia de contexto em equipes colaborativas, com comunicação clara para transformar necessidades complexas em software confiável."
   },
   metrics: {
     experience: "Anos de experiência",
@@ -148,11 +146,18 @@ export default {
     },
   },
   experience: {
+    "prodeb-senior": {
+      title: "Engenheiro de Software Sênior",
+      org: "PRODEB",
+      mode: "Híbrido",
+      periodLabel: "Jun 2026 – Atual",
+      summary: "Liderando a arquitetura e evolução do SIIC v2 para a SECULT-BA: design modular e Clean Architecture com Laravel, Vue.js, PostgreSQL e Redis; DevOps com Docker, Kubernetes e CI/CD; fluxos de desenvolvimento assistido por IA e engenharia de contexto adotados pelas equipes; cobertura de testes acima de 90%, com o roadmap cerca de dois meses adiantado."
+    },
     netra: {
       title: "Engenheiro de Software",
       org: "Netra Tecnologia",
       mode: "Remoto",
-      periodLabel: "Set 2023 – Atual",
+      periodLabel: "Set 2023 – Jun 2026",
       summary: "Melhorou o desempenho das APIs em 45% com cache e otimização de consultas e liderou a automação de CI/CD, aumentando os deploys em 80%.",
     },
     prodeb: {
@@ -182,11 +187,6 @@ export default {
     enterpriseHint: "Sistemas corporativos",
     infraTitle: "Projetos de Infraestrutura e API",
     infraHint: "Principais contribuições em modernização de sistemas, autenticação e orquestração de APIs",
-    beyondTitle: "Além dos projetos listados",
-    beyond1: "Os projetos mostrados aqui representam apenas uma pequena parte da minha trajetória profissional. Ao longo dos anos, contribuí com diversos sistemas corporativos e iniciativas de infraestrutura, sempre com foco em desempenho, manutenibilidade e entregas rápidas e de alta qualidade.",
-    beyondResume: "baixar meu currículo aqui",
-    beyond2: "Para uma visão completa da minha experiência, você pode {resume} ou entrar em contato pelas minhas redes sociais para conversar sobre projetos, colaborações ou detalhes mais técnicos.",
-    beyond3: "Valorizo o profissionalismo, a comunicação clara e a arquitetura limpa. Meu objetivo é sempre entregar soluções que equilibrem velocidade, confiabilidade e excelência técnica.",
     roleLabel: "Cargo:",
     techLabel: "Tecnologias:",
     referenceLabel: "Referência:",
@@ -196,6 +196,7 @@ export default {
     internalTag: "Sistema interno",
     systems: {
       "1": {
+        title: "SISPPPG",
         role: "Arquiteto de Sistemas / Engenheiro de Software Sênior / DevOps",
         description: "Sistema para gerenciamento de programas de pós-graduação e projetos de pesquisa, semelhante ao SISTEX, mas com foco em programas acadêmicos e acompanhamento de projetos.",
       },
@@ -205,26 +206,32 @@ export default {
         description: "Sistema de Extensão Universitária. Gerencia projetos, planos e relatórios de atividades.",
       },
       "3": {
+        title: "SIPAE",
         role: "Arquiteto de Sistemas / Engenheiro de Software Sênior / DevOps",
         description: "Sistema Integrado de Auxílio Estudantil. Gerencia bolsas e benefícios estudantis.",
       },
       "4": {
+        title: "SIDOC",
         role: "Engenheiro de Software Sênior / DevOps",
         description: "Sistema de gestão de documentos e fluxo de trabalho administrativo.",
       },
       "5": {
+        title: "SIGRH",
         role: "Engenheiro de Software Sênior / DevOps",
         description: "Sistema de Gestão de Recursos Humanos para servidores acadêmicos e técnicos.",
       },
       "6": {
+        title: "SIAC",
         role: "Engenheiro de Software Sênior / DevOps",
         description: "Sistema de Atividades Acadêmicas e Culturais. Gerencia cursos, oficinas e eventos abertos ao público oferecidos pela universidade.",
       },
       "7": {
+        title: "SGP",
         role: "Engenheiro de Software Sênior / DevOps",
         description: "Sistema de Gestão de Projetos Institucionais.",
       },
       "8": {
+        title: "SIIC",
         description: "Sistema de Informações e Indicadores Culturais da SECULT Bahia",
       },
     },

@@ -6,7 +6,7 @@ const { t } = useLocale();
 </script>
 
 <template>
-  <div class="flex flex-col items-center gap-8 md:flex-row md:items-start">
+  <div v-reveal class="flex flex-col items-center gap-8 md:flex-row md:items-start">
     <img
       :src="profileImage"
       alt="Yan Penalva"

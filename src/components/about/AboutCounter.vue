@@ -11,7 +11,7 @@ const labelKeys = {
 </script>
 
 <template>
-  <section class="bg-canvas">
+  <section v-reveal class="bg-canvas">
     <div class="flex items-center justify-center gap-10 py-14">
       <div v-for="metric in metrics" :key="metric.id" class="text-center">
         <div class="text-4xl font-semibold text-text">

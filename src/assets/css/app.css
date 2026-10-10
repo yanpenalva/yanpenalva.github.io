@@ -50,10 +50,49 @@ body {
 	outline-offset: 2px;
 }
 
+.card-motion:hover,
+.card-motion:focus-visible,
+.card-motion:focus-within {
+	border-color: rgb(var(--color-accent));
+}
+
 /* Active class for navigation menu */
 .router-link-active,
 .router-link-exact-active {
 	@apply text-accent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.reveal {
+		opacity: 0;
+		transform: translateY(8px);
+		transition: opacity 500ms ease, transform 500ms ease;
+	}
+
+	.reveal.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.card-motion {
+		transition: border-color 180ms ease, transform 180ms ease;
+	}
+
+	.card-motion:hover,
+	.card-motion:focus-visible,
+	.card-motion:focus-within {
+		transform: translateY(-2px);
+	}
+
+	.route-enter-active,
+	.route-leave-active {
+		transition: opacity 150ms ease;
+	}
+
+	.route-enter-from,
+	.route-leave-to {
+		opacity: 0;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {

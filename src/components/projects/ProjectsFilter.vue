@@ -12,11 +12,7 @@ const { t } = useLocale();
 
 const selected = ref("");
 
-const categoryLabel = (category) => {
-  const key = `projects.categories.${category}`;
-  const translation = t(key);
-  return translation === key ? category : translation;
-};
+const categoryLabel = (category) => t(`projects.categories.${category}`);
 
 const categories = computed(() => {
   const unique = [];

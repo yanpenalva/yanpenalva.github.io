@@ -25,7 +25,7 @@ export default {
     },
     about: {
       title: "About — Yan Penalva",
-      description: "About Yan Penalva: experience, clients and background."
+      description: "About Yan Penalva: experience and background."
     },
     projects: {
       title: "Projects — Yan Penalva",
@@ -57,7 +57,6 @@ export default {
     openProject: "View project",
     metricsAriaLabel: "Experience and project metrics",
     experienceTitle: "Experience",
-    clientsTitle: "Companies I've worked with",
     metricsTitle: "",
     contactTitle: "Let's work together",
     contactText: "Have a project, role, or idea? Get in touch.",
@@ -67,9 +66,8 @@ export default {
   about: {
     metricsExperience: "Years of experience",
     metricsProjects: "Projects completed",
-    clientsHeading: "Companies I've worked with",
-    bio1: "I am a Software Engineer with a passion for web development, specializing in creating robust, scalable, and user-friendly web applications. As a self-motivated and self-taught professional, I bring a strong work ethic and a track record of delivering high-quality software solutions. My approach combines continuous learning, team collaboration, and a commitment to diversity and inclusion. I excel in problem-solving and a critical thinking. My fast learning and adaptability enable me to embrace new challenges enthusiastically. I am an advocate for open-source software, the open web, and leveraging technology to address real-world issues. I firmly believe in technology's potential to enhance quality of life, promote social justice, and forge a sustainable, equitable future for all.",
-    bio2: "As a seasoned Software Engineer, I am adept at navigating the complete system lifecycle. My expertise encompasses maintaining production systems, spearheading new projects, conducting meticulous requirements analysis, crafting comprehensive technical documentation, and managing version control. Proficient in English, I am committed to enhancing my skills daily, striving for a 1% improvement with each passing day. My repertoire includes robust problem-solving abilities and sharp critical thinking aimed at devising effective solutions. Thanks to my extensive experience with a diverse array of tools, technologies, and methodologies, I am well-equipped to deliver superior-quality software solutions."
+    bio1: "I’m a software engineer with 6 years of experience building and evolving enterprise systems, from architecture and infrastructure to performance, maintainability, and software quality.",
+    bio2: "I also contribute to open source and apply AI-assisted development and context engineering in collaborative teams, communicating clearly to turn complex needs into reliable software."
   },
   metrics: {
     experience: "Years of experience",
@@ -148,11 +146,18 @@ export default {
     },
   },
   experience: {
+    "prodeb-senior": {
+      title: "Senior Software Engineer",
+      org: "PRODEB",
+      mode: "Hybrid",
+      periodLabel: "Jun 2026 – Present",
+      summary: "Leading the architecture and evolution of SIIC v2 for SECULT-BA: modular design and Clean Architecture with Laravel, Vue.js, PostgreSQL and Redis; DevOps with Docker, Kubernetes and CI/CD; AI-assisted and context engineering workflows adopted across teams; test coverage above 90% with the roadmap about two months ahead of schedule."
+    },
     netra: {
       title: "Software Engineer",
       org: "Netra Tecnologia",
       mode: "Remote",
-      periodLabel: "Sep 2023 – Present",
+      periodLabel: "Sep 2023 – Jun 2026",
       summary: "Improved API performance by 45% through caching and query optimization, and led CI/CD automation that increased deployments by 80%.",
     },
     prodeb: {
@@ -182,11 +187,6 @@ export default {
     enterpriseHint: "Enterprise systems",
     infraTitle: "Infrastructure & API Projects",
     infraHint: "Key contributions to system modernization, authentication, and API orchestration",
-    beyondTitle: "Beyond the listed projects",
-    beyond1: "The projects shown here represent only a small part of my professional journey. Over the years, I have contributed to several enterprise systems and infrastructure initiatives, always focusing on performance, maintainability, and fast, high-quality delivery.",
-    beyondResume: "download my resume here",
-    beyond2: "For a complete overview of my experience, you can {resume} or reach out through my social media to discuss projects, collaborations, or more technical details.",
-    beyond3: "I value professionalism, clear communication, and clean architecture. My goal is always to deliver solutions that balance speed, reliability, and technical excellence.",
     roleLabel: "Role:",
     techLabel: "Tech:",
     referenceLabel: "Reference:",
@@ -196,6 +196,7 @@ export default {
     internalTag: "Internal system",
     systems: {
       "1": {
+        title: "SISPPPG",
         role: "System Architect / Senior Software Engineer / DevOps",
         description: "System for managing graduate programs and research projects, similar to SISTEX but focused on academic programs and project tracking.",
       },
@@ -205,26 +206,32 @@ export default {
         description: "University Extension System. Manages projects, plans and activity reports.",
       },
       "3": {
+        title: "SIPAE",
         role: "System Architect / Senior Software Engineer / DevOps",
         description: "Integrated Student Aid System. Manages scholarships and student benefits.",
       },
       "4": {
+        title: "SIDOC",
         role: "Senior Software Engineer / DevOps",
         description: "Document management and administrative workflow system.",
       },
       "5": {
+        title: "SIGRH",
         role: "Senior Software Engineer / DevOps",
         description: "Human Resources Management System for academic and technical staff.",
       },
       "6": {
+        title: "SIAC",
         role: "Senior Software Engineer / DevOps",
         description: "Academic and Cultural Activities System. Manages public courses, workshops and events offered by the university.",
       },
       "7": {
+        title: "SGP",
         role: "Senior Software Engineer / DevOps",
         description: "Institutional Project Management System.",
       },
       "8": {
+        title: "SIIC",
         description: "Cultural information and indicators system for Bahia's SECULT",
       },
     },

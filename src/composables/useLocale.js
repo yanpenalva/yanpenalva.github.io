@@ -45,7 +45,7 @@ const setLocale = (value) => {
 const toggleLocale = () => setLocale(locale.value === "en-US" ? "pt-BR" : "en-US");
 
 const t = (key, params) => {
-  const value = resolve(dicts[locale.value], key) ?? resolve(enUS, key);
+  const value = resolve(dicts[locale.value], key);
   if (typeof value !== "string") return key;
   if (!params) return value;
   return value.replace(/\{(\w+)\}/g, (match, name) =>

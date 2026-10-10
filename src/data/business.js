@@ -60,7 +60,6 @@ export default {
     {
       id: 8,
       title: "SIIC",
-      client: "Prodeb",
       description: "Cultural information and indicators system for Bahia's SECULT",
       tech: "Laravel 13, TypeScript, Vue",
       reference: "siic.cultura.ba.gov.br",

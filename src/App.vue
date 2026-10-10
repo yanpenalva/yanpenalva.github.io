@@ -10,7 +10,9 @@ const { theme } = useTheme();
   <div :class="theme" class="font-sans antialiased">
     <AppHeader />
     <router-view v-slot="{ Component }">
-      <component :is="Component" :theme="theme" />
+      <Transition name="route" mode="out-in">
+        <component :is="Component" :key="$route.path" :theme="theme" />
+      </Transition>
     </router-view>
     <AppFooter />
   </div>

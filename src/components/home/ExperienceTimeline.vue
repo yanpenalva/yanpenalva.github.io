@@ -6,7 +6,7 @@ const { t } = useLocale();
 </script>
 
 <template>
-  <section class="space-y-6">
+  <section v-reveal class="space-y-6">
     <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.experienceTitle") }}</h2>
     <ol class="divide-y divide-border border-y border-border">
       <li

@@ -1,10 +1,20 @@
 export default [
   {
+    id: "prodeb-senior",
+    title: "Senior Software Engineer",
+    org: "PRODEB",
+    mode: "Hybrid",
+    period: { start: "2026-06", end: "present" },
+    summary:
+      "Leading the architecture and evolution of SIIC v2 for SECULT-BA: modular design and Clean Architecture with Laravel, Vue.js, PostgreSQL and Redis; DevOps with Docker, Kubernetes and CI/CD; AI-assisted and context engineering workflows adopted across teams; test coverage above 90% with the roadmap about two months ahead of schedule.",
+    tags: ["PHP", "Laravel", "Vue.js", "PostgreSQL", "Redis", "Docker", "Kubernetes", "CI/CD"]
+  },
+  {
     id: "netra",
     title: "Software Engineer",
     org: "Netra Tecnologia",
     mode: "Remote",
-    period: { start: "2023-09", end: "present" },
+    period: { start: "2023-09", end: "2026-06" },
     summary:
       "Improved API performance by 45% through caching and query optimization, and led CI/CD automation that increased deployments by 80%.",
     tags: ["Laravel", "Vue", "PostgreSQL", "CI/CD", "Kubernetes"]

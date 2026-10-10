@@ -4,7 +4,6 @@ import FeaturedBento from "@/components/home/FeaturedBento.vue";
 import HomeMetrics from "@/components/home/HomeMetrics.vue";
 import AIOSSStrip from "@/components/home/AIOSSStrip.vue";
 import ExperienceTimeline from "@/components/home/ExperienceTimeline.vue";
-import AboutClients from "@/components/about/AboutClients.vue";
 import ContactCTA from "@/components/home/ContactCTA.vue";
 </script>
 
@@ -15,7 +14,6 @@ import ContactCTA from "@/components/home/ContactCTA.vue";
     <FeaturedBento />
     <AIOSSStrip />
     <ExperienceTimeline />
-    <AboutClients />
     <ContactCTA />
   </main>
 </template>

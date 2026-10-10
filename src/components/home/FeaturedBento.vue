@@ -5,17 +5,12 @@ import featured from "@/data/featured";
 import projects from "@/data/projects";
 import business from "@/data/business";
 import ProofCard from "@/components/reusable/ProofCard.vue";
+import { isValidHttpUrl, normalizePublicUrl } from "@/utils/urls";
 
 const { t } = useLocale();
 
 const hostOf = (href) => {
-  if (!href) return "GitHub";
-  try {
-    const host = new URL(href).host;
-    return host || "GitHub";
-  } catch {
-    return "GitHub";
-  }
+  return isValidHttpUrl(href) ? new URL(href).host : "";
 };
 
 const cards = computed(() =>
@@ -33,7 +28,7 @@ const cards = computed(() =>
             t(`projects.categories.${project.category}`),
             ...(project.language ? [project.language] : [])
           ],
-          href: project.href,
+          href: isValidHttpUrl(project.href) ? project.href : "",
           evidenceLabel: hostOf(project.href)
         };
       }
@@ -41,7 +36,7 @@ const cards = computed(() =>
       if (item.kind === "business") {
         const system = business.systems.find((entry) => entry.id === item.id);
         if (!system) return null;
-        const isInternal = system.reference.toLowerCase().includes("internal");
+        const href = normalizePublicUrl(system.reference);
         return {
           key: `business-${item.id}`,
           title: t(`business.systems.${item.id}.title`),
@@ -52,8 +47,8 @@ const cards = computed(() =>
             .map((tag) => tag.trim())
             .filter(Boolean)
             .slice(0, 4),
-          href: isInternal ? "" : `https://${system.reference}`,
-          evidenceLabel: system.reference
+          href,
+          evidenceLabel: href ? new URL(href).host : ""
         };
       }
 
@@ -64,14 +59,14 @@ const cards = computed(() =>
 </script>
 
 <template>
-  <section class="space-y-6">
+  <section v-reveal class="space-y-6">
     <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.featuredTitle") }}</h2>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-[repeat(2,minmax(13rem,1fr))]">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div
-        v-for="(card, index) in cards"
+        v-for="card in cards"
         :key="card.key"
+        v-reveal
         class="min-h-48"
-        :class="index === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'"
       >
         <ProofCard
           class="h-full"

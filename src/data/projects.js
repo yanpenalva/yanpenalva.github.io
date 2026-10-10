@@ -5,7 +5,6 @@ const projects = [
         category: "API Application",
         description: "A micro-framework for PHP with MVC pattern and REST API.",
         href: "https://github.com/yanpenalva/phpenalva",
-        img: new URL("@/assets/images/phpenalva.png", import.meta.url),
     },
     {
         id: 5,
@@ -13,7 +12,6 @@ const projects = [
         category: "API Application",
         description: "A Rest API querying IBGE with CRUD and unit tests.",
         href: "https://github.com/yanpenalva/api-laravel-ibge",
-        img: new URL("@/assets/images/api-rest-full-laravel.png", import.meta.url),
     },
     {
         id: 8,
@@ -21,7 +19,6 @@ const projects = [
         category: "Web Application",
         description: "A sleek, efficient URL shortening tool built with the PHPenalva microframework.",
         href: "https://github.com/yanpenalva/phpenalva-url-shortener",
-        img: new URL("@/assets/images/shortener.png", import.meta.url),
     },
     {
         id: 9,
@@ -31,7 +28,6 @@ const projects = [
             "The Suitability System was developed to run both on the client's website and in the application. It offers a set of questions and answers that, when completed, determine the client's investment profile.",
         href: "https://github.com/Owl-Codium/suitability-system",
         deploy: "https://www.neosnews.com.br/",
-        img: new URL("@/assets/images/neonews.png", import.meta.url),
     },
     {
         id: 11,
@@ -40,7 +36,6 @@ const projects = [
         description:
             "The PenPen Deep Focus theme for Visual Studio Code is designed to provide a distraction-free coding environment, with a focus on clarity and readability.",
         href: "https://github.com/yanpenalva/penpen-deep-focus-theme",
-        img: new URL("@/assets/images/penpen-deep-focus.png", import.meta.url),
     },
     {
         id: 12,
@@ -49,7 +44,6 @@ const projects = [
         description:
             "Whisper Subtitle Automation is a tool designed to streamline the process of generating subtitles for videos using advanced AI techniques.",
         href: "https://github.com/yanpenalva/whisper-subtitle-automation",
-        img: new URL("@/assets/images/whisper.png", import.meta.url),
     },
     {
         id: 13,
@@ -97,7 +91,6 @@ const projects = [
         description:
             "Official website for the 1st Protest Notary Office of São Luís, Maranhão, built with Laravel 13, Inertia 3, Vue 3, TypeScript, and Tailwind 4.",
         href: "https://www.1protestodesaoluis.com.br/",
-        role: "Developer",
         role: "Developer",
     },
     {
