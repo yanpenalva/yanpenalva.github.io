@@ -48,41 +48,6 @@ body {
 	outline-offset: 2px;
 }
 
-/* Deprecated aliases: replaced by font-sans + weight utilities (removed in slice 6) */
-.font-general-variable,
-.font-general-regular,
-.font-general-italic {
-	font-family: 'GeneralSans', system-ui, Inter, ui-sans-serif, sans-serif;
-	font-weight: 400;
-}
-
-.font-general-variable-italic,
-.font-general-light,
-.font-general-light-italic,
-.font-general-extralight,
-.font-general-extralight-italic {
-	font-family: 'GeneralSans', system-ui, Inter, ui-sans-serif, sans-serif;
-	font-weight: 300;
-}
-
-.font-general-medium,
-.font-general-medium-italic {
-	font-family: 'GeneralSans', system-ui, Inter, ui-sans-serif, sans-serif;
-	font-weight: 500;
-}
-
-.font-general-semibold,
-.font-general-semibold-italic {
-	font-family: 'GeneralSans', system-ui, Inter, ui-sans-serif, sans-serif;
-	font-weight: 600;
-}
-
-.font-general-bold,
-.font-general-bold-italic {
-	font-family: 'GeneralSans', system-ui, Inter, ui-sans-serif, sans-serif;
-	font-weight: 700;
-}
-
 /* Active class for navigation menu */
 .router-link-active,
 .router-link-exact-active {

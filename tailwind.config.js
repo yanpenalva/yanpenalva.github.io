@@ -28,20 +28,7 @@ module.exports = {
 
 				muted: 'rgb(var(--color-muted) / <alpha-value>)',
 
-				accent: 'rgb(var(--color-accent) / <alpha-value>)',
-
-
-				'primary-light': '#F7F8FC',
-
-				'secondary-light': '#FFFFFF',
-
-				'ternary-light': '#F6F7F8',
-
-				'primary-dark': '#0D2438',
-
-				'secondary-dark': '#102D44',
-
-				'ternary-dark': '#1E3851'
+				accent: 'rgb(var(--color-accent) / <alpha-value>)'
 
 			},
 

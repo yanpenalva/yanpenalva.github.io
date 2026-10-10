@@ -17,11 +17,11 @@ const socials = [
 
 <template>
   <div class="container mx-auto">
-    <div class="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
+    <div class="pt-20 sm:pt-30 pb-8 mt-20 border-t border-border">
       <div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
         <ul class="flex gap-4 sm:gap-8">
           <li v-for="social in socials" :key="social.id">
-            <a :href="social.url" target="_blank" rel="noopener noreferrer" :aria-label="social.name" class="flex text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500">
+            <a :href="social.url" target="_blank" rel="noopener noreferrer" :aria-label="social.name" class="flex text-muted hover:text-accent cursor-pointer rounded-xl border border-border bg-surface p-4 transition-colors duration-150">
               <component :is="social.icon" :size="20" class="w-5 sm:w-8 h-5 sm:h-8" />
             </a>
           </li>
