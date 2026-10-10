@@ -1,11 +1,33 @@
 <script setup>
-defineProps({ isOpen: { type: Boolean, default: false } });
+import { useLocale } from "@/composables/useLocale";
+
+defineProps({
+  isOpen: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const { t } = useLocale();
+
+const links = [
+  { to: "/about", label: "nav.about" },
+  { to: "/projects", label: "nav.projects" },
+  { to: "/business-projects", label: "nav.business" },
+  { to: "/contact", label: "nav.contact" },
+];
 </script>
 
 <template>
-  <div :class="isOpen ? 'block' : 'hidden'" class="m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
-    <router-link to="/about" class="font-general-medium block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-indigo-600 dark:hover:text-indigo-300 sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark" aria-label="About Me">About Me</router-link>
-    <router-link to="/projects" class="font-general-medium block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-indigo-600 dark:hover:text-indigo-300 sm:mx-4 mb-2 sm:py-2" aria-label="Projects">Projects</router-link>
-    <router-link to="/business-projects" class="font-general-medium block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-indigo-600 dark:hover:text-indigo-300 sm:mx-4 mb-2 sm:py-2" aria-label="Business Projects">Business</router-link>
+  <div id="mobile-menu" :class="isOpen ? 'block' : 'hidden'" class="sm:flex sm:items-center sm:justify-end">
+    <router-link
+      v-for="link in links"
+      :key="link.to"
+      :to="link.to"
+      :aria-label="t(link.label)"
+      class="block border-b border-border py-3 font-sans font-medium text-muted hover:text-accent sm:ml-6 sm:inline-block sm:border-b-0 sm:py-0"
+    >
+      {{ t(link.label) }}
+    </router-link>
   </div>
 </template>
