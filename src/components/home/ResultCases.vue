@@ -40,7 +40,10 @@ const labels = ["problem", "action", "result"];
             <dt class="font-mono text-xs uppercase tracking-wide text-muted">
               {{ t(`cases.${label}`) }}
             </dt>
-            <dd class="text-sm leading-relaxed text-text">
+            <dd
+              class="text-sm leading-relaxed"
+              :class="label === 'result' ? 'border-l-2 border-accent pl-3 font-medium text-accent' : 'text-text'"
+            >
               {{ t(`cases.${item.id}.${label}`) }}
             </dd>
           </div>

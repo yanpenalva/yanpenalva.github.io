@@ -20,8 +20,8 @@ const { t } = useLocale();
         </div>
         <div>
           <h3 class="text-lg font-semibold text-text">{{ t(`experience.${item.id}.title`) }}</h3>
-          <p class="mt-1 font-mono text-sm text-muted">{{ t(`experience.${item.id}.org`) }}</p>
-          <p class="mt-3 max-w-3xl leading-relaxed text-muted">{{ t(`experience.${item.id}.summary`) }}</p>
+          <p class="mt-1 font-sans text-sm font-medium text-text">{{ t(`experience.${item.id}.org`) }}</p>
+          <p class="mt-3 max-w-[65ch] leading-relaxed text-muted">{{ t(`experience.${item.id}.summary`) }}</p>
           <ul class="mt-4 flex flex-wrap gap-x-3 gap-y-1">
             <li
               v-for="tag in item.tags"

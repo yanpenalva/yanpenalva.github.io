@@ -78,7 +78,7 @@ const repoLabel = (href) => {
           class="inline-flex min-w-0 flex-col gap-1 rounded-sm text-sm text-accent underline decoration-border underline-offset-4 hover:decoration-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           <span>{{ repoLabel(project.href) }}</span>
-          <span class="break-all text-text">{{ shortUrl(project.href) }}</span>
+          <span class="[overflow-wrap:anywhere] text-text">{{ shortUrl(project.href) }}</span>
         </a>
         <a
           v-if="isValidHttpUrl(project.deploy)"
@@ -88,7 +88,7 @@ const repoLabel = (href) => {
           class="inline-flex min-w-0 flex-col gap-1 self-start rounded-md border border-border px-3 py-2 text-sm text-accent hover:border-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           <span>{{ t("projects.deployLabel") }}</span>
-          <span class="break-all font-mono text-xs text-muted">{{ shortUrl(project.deploy) }}</span>
+          <span class="[overflow-wrap:anywhere] font-mono text-xs text-muted">{{ shortUrl(project.deploy) }}</span>
         </a>
       </div>
     </div>
