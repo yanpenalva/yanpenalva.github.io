@@ -115,10 +115,6 @@ export default {
     }
   },
   inspect: {
-    title: "Inspecione a engenharia",
-    text: "Explore detalhes de implementação por trás das decisões de arquitetura, autorização, testes e observabilidade.",
-    apiTitle: "API",
-    feTitle: "Frontend",
     links: {
       auth: {
         label: "Fronteiras de autorização e HTTP",
@@ -161,6 +157,7 @@ export default {
     filterLabel: "Filtrar por categoria",
     deployLabel: "Abrir demonstração",
     viewCode: "Ver código",
+    inspectTitle: "Onde olhar",
     categories: {
       "Web Application": "Aplicação Web",
       "API Application": "Aplicação API",

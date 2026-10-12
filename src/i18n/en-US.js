@@ -115,10 +115,6 @@ export default {
     }
   },
   inspect: {
-    title: "Inspect the engineering",
-    text: "Explore implementation details behind the architecture, authorization, testing, and observability decisions.",
-    apiTitle: "API",
-    feTitle: "Frontend",
     links: {
       auth: {
         label: "Authorization and HTTP boundaries",
@@ -161,6 +157,7 @@ export default {
     filterLabel: "Filter by category",
     deployLabel: "Open live demo",
     viewCode: "View code",
+    inspectTitle: "Where to look",
     categories: {
       "Web Application": "Web Application",
       "API Application": "API Application",

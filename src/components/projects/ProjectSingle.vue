@@ -34,6 +34,24 @@ const projectText = (field) => t(`projects.items.${props.project.id}.${field}`);
       </div>
 
       <div
+        v-if="project.inspect && project.inspectBase"
+        class="flex flex-col gap-2 border-t border-border pt-4"
+      >
+        <p class="font-mono text-xs uppercase tracking-wide text-muted">{{ t("projects.inspectTitle") }}</p>
+        <ul class="flex flex-col gap-2">
+          <li v-for="link in project.inspect" :key="link.key" class="text-sm">
+            <a
+              :href="project.inspectBase + link.path"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >{{ t("inspect.links." + link.key + ".label") }}</a>
+            <p class="text-muted">{{ t("inspect.links." + link.key + ".hint") }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div
         v-if="isValidHttpUrl(project.href) || isValidHttpUrl(project.deploy)"
         class="mt-auto flex flex-col gap-3 border-t border-border pt-4"
       >

@@ -52,6 +52,13 @@ const projects = [
         language: "PHP",
         description: "Laravel REST API starter kit with authentication, RBAC, testing, and observability.",
         href: "https://github.com/yanpenalva/starter-kit-api",
+        inspectBase: "https://github.com/yanpenalva/starter-kit-api/blob/main/",
+        inspect: [
+            { key: "auth", path: "app/Policies/RolePolicy.php" },
+            { key: "rbac", path: "app/Actions/Roles/UpdateRolePermissions.php" },
+            { key: "tests", path: "tests/Feature/RbacAbilityMatrixTest.php" },
+            { key: "health", path: "app/Http/Controllers/HealthController.php" },
+        ],
     },
     {
         id: 14,
@@ -60,6 +67,11 @@ const projects = [
         language: "TypeScript",
         description: "Vue 3 starter kit with Vue, Quasar, TypeScript, and automated testing.",
         href: "https://github.com/yanpenalva/starter-kit-frontend",
+        inspectBase: "https://github.com/yanpenalva/starter-kit-frontend/blob/main/",
+        inspect: [
+            { key: "feAuth", path: "src/features/auth/composables/useAuthorization.ts" },
+            { key: "feTests", path: "src/features/auth/composables/useAuthorization.test.ts" },
+        ],
     },
     {
         id: 15,
