@@ -49,7 +49,7 @@ export default {
     }
   },
   home: {
-    role: "Engenheiro de Software Sênior · Laravel / Vue",
+    role: "Engenheiro de Software Sênior",
     heroStatement: "Desenvolvo sistemas web e soluções de IA e contribuo com software de código aberto.",
     resumePt: "Currículo (PT-BR)",
     resumeEn: "Currículo (EN-US)",

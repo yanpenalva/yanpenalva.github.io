@@ -49,7 +49,7 @@ export default {
     }
   },
   home: {
-    role: "Senior Software Engineer · Laravel / Vue",
+    role: "Senior Software Engineer",
     heroStatement: "I build web systems and applied AI, and contribute to open-source software.",
     resumePt: "Resume (PT-BR)",
     resumeEn: "Resume (EN-US)",
