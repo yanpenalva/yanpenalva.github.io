@@ -22,7 +22,7 @@ const observeElement = (element, state) => {
       if (!state.motionQuery.matches || revealStates.get(element) !== state) return;
 
       for (const entry of entries) {
-        if (entry.isIntersecting && entry.intersectionRatio >= 0.12) {
+        if (entry.isIntersecting) {
           element.classList.add("is-visible");
           observer.disconnect();
           state.observer = null;
@@ -30,7 +30,7 @@ const observeElement = (element, state) => {
         }
       }
     },
-    { threshold: 0.12 }
+    { threshold: 0 }
   );
 
   state.observer = observer;

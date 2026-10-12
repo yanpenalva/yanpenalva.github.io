@@ -8,7 +8,7 @@ const { t } = useLocale();
 </script>
 
 <template>
-  <main class="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-16">
+  <main id="main-content" class="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-16">
     <h1 class="sr-only">{{ t("nav.about") }}</h1>
     <AboutMe />
     <AboutCredentials />

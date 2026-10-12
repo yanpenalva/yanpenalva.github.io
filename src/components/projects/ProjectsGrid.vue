@@ -62,6 +62,6 @@ const filteredProjects = computed(() => {
         <ProjectSingle :project="project" />
       </div>
     </div>
-    <p v-else class="py-12 text-center text-muted">{{ t("projects.empty") }}</p>
+    <p v-else role="status" class="py-12 text-center text-muted">{{ t("projects.empty") }}</p>
   </section>
 </template>

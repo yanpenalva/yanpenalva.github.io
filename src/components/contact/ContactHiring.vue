@@ -24,6 +24,10 @@ const faqIds = [1, 2, 3];
       <p class="max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
         {{ t("hireText") }}
       </p>
+      <p class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+        <a :href="whatsappHref" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">{{ t("hireWhatsAppCta") }}</a>
+        <a v-if="emailContact" :href="emailContact.href" class="text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">{{ t("hireEmailCta") }}</a>
+      </p>
     </section>
 
     <section

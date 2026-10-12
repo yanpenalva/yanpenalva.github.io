@@ -9,6 +9,21 @@ const props = defineProps({
 const { t } = useLocale();
 
 const projectText = (field) => t(`projects.items.${props.project.id}.${field}`);
+
+const shortUrl = (href) => {
+  try {
+    const u = new URL(href);
+    return u.host + (u.pathname.length > 1 ? u.pathname : "");
+  } catch {
+    return href;
+  }
+};
+
+const repoLabel = (href) => {
+  if (href.includes("npmjs.com")) return t("projects.packageLabel");
+  if (!href.includes("github.com")) return t("projects.siteLabel");
+  return t("projects.viewCode");
+};
 </script>
 
 <template>
@@ -62,8 +77,8 @@ const projectText = (field) => t(`projects.items.${props.project.id}.${field}`);
           rel="noopener noreferrer"
           class="inline-flex min-w-0 flex-col gap-1 rounded-sm text-sm text-accent underline decoration-border underline-offset-4 hover:decoration-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
-          <span>{{ t("projects.viewCode") }}</span>
-          <span class="break-all text-text">{{ project.href }}</span>
+          <span>{{ repoLabel(project.href) }}</span>
+          <span class="break-all text-text">{{ shortUrl(project.href) }}</span>
         </a>
         <a
           v-if="isValidHttpUrl(project.deploy)"
@@ -73,7 +88,7 @@ const projectText = (field) => t(`projects.items.${props.project.id}.${field}`);
           class="inline-flex min-w-0 flex-col gap-1 self-start rounded-md border border-border px-3 py-2 text-sm text-accent hover:border-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           <span>{{ t("projects.deployLabel") }}</span>
-          <span class="break-all font-mono text-xs text-muted">{{ project.deploy }}</span>
+          <span class="break-all font-mono text-xs text-muted">{{ shortUrl(project.deploy) }}</span>
         </a>
       </div>
     </div>

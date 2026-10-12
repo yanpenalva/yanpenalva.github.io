@@ -9,7 +9,7 @@ const { t } = useLocale();
   <section class="border-b border-border py-12 sm:py-16 lg:py-24" aria-labelledby="home-heading">
     <div class="max-w-4xl">
       <p class="font-mono text-sm uppercase tracking-[0.16em] text-muted">{{ t("home.role") }}</p>
-      <h1 id="home-heading" class="mt-5 text-[clamp(48px,8vw,104px)] font-semibold leading-[1.05] tracking-[-0.06em] text-text">
+      <h1 id="home-heading" class="mt-5 text-[clamp(44px,7vw,88px)] font-semibold leading-[1.05] tracking-[-0.06em] text-text">
         Yan Penalva
       </h1>
       <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">

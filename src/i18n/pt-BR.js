@@ -9,6 +9,7 @@ export default {
   common: {
     toggleTheme: "Alternar tema",
     toggleNav: "Alternar navegação",
+    skipToContent: "Pular para o conteúdo",
     language: "Idioma",
     switchToEnglish: "Mudar para inglês",
     switchToPortuguese: "Mudar para português",
@@ -48,7 +49,7 @@ export default {
     }
   },
   home: {
-    role: "Engenheiro de Software",
+    role: "Engenheiro de Software Sênior · Laravel / Vue",
     heroStatement: "Desenvolvo sistemas web e soluções de IA e contribuo com software de código aberto.",
     resumePt: "Currículo (PT-BR)",
     resumeEn: "Currículo (EN-US)",
@@ -157,6 +158,8 @@ export default {
     filterLabel: "Filtrar por categoria",
     deployLabel: "Abrir demonstração",
     viewCode: "Ver código",
+    siteLabel: "Abrir site",
+    packageLabel: "Ver pacote",
     inspectTitle: "Onde olhar",
     categories: {
       "Web Application": "Aplicação Web",

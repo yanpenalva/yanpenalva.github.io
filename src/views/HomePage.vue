@@ -8,7 +8,7 @@ import ContactCTA from "@/components/home/ContactCTA.vue";
 </script>
 
 <template>
-  <main class="mx-auto w-full max-w-[1160px] space-y-14 px-4 py-8 sm:space-y-20 sm:px-6 sm:py-12 lg:space-y-24">
+  <main id="main-content" class="mx-auto w-full max-w-[1160px] space-y-14 px-4 py-8 sm:space-y-20 sm:px-6 sm:py-12 lg:space-y-24">
     <AppBanner />
     <HomeMetrics />
     <FeaturedBento />

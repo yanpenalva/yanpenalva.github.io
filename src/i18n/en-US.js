@@ -9,6 +9,7 @@ export default {
   common: {
     toggleTheme: "Toggle theme",
     toggleNav: "Toggle navigation",
+    skipToContent: "Skip to content",
     language: "Language",
     switchToEnglish: "Switch to English",
     switchToPortuguese: "Switch to Portuguese",
@@ -48,7 +49,7 @@ export default {
     }
   },
   home: {
-    role: "Software Engineer",
+    role: "Senior Software Engineer · Laravel / Vue",
     heroStatement: "I build web systems and applied AI, and contribute to open-source software.",
     resumePt: "Resume (PT-BR)",
     resumeEn: "Resume (EN-US)",
@@ -157,6 +158,8 @@ export default {
     filterLabel: "Filter by category",
     deployLabel: "Open live demo",
     viewCode: "View code",
+    siteLabel: "Open website",
+    packageLabel: "View package",
     inspectTitle: "Where to look",
     categories: {
       "Web Application": "Web Application",
