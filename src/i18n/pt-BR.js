@@ -68,6 +68,24 @@ export default {
     jobMessage: "Olá, Yan! Tenho uma vaga: [cargo/modalidade/local]. Podemos conversar?",
     emailButton: "Me envie um email"
   },
+  cases: {
+    title: "Casos de resultado",
+    text: "Intervenções e resultados mensuráveis em projetos recentes.",
+    ongoing: "Em andamento",
+    problem: "Problema",
+    action: "Ação",
+    result: "Resultado",
+    netra: {
+      problem: "APIs lentas e deploys manuais",
+      action: "cache Redis/Elasticsearch, otimização de queries, pipelines GitLab CI com SonarQube e Docker",
+      result: "+45% desempenho das APIs, +80% deploys"
+    },
+    siic: {
+      problem: "sistema legado a evoluir",
+      action: "design modular, Clean Architecture, qualidade automatizada, CI/CD",
+      result: "roadmap ~2 meses adiantado, cobertura >90%"
+    }
+  },
   about: {
     metricsExperience: "Anos de experiência",
     metricsProjects: "Projetos concluídos",
@@ -340,6 +358,27 @@ export default {
         description: "Projetei e implantei registros internos de contêineres usando Harbor para gerenciar e proteger imagens Docker na infraestrutura da organização.",
       },
     },
+  },
+  arch: {
+    title: "Arquitetura SIIC v2",
+    text: "Fluxo da aplicação e decisões de arquitetura.",
+    diagramTitle: "Diagrama da arquitetura SIIC v2",
+    nodes: {
+      user: "Navegador/Usuário",
+      frontend: "Frontend Vue 3 + TS",
+      api: "API Laravel",
+      http: "HTTP",
+      actions: "Actions (casos de uso)",
+      domain: "Domínio",
+      auth: "Keycloak/OAuth2",
+      data: "PostgreSQL/Redis"
+    },
+    notes: {
+      "1": "monólito modular",
+      "2": "fronteira HTTP fina",
+      "3": "correlação de requests + health",
+      "4": "testes acima de 90%"
+    }
   },
   contact: {
     title: "Informações de contato",

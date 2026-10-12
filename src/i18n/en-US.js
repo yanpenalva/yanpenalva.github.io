@@ -68,6 +68,24 @@ export default {
     jobMessage: "Hi, Yan! I have a role: [title/modality/location]. Can we talk?",
     emailButton: "Email me"
   },
+  cases: {
+    title: "Result cases",
+    text: "Interventions and measurable outcomes from recent projects.",
+    ongoing: "In progress",
+    problem: "Problem",
+    action: "Action",
+    result: "Result",
+    netra: {
+      problem: "Slow APIs and manual deploys",
+      action: "Redis/Elasticsearch caching, query optimization, GitLab CI pipelines with SonarQube and Docker",
+      result: "+45% API performance, +80% deployments"
+    },
+    siic: {
+      problem: "legacy system to evolve",
+      action: "modular design, Clean Architecture, automated quality, CI/CD",
+      result: "roadmap ~2 months ahead, coverage above 90%"
+    }
+  },
   about: {
     metricsExperience: "Years of experience",
     metricsProjects: "Projects completed",
@@ -340,6 +358,27 @@ export default {
         description: "Designed and deployed internal container registries using Harbor to manage and secure Docker images within the organization’s infrastructure.",
       },
     },
+  },
+  arch: {
+    title: "SIIC v2 architecture",
+    text: "Application flow and architecture decisions.",
+    diagramTitle: "SIIC v2 architecture diagram",
+    nodes: {
+      user: "Browser/User",
+      frontend: "Frontend Vue 3 + TS",
+      api: "Laravel API",
+      http: "HTTP",
+      actions: "Actions (use cases)",
+      domain: "Domain",
+      auth: "Keycloak/OAuth2",
+      data: "PostgreSQL/Redis"
+    },
+    notes: {
+      "1": "modular monolith",
+      "2": "thin HTTP boundary",
+      "3": "request correlation + health",
+      "4": "tests above 90%"
+    }
   },
   contact: {
     title: "Contact details",

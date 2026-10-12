@@ -1,6 +1,7 @@
 <script setup>
 import AppBanner from "@/components/shared/AppBanner.vue";
 import FeaturedBento from "@/components/home/FeaturedBento.vue";
+import ResultCases from "@/components/home/ResultCases.vue";
 import HomeMetrics from "@/components/home/HomeMetrics.vue";
 import AIOSSStrip from "@/components/home/AIOSSStrip.vue";
 import ExperienceTimeline from "@/components/home/ExperienceTimeline.vue";
@@ -12,6 +13,7 @@ import ContactCTA from "@/components/home/ContactCTA.vue";
     <AppBanner />
     <HomeMetrics />
     <FeaturedBento />
+    <ResultCases />
     <AIOSSStrip />
     <ExperienceTimeline />
     <ContactCTA />
