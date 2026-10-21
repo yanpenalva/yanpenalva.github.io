@@ -57,6 +57,8 @@ export default {
     techModeOn: "Tech mode: on",
     techModeOff: "Tech mode: off",
     aiOssTitle: "AI & open source",
+    pauseMarquee: "Pause motion",
+    resumeMarquee: "Resume motion",
     openProject: "View project",
     metricsAriaLabel: "Experience and project metrics",
     experienceTitle: "Experience",

@@ -57,6 +57,8 @@ export default {
     techModeOn: "Modo tech: ligado",
     techModeOff: "Modo tech: desligado",
     aiOssTitle: "IA e código aberto",
+    pauseMarquee: "Pausar movimento",
+    resumeMarquee: "Retomar movimento",
     openProject: "Ver projeto",
     metricsAriaLabel: "Indicadores de experiência e projetos",
     experienceTitle: "Experiência",

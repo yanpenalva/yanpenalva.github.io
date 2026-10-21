@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useLocale } from "@/composables/useLocale";
 import projects from "@/data/projects";
 import ProofCard from "@/components/reusable/ProofCard.vue";
@@ -7,6 +7,7 @@ import { isValidHttpUrl } from "@/utils/urls";
 
 const { t } = useLocale();
 const projectIds = [14, 12, 15, 16, 17];
+const paused = ref(false);
 
 const cards = computed(() =>
   projectIds
@@ -32,21 +33,26 @@ const cards = computed(() =>
 
 <template>
   <section v-reveal class="space-y-6">
-    <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.aiOssTitle") }}</h2>
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <div
-        v-for="card in cards"
-        :key="card.key"
-        v-reveal
-      >
-        <ProofCard
-          :title="card.title"
-          :problem="card.description"
-          :tags="card.tags"
-          :href="card.href"
-          :evidence-label="card.evidenceLabel"
-        />
+    <div class="flex items-center justify-between gap-4">
+      <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.aiOssTitle") }}</h2>
+      <button type="button" class="shrink-0 rounded border border-border px-3 py-2 text-sm text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" :aria-pressed="paused" @click="paused = !paused">{{ paused ? t("home.resumeMarquee") : t("home.pauseMarquee") }}</button>
+    </div>
+    <div class="overflow-hidden" @focusin="paused = true">
+      <div class="marquee-track flex w-max gap-4" :class="{ 'is-paused': paused }">
+        <div v-for="card in cards" :key="card.key" v-reveal class="w-[min(78vw,20rem)] shrink-0">
+          <ProofCard :title="card.title" :problem="card.description" :tags="card.tags" :href="card.href" :evidence-label="card.evidenceLabel" />
+        </div>
+        <div v-for="card in cards" :key="`duplicate-${card.key}`" aria-hidden="true" inert class="w-[min(78vw,20rem)] shrink-0">
+          <ProofCard :title="card.title" :problem="card.description" :tags="card.tags" :href="card.href" :evidence-label="card.evidenceLabel" />
+        </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.marquee-track { animation: marquee 48s linear infinite; }
+.marquee-track.is-paused, .overflow-hidden:focus-within .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(calc(-50% - .5rem)); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+</style>
