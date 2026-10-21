@@ -54,6 +54,8 @@ export default {
     resumePt: "Currículo (PT-BR)",
     resumeEn: "Currículo (EN-US)",
     featuredTitle: "Trabalhos selecionados",
+    techModeOn: "Modo tech: ligado",
+    techModeOff: "Modo tech: desligado",
     aiOssTitle: "IA e código aberto",
     openProject: "Ver projeto",
     metricsAriaLabel: "Indicadores de experiência e projetos",

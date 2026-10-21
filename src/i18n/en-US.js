@@ -54,6 +54,8 @@ export default {
     resumePt: "Resume (PT-BR)",
     resumeEn: "Resume (EN-US)",
     featuredTitle: "Selected work",
+    techModeOn: "Tech mode: on",
+    techModeOff: "Tech mode: off",
     aiOssTitle: "AI & open source",
     openProject: "View project",
     metricsAriaLabel: "Experience and project metrics",
