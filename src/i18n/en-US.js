@@ -350,6 +350,13 @@ export default {
     title: "SIIC v2 architecture",
     text: "Application flow and architecture decisions.",
     diagramTitle: "SIIC v2 architecture diagram",
+    flowLabel: "Architecture flow steps",
+    steps: {
+      "1": "Request enters",
+      "2": "Frontend sends request",
+      "3": "Domain handles the use case",
+      "4": "Auth and data services respond",
+    },
     nodes: {
       user: "Browser/User",
       frontend: "Frontend Vue 3 + TS",
