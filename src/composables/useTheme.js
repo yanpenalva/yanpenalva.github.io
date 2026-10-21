@@ -13,12 +13,14 @@ try {
 function applyTheme(value) {
   const root = document.documentElement;
   root.classList.toggle("dark", value === "dark");
+  root.style.colorScheme = value;
 }
 
 applyTheme(theme.value);
 
 export function useTheme() {
   function setTheme(value) {
+    if (value !== "light" && value !== "dark") return;
     theme.value = value;
     applyTheme(value);
     try { localStorage.setItem("theme", value); } catch (_e) { void _e; }
