@@ -1,12 +1,16 @@
 <script setup>
 import { useLocale } from "@/composables/useLocale";
 import experience from "@/data/experience";
+import { useMotionPreference } from "@/composables/useMotionPreference";
 
 const { t } = useLocale();
+const { reducedMotion } = useMotionPreference();
+const initialMotion = { opacity: 0, y: 12 };
+const finalMotion = { opacity: 1, y: 0 };
 </script>
 
 <template>
-  <section v-reveal class="space-y-6">
+  <section v-motion :initial="reducedMotion ? finalMotion : initialMotion" :visible="finalMotion" class="space-y-6">
     <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.experienceTitle") }}</h2>
     <ol class="divide-y divide-border border-y border-border">
       <li

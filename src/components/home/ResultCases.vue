@@ -1,7 +1,11 @@
 <script setup>
 import { useLocale } from "@/composables/useLocale";
+import { useMotionPreference } from "@/composables/useMotionPreference";
 
 const { t } = useLocale();
+const { reducedMotion } = useMotionPreference();
+const initialMotion = { opacity: 0, y: 12 };
+const finalMotion = { opacity: 1, y: 0 };
 
 const cases = [
   { id: "netra", titleKey: "experience.netra.org" },
@@ -12,7 +16,7 @@ const labels = ["problem", "action", "result"];
 </script>
 
 <template>
-  <section v-reveal class="space-y-6" aria-labelledby="result-cases-title">
+  <section v-motion :initial="reducedMotion ? finalMotion : initialMotion" :visible="finalMotion" class="space-y-6" aria-labelledby="result-cases-title">
     <div class="space-y-2">
       <h2 id="result-cases-title" class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">
         {{ t("cases.title") }}

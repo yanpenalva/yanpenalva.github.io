@@ -1,15 +1,19 @@
 <script setup>
 import { computed } from "vue";
 import { useLocale } from "@/composables/useLocale";
+import { useMotionPreference } from "@/composables/useMotionPreference";
 
 const { t } = useLocale();
+const { reducedMotion } = useMotionPreference();
+const initialMotion = { opacity: 0, y: 12 };
+const finalMotion = { opacity: 1, y: 0 };
 const whatsappBaseUrl = "https://wa.me/5571992432603?text=";
 const projectUrl = computed(() => `${whatsappBaseUrl}${encodeURIComponent(t("home.projectMessage"))}`);
 const jobUrl = computed(() => `${whatsappBaseUrl}${encodeURIComponent(t("home.jobMessage"))}`);
 </script>
 
 <template>
-  <section v-reveal class="rounded-md border border-border bg-surface p-6 sm:p-10">
+  <section v-motion :initial="reducedMotion ? finalMotion : initialMotion" :visible="finalMotion" class="rounded-md border border-border bg-surface p-6 sm:p-10">
     <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.contactTitle") }}</h2>
     <p class="mt-3 max-w-2xl leading-relaxed text-muted">{{ t("home.contactText") }}</p>
     <div class="mt-6 flex flex-wrap gap-3">
