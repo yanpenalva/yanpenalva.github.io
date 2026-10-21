@@ -160,6 +160,12 @@ export default {
     siteLabel: "Open website",
     packageLabel: "View package",
     inspectTitle: "Where to look",
+    cubeTitle: "A problem, solved step by step",
+    cubeCaption: "A small Rubik’s cube cycles through a scramble and its inverse.",
+    cubeDescription: "The animated model loads only when it reaches the screen. The resolved cube remains visible when motion is reduced or WebGL is unavailable.",
+    cubeReplay: "Replay",
+    cubeReplayAria: "Replay the cube scramble and solution",
+    cubeBrowse: "Browse the project list",
     categories: {
       "Web Application": "Web Application",
       "API Application": "API Application",

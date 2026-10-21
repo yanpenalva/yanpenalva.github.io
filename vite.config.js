@@ -12,5 +12,12 @@ export default defineConfig({
   },
   build: {
     outDir: fileURLToPath(new URL("./docs", import.meta.url)),
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("/node_modules/three/")) return "three";
+        },
+      },
+    },
   },
 });

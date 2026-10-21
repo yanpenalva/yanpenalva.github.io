@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed, defineAsyncComponent, onMounted, onUnmounted, ref } from "vue";
 import ProjectsFilter from "@/components/projects/ProjectsFilter.vue";
 import ProjectSingle from "@/components/projects/ProjectSingle.vue";
 import IconSearch from "@/components/icons/IconSearch.vue";
@@ -7,9 +7,28 @@ import projectsData from "@/data/projects";
 import { useLocale } from "@/composables/useLocale";
 
 const { t } = useLocale();
+const MagicCube = defineAsyncComponent(() => import("./MagicCube.vue"));
 
 const selectedCategory = ref("");
 const search = ref("");
+const showcase = ref(null);
+const loadShowcase = ref(false);
+let observer;
+
+onMounted(() => {
+  if (typeof window.IntersectionObserver !== "function") {
+    loadShowcase.value = true;
+    return;
+  }
+  observer = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    loadShowcase.value = true;
+    observer.disconnect();
+  });
+  observer.observe(showcase.value);
+});
+
+onUnmounted(() => observer?.disconnect());
 
 const filteredProjects = computed(() => {
   const term = search.value.trim().toLowerCase();
@@ -44,6 +63,9 @@ const filteredProjects = computed(() => {
     </div>
     <h2 class="text-center text-2xl font-semibold text-text">{{ t("projects.title") }}</h2>
     <p class="text-center text-muted">{{ t("projects.hint") }}</p>
+    <div ref="showcase" class="min-h-[360px]">
+      <MagicCube v-if="loadShowcase" />
+    </div>
     <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
       <div class="flex flex-1 items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2">
         <IconSearch class="h-4 w-4 shrink-0 text-muted" />
@@ -57,7 +79,7 @@ const filteredProjects = computed(() => {
       </div>
       <ProjectsFilter select="projects" @filter="selectedCategory = $event" />
     </div>
-    <div v-if="filteredProjects.length > 0" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div v-if="filteredProjects.length > 0" id="project-cards" class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       <div v-for="project in filteredProjects" :key="project.id" v-reveal class="h-full">
         <ProjectSingle :project="project" />
       </div>

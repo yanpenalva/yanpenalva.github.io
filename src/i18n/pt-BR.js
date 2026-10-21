@@ -160,6 +160,12 @@ export default {
     siteLabel: "Abrir site",
     packageLabel: "Ver pacote",
     inspectTitle: "Onde olhar",
+    cubeTitle: "Um problema resolvido passo a passo",
+    cubeCaption: "Um pequeno cubo mágico alterna entre um embaralhamento e sua sequência inversa.",
+    cubeDescription: "O modelo animado só carrega quando chega à tela. O cubo resolvido permanece visível com movimento reduzido ou sem suporte a WebGL.",
+    cubeReplay: "Reproduzir novamente",
+    cubeReplayAria: "Reproduzir o embaralhamento e a solução do cubo",
+    cubeBrowse: "Ver a lista de projetos",
     categories: {
       "Web Application": "Aplicação Web",
       "API Application": "Aplicação API",

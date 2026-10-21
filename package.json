@@ -8,10 +8,12 @@
     "scripts": {
         "dev": "vite --port 5000",
         "build": "vite build && node scripts/generate-seo-pages.mjs",
-        "serve": "vite preview"
+        "serve": "vite preview",
+        "test:magic-cube": "node scripts/check-magic-cube.mjs"
     },
     "dependencies": {
         "@vueuse/motion": "2.0.0",
+        "three": "0.170.0",
         "vue": "^3.2.47",
         "vue-router": "^4.1.6"
     },
