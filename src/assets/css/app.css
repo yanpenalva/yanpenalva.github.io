@@ -107,6 +107,6 @@ body {
 
 @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
 	.card-motion:hover {
-		transform: translateY(-2px);
+		transform: perspective(700px) rotateX(1deg) rotateY(-1deg) translateY(-2px);
 	}
 }
