@@ -7,13 +7,9 @@ const STORAGE_KEY = "locale";
 
 const isLocale = (value) => Object.prototype.hasOwnProperty.call(dicts, value);
 
-const read = () => {
-  if (typeof window === "undefined") return null;
-  try {
-    return window.localStorage.getItem(STORAGE_KEY);
-  } catch {
-    return null;
-  }
+const localeFromPath = () => {
+  if (typeof window === "undefined") return "en-US";
+  return /^\/pt-br(?:\/|$)/i.test(window.location.pathname) ? "pt-BR" : "en-US";
 };
 
 const persist = (value) => {
@@ -26,8 +22,7 @@ const persist = (value) => {
 const resolve = (dict, key) =>
   key.split(".").reduce((node, part) => (node && typeof node === "object" ? node[part] : undefined), dict);
 
-const stored = read();
-const locale = ref(isLocale(stored) ? stored : "en-US");
+const locale = ref(localeFromPath());
 
 const syncLang = () => {
   if (typeof document !== "undefined") document.documentElement.lang = locale.value;
@@ -42,8 +37,6 @@ const setLocale = (value) => {
   syncLang();
 };
 
-const toggleLocale = () => setLocale(locale.value === "en-US" ? "pt-BR" : "en-US");
-
 const t = (key, params) => {
   const value = resolve(dicts[locale.value], key);
   if (typeof value !== "string") return key;
@@ -54,5 +47,5 @@ const t = (key, params) => {
 };
 
 export function useLocale() {
-  return { locale, setLocale, toggleLocale, t };
+  return { locale, setLocale, t };
 }

@@ -1,3 +1,5 @@
+import routeMetadata from "./routeMetadata.json";
+
 export default {
   nav: {
     home: "Home",
@@ -19,35 +21,7 @@ export default {
   footer: {
     developedBy: "Developed by"
   },
-  routes: {
-    home: {
-      title: "Yan Penalva — Software Engineer",
-      description: "Yan Penalva — Software Engineer portfolio. Projects, experience and contact."
-    },
-    about: {
-      title: "About — Yan Penalva",
-      description: "About Yan Penalva: experience and background."
-    },
-    projects: {
-      title: "Projects — Yan Penalva",
-      description: "Selected projects by Yan Penalva."
-    },
-    business: {
-      title: "Business — Yan Penalva",
-      description: "Enterprise systems and infrastructure work."
-    },
-    contact: {
-      title: "Contact — Yan Penalva",
-      description: "Contact Yan Penalva."
-    },
-    notFound: {
-      title: "Not found — Yan Penalva",
-      description: "Page not found.",
-      heading: "Page not found",
-      message: "The page you are looking for does not exist.",
-      backHome: "Back to home"
-    }
-  },
+  routes: routeMetadata.locales["en-US"],
   home: {
     role: "Senior Software Engineer",
     heroStatement: "I build web systems and applied AI, and contribute to open-source software.",

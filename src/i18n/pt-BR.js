@@ -1,3 +1,5 @@
+import routeMetadata from "./routeMetadata.json";
+
 export default {
   nav: {
     home: "Início",
@@ -19,35 +21,7 @@ export default {
   footer: {
     developedBy: "Desenvolvido por"
   },
-  routes: {
-    home: {
-      title: "Yan Penalva — Engenheiro de Software",
-      description: "Portfólio de Yan Penalva — Engenheiro de Software. Projetos, experiência e contato."
-    },
-    about: {
-      title: "Sobre — Yan Penalva",
-      description: "Sobre Yan Penalva: experiência e trajetória."
-    },
-    projects: {
-      title: "Projetos — Yan Penalva",
-      description: "Projetos selecionados por Yan Penalva."
-    },
-    business: {
-      title: "Empresarial — Yan Penalva",
-      description: "Sistemas corporativos e trabalho de infraestrutura."
-    },
-    contact: {
-      title: "Contato — Yan Penalva",
-      description: "Contato Yan Penalva."
-    },
-    notFound: {
-      title: "Página não encontrada — Yan Penalva",
-      description: "Página não encontrada.",
-      heading: "Página não encontrada",
-      message: "A página que você procura não existe.",
-      backHome: "Voltar ao início"
-    }
-  },
+  routes: routeMetadata.locales["pt-BR"],
   home: {
     role: "Engenheiro de Software Sênior",
     heroStatement: "Desenvolvo sistemas web e soluções de IA e contribuo com software de código aberto.",

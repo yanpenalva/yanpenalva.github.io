@@ -1,7 +1,21 @@
 <script setup>
 import { useLocale } from "@/composables/useLocale";
+import { useRoute, useRouter } from "vue-router";
 
-const { locale, t, toggleLocale } = useLocale();
+const { locale, setLocale, t } = useLocale();
+const route = useRoute();
+const router = useRouter();
+
+const toggleLocale = () => {
+  const nextLocale = locale.value === "en-US" ? "pt-BR" : "en-US";
+  const path = route.path.replace(/^\/pt-br(?=\/|$)/i, "") || "/";
+  setLocale(nextLocale);
+  router.push({
+    path: nextLocale === "pt-BR" ? `/pt-br${path}` : path,
+    query: route.query,
+    hash: route.hash,
+  });
+};
 </script>
 
 <template>

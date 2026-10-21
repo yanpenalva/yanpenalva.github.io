@@ -7,7 +7,7 @@
     },
     "scripts": {
         "dev": "vite --port 5000",
-        "build": "vite build",
+        "build": "vite build && node scripts/generate-seo-pages.mjs",
         "serve": "vite preview"
     },
     "dependencies": {
