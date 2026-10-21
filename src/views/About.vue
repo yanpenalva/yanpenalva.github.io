@@ -1,14 +1,19 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
+import OwlAccent from "@/components/home/OwlAccent.vue";
 import AboutMe from "@/components/about/AboutMe.vue";
 import AboutCounter from "@/components/about/AboutCounter.vue";
 import AboutCredentials from "@/components/about/AboutCredentials.vue";
 import experience from "@/data/experience";
+import contacts from "@/data/contacts";
 import { useLocale } from "@/composables/useLocale";
 import { useMotionPreference } from "@/composables/useMotionPreference";
+import { useWhatsApp } from "@/composables/useWhatsApp";
 
 const { t } = useLocale();
 const { reducedMotion } = useMotionPreference();
+const { href: whatsappHref } = useWhatsApp();
+const emailContact = contacts.find((contact) => contact.icon === "mail");
 const timeline = ref(null);
 const activeExperienceId = ref(experience[0]?.id);
 const initialMotion = { opacity: 0, y: 12 };
@@ -83,6 +88,44 @@ onUnmounted(() => experienceObserver?.disconnect());
     </section>
     <AboutCredentials />
     <AboutCounter />
+    <section
+      v-motion
+      :initial="reducedMotion ? finalMotion : initialMotion"
+      :visible="finalMotion"
+      class="rounded-md border border-border bg-surface p-6 sm:p-8"
+      aria-labelledby="about-contact-title"
+    >
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 id="about-contact-title" class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">
+            {{ t("hireCtaTitle") }}
+          </h2>
+          <p class="mt-3 max-w-2xl leading-relaxed text-muted">
+            {{ t("hireCtaText") }}
+          </p>
+        </div>
+        <OwlAccent :messenger="true" class="shrink-0" />
+      </div>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <span class="orbit-cta inline-flex rounded-md">
+          <a
+            :href="whatsappHref"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-on-accent transition-colors hover:opacity-90 focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            {{ t("hireWhatsAppCta") }}
+          </a>
+        </span>
+        <a
+          v-if="emailContact"
+          :href="emailContact.href"
+          class="inline-flex items-center justify-center rounded-md border border-border bg-surface px-5 py-3 text-sm font-medium text-text transition-colors hover:border-muted focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          {{ t("hireEmailCta") }}
+        </a>
+      </div>
+    </section>
   </main>
 </template>
 
