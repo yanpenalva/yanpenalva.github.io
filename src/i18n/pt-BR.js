@@ -28,8 +28,6 @@ export default {
     resumePt: "Currículo (PT-BR)",
     resumeEn: "Currículo (EN-US)",
     featuredTitle: "Trabalhos selecionados",
-    techModeOn: "Modo tech: ligado",
-    techModeOff: "Modo tech: desligado",
     aiOssTitle: "IA e código aberto",
     pauseMarquee: "Pausar movimento",
     resumeMarquee: "Retomar movimento",

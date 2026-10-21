@@ -1,5 +1,5 @@
 <script setup>
-import { computed, defineAsyncComponent, ref } from "vue";
+import { computed, defineAsyncComponent } from "vue";
 import { useLocale } from "@/composables/useLocale";
 import featured from "@/data/featured";
 import projects from "@/data/projects";
@@ -11,14 +11,6 @@ const { t } = useLocale();
 const BlueprintDots = defineAsyncComponent(() => import("./BlueprintDots.vue"));
 import OwlAccent from "./OwlAccent.vue";
 import TechBackdrop from "./TechBackdrop.vue";
-const readTechMode = () => {
-  try { return localStorage.getItem("tech-mode") === "true"; } catch { return false; }
-};
-const techMode = ref(readTechMode());
-const toggleTechMode = () => {
-  techMode.value = !techMode.value;
-  try { localStorage.setItem("tech-mode", String(techMode.value)); } catch {}
-};
 
 const hostOf = (href) => {
   return isValidHttpUrl(href) ? new URL(href).host : "";
@@ -72,11 +64,10 @@ const cards = computed(() =>
 <template>
   <section v-reveal class="space-y-6">
     <div class="blueprint relative isolate overflow-hidden rounded-md border border-border px-5 py-8 sm:py-12">
-      <TechBackdrop v-if="techMode" />
+      <TechBackdrop />
       <BlueprintDots />
       <div class="relative flex items-center justify-between gap-4">
         <div class="flex items-center gap-3"><OwlAccent /><h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.featuredTitle") }}</h2></div>
-        <button type="button" :aria-pressed="techMode" class="rounded border border-border px-3 py-2 text-sm text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" @click="toggleTechMode">{{ techMode ? t("home.techModeOn") : t("home.techModeOff") }}</button>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
