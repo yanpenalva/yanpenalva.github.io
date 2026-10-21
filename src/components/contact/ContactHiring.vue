@@ -1,5 +1,6 @@
 <script setup>
 import contacts from "@/data/contacts";
+import OwlAccent from "@/components/home/OwlAccent.vue";
 import { useLocale } from "@/composables/useLocale";
 import { useWhatsApp } from "@/composables/useWhatsApp";
 
@@ -120,21 +121,28 @@ const faqIds = [1, 2, 3];
       v-reveal
       class="rounded-md border border-border bg-surface p-6 sm:p-8"
     >
-      <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">
-        {{ t("hireCtaTitle") }}
-      </h2>
-      <p class="mt-3 max-w-2xl leading-relaxed text-muted">
-        {{ t("hireCtaText") }}
-      </p>
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">
+            {{ t("hireCtaTitle") }}
+          </h2>
+          <p class="mt-3 max-w-2xl leading-relaxed text-muted">
+            {{ t("hireCtaText") }}
+          </p>
+        </div>
+        <OwlAccent :messenger="true" class="shrink-0" />
+      </div>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a
-          :href="whatsappHref"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-on-accent transition-colors hover:opacity-90 focus-visible:ring-2 focus-visible:ring-accent"
-        >
-          {{ t("hireWhatsAppCta") }}
-        </a>
+        <span class="orbit-cta inline-flex rounded-md">
+          <a
+            :href="whatsappHref"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-on-accent transition-colors hover:opacity-90 focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            {{ t("hireWhatsAppCta") }}
+          </a>
+        </span>
         <a
           v-if="emailContact"
           :href="emailContact.href"

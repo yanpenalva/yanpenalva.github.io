@@ -56,6 +56,25 @@ body {
 	border-color: rgb(var(--color-accent));
 }
 
+.orbit-cta {
+	position: relative;
+	isolation: isolate;
+}
+
+.orbit-cta::before {
+	position: absolute;
+	inset: -0.4rem;
+	border: 1px dashed rgb(var(--color-accent) / 0.62);
+	border-radius: 9999px;
+	content: "";
+	animation: orbit-cta 18s linear infinite;
+	pointer-events: none;
+}
+
+@keyframes orbit-cta {
+	to { transform: rotate(360deg); }
+}
+
 /* Active class for navigation menu */
 .router-link-active,
 .router-link-exact-active {
@@ -90,6 +109,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+	.orbit-cta::before {
+		animation: none;
+	}
+
 	.reveal {
 		opacity: 1 !important;
 		transform: none !important;

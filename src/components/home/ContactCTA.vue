@@ -17,14 +17,16 @@ const jobUrl = computed(() => `${whatsappBaseUrl}${encodeURIComponent(t("home.jo
     <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.contactTitle") }}</h2>
     <p class="mt-3 max-w-2xl leading-relaxed text-muted">{{ t("home.contactText") }}</p>
     <div class="mt-6 flex flex-wrap gap-3">
-      <a
-        :href="projectUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="rounded-md bg-accent px-5 py-3 font-sans text-sm font-medium text-on-accent transition-colors hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-      >
-        {{ t("home.projectButton") }}
-      </a>
+      <span class="orbit-cta inline-flex rounded-md">
+        <a
+          :href="projectUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-md bg-accent px-5 py-3 font-sans text-sm font-medium text-on-accent transition-colors hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          {{ t("home.projectButton") }}
+        </a>
+      </span>
       <a
         :href="jobUrl"
         target="_blank"
