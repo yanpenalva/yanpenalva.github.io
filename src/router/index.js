@@ -1,13 +1,12 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import { watch } from "vue";
-import HomePage from "@/views/HomePage.vue";
 import { useLocale } from "@/composables/useLocale";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: HomePage,
+    component: () => import("@/views/HomePage.vue"),
     meta: { i18n: "home" },
   },
   {
@@ -65,6 +64,16 @@ const updateMetadata = (route) => {
     document.head.appendChild(description);
   }
   description.setAttribute("content", t(`routes.${routeKey}.description`));
+
+  const title = document.title;
+  for (const [selector, content] of [
+    ['meta[property="og:title"]', title],
+    ['meta[property="og:description"]', t(`routes.${routeKey}.description`)],
+    ['meta[name="twitter:title"]', title],
+    ['meta[name="twitter:description"]', t(`routes.${routeKey}.description`)],
+  ]) {
+    document.querySelector(selector)?.setAttribute("content", content);
+  }
 };
 
 router.afterEach((to) => updateMetadata(to));
