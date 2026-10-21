@@ -25,6 +25,11 @@ export default {
   home: {
     role: "Engenheiro de Software Sênior",
     heroStatement: "Desenvolvo sistemas web e soluções de IA e contribuo com software de código aberto.",
+    heroPanelTitle: "Console de entrega",
+    heroPanelReady: "PRONTO PARA ENTREGAR",
+    heroPanelSignal1: "Sistemas web confiáveis",
+    heroPanelSignal2: "IA aplicada na prática",
+    heroPanelSignal3: "Contribuições open source",
     resumePt: "Currículo (PT-BR)",
     resumeEn: "Currículo (EN-US)",
     featuredTitle: "Trabalhos selecionados",
