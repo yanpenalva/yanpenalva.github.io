@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { computed, defineAsyncComponent } from "vue";
 import { useLocale } from "@/composables/useLocale";
 import featured from "@/data/featured";
 import projects from "@/data/projects";
@@ -8,6 +8,7 @@ import ProofCard from "@/components/reusable/ProofCard.vue";
 import { isValidHttpUrl, normalizePublicUrl } from "@/utils/urls";
 
 const { t } = useLocale();
+const BlueprintDots = defineAsyncComponent(() => import("./BlueprintDots.vue"));
 
 const hostOf = (href) => {
   return isValidHttpUrl(href) ? new URL(href).host : "";
@@ -60,7 +61,10 @@ const cards = computed(() =>
 
 <template>
   <section v-reveal class="space-y-6">
-    <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.featuredTitle") }}</h2>
+    <div class="blueprint relative isolate overflow-hidden rounded-md border border-border px-5 py-8 sm:py-12">
+      <BlueprintDots />
+      <h2 class="relative text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.featuredTitle") }}</h2>
+    </div>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div
         v-for="card in cards"
@@ -81,3 +85,10 @@ const cards = computed(() =>
     </div>
   </section>
 </template>
+
+<style scoped>
+.blueprint {
+  background-image: linear-gradient(rgb(var(--color-accent) / 0.09) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--color-accent) / 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+</style>
