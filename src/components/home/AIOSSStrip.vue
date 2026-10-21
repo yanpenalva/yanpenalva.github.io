@@ -37,12 +37,12 @@ const cards = computed(() =>
       <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.aiOssTitle") }}</h2>
       <button type="button" class="shrink-0 rounded border border-border px-3 py-2 text-sm text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" :aria-pressed="paused" @click="paused = !paused">{{ paused ? t("home.resumeMarquee") : t("home.pauseMarquee") }}</button>
     </div>
-    <div class="overflow-hidden" @focusin="paused = true">
-      <div class="marquee-track flex w-max gap-4" :class="{ 'is-paused': paused }">
+    <div class="marquee-viewport overflow-hidden" @focusin="paused = true">
+      <div class="marquee-track flex gap-4" :class="{ 'is-paused': paused }">
         <div v-for="card in cards" :key="card.key" v-reveal class="w-[min(78vw,20rem)] shrink-0">
           <ProofCard :title="card.title" :problem="card.description" :tags="card.tags" :href="card.href" :evidence-label="card.evidenceLabel" />
         </div>
-        <div v-for="card in cards" :key="`duplicate-${card.key}`" aria-hidden="true" inert class="w-[min(78vw,20rem)] shrink-0">
+        <div v-for="card in cards" :key="`duplicate-${card.key}`" aria-hidden="true" inert class="marquee-duplicate w-[min(78vw,20rem)] shrink-0">
           <ProofCard :title="card.title" :problem="card.description" :tags="card.tags" :href="card.href" :evidence-label="card.evidenceLabel" />
         </div>
       </div>
@@ -51,8 +51,12 @@ const cards = computed(() =>
 </template>
 
 <style scoped>
-.marquee-track { animation: marquee 48s linear infinite; }
+.marquee-track { width: max-content; animation: marquee 48s linear infinite; }
 .marquee-track.is-paused, .overflow-hidden:focus-within .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(calc(-50% - .5rem)); } }
-@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-viewport { overflow: visible; }
+  .marquee-track { animation: none; flex-wrap: wrap; width: 100%; }
+  .marquee-duplicate { display: none; }
+}
 </style>
