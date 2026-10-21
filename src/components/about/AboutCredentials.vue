@@ -25,6 +25,7 @@ const credentialIds = [
       <li
         v-for="id in credentialIds"
         :key="id"
+        v-reveal
         class="card-motion rounded-md border border-border bg-surface p-5"
       >
         <h3 class="font-medium text-text">{{ t(`creds.items.${id}.name`) }}</h3>

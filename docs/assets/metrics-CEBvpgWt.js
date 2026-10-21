@@ -1,0 +1,1 @@
+const c=(n,a)=>{const o=performance.now();let e;const t=s=>{const r=Math.min((s-o)/700,1);a(Math.round(n*r)),r<1&&(e=requestAnimationFrame(t))};return e=requestAnimationFrame(t),()=>cancelAnimationFrame(e)},i=[{id:"experience",value:6,suffix:"",label:"Years of experience"},{id:"projects",value:20,suffix:"+",label:"Projects completed"}];export{c,i as m};

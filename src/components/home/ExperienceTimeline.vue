@@ -16,6 +16,7 @@ const finalMotion = { opacity: 1, y: 0 };
       <li
         v-for="item in experience"
         :key="item.id"
+        v-reveal
         class="grid gap-3 py-6 sm:grid-cols-[minmax(10rem,0.7fr)_2fr] sm:gap-8 sm:py-8"
       >
         <div class="space-y-1 font-mono text-xs uppercase tracking-wide text-muted">
