@@ -11,7 +11,7 @@ export default [
   },
   {
     id: "netra",
-    title: "Software Engineer",
+    title: "Senior Software Engineer",
     org: "Netra Tecnologia",
     mode: "Remote",
     period: { start: "2023-09", end: "2026-06" },

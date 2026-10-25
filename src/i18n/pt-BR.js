@@ -237,7 +237,7 @@ export default {
       summary: "Liderando a arquitetura e evolução do SIIC v2 para a SECULT-BA: design modular e Clean Architecture com Laravel, Vue.js, PostgreSQL e Redis; DevOps com Docker, Kubernetes (criação e migração de clusters), CI/CD e GNU/Linux; fluxos de desenvolvimento assistido por IA e engenharia de contexto adotados pelas equipes; cobertura de testes acima de 90%, com o roadmap cerca de dois meses adiantado."
     },
     netra: {
-      title: "Engenheiro de Software",
+      title: "Engenheiro de Software Sênior",
       org: "Netra Tecnologia",
       mode: "Remoto",
       periodLabel: "Set 2023 – Jun 2026",
