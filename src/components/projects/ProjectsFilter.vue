@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from "vue";
-import projectsData from "@/data/projects";
+import { featuredProjects } from "@/data/projects";
 import { useLocale } from "@/composables/useLocale";
 
 defineProps({
@@ -16,7 +16,7 @@ const categoryLabel = (category) => t(`projects.categories.${category}`);
 
 const categories = computed(() => {
   const unique = [];
-  for (const project of projectsData) {
+  for (const project of featuredProjects) {
     if (project.category && !unique.includes(project.category)) {
       unique.push(project.category);
     }

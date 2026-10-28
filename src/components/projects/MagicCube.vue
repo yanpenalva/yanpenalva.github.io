@@ -70,9 +70,8 @@ onBeforeUnmount(() => {
 
 <template>
   <section ref="showcase" class="space-y-4" aria-labelledby="magic-cube-title">
-    <header class="space-y-2">
+    <header>
       <h3 id="magic-cube-title" class="text-xl font-semibold text-text">{{ t("projects.cubeTitle") }}</h3>
-      <p class="max-w-2xl text-sm leading-relaxed text-muted">{{ t("projects.cubeCaption") }}</p>
     </header>
     <div class="grid items-center gap-5 rounded-md border border-border bg-surface p-4 sm:grid-cols-[minmax(0,1.1fr)_minmax(14rem,0.9fr)] sm:p-6">
       <div ref="stage" class="relative min-h-[260px] overflow-hidden rounded-md bg-canvas sm:min-h-[300px]">
@@ -86,7 +85,6 @@ onBeforeUnmount(() => {
         </div>
       </div>
       <div class="flex flex-col items-start gap-5">
-        <p class="text-sm leading-relaxed text-muted">{{ t("projects.cubeDescription") }}</p>
         <button
           v-if="!fallback && !reducedMotion"
           type="button"

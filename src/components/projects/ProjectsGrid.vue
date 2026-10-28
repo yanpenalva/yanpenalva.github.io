@@ -3,7 +3,7 @@ import { computed, defineAsyncComponent, onMounted, onUnmounted, ref } from "vue
 import ProjectsFilter from "@/components/projects/ProjectsFilter.vue";
 import ProjectSingle from "@/components/projects/ProjectSingle.vue";
 import IconSearch from "@/components/icons/IconSearch.vue";
-import projectsData from "@/data/projects";
+import { featuredProjects } from "@/data/projects";
 import { useLocale } from "@/composables/useLocale";
 
 const { t } = useLocale();
@@ -32,7 +32,7 @@ onUnmounted(() => observer?.disconnect());
 
 const filteredProjects = computed(() => {
   const term = search.value.trim().toLowerCase();
-  return projectsData.filter((project) => {
+  return featuredProjects.filter((project) => {
     if (selectedCategory.value !== "" && project.category !== selectedCategory.value) {
       return false;
     }

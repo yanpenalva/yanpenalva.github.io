@@ -3,8 +3,59 @@ const projects = [
         id: 1,
         title: "PHPenalva",
         category: "API Application",
-        description: "A micro-framework for PHP with MVC pattern and REST API.",
+        language: "PHP",
+        featured: true,
+        description:
+            "PHPenalva is a lightweight PHP framework designed for developing web applications and straightforward APIs. It provides a streamlined structure and essential tools to facilitate rapid development and efficient code management.",
         href: "https://github.com/yanpenalva/phpenalva",
+    },
+    {
+        id: 20,
+        title: "Starter Kit Laravue",
+        category: "Web Application",
+        language: "PHP",
+        featured: true,
+        description:
+            "Starter Kit Laravue is a powerful project template designed to jumpstart your development process. It combines Laravel and Vue 3, providing a robust backend and a reactive frontend.",
+        href: "https://github.com/yanpenalva/starter-kit-laravue",
+    },
+    {
+        id: 17,
+        title: "Context Spec Develop",
+        category: "AI Applications",
+        language: "TypeScript",
+        featured: true,
+        description: "An agent-neutral, conversation-first development kit—from context to verified production change.",
+        href: "https://github.com/yanpenalva/context-spec-develop",
+    },
+    {
+        id: 16,
+        title: "Anki Lingo",
+        category: "AI Applications",
+        language: "Python",
+        featured: true,
+        description: "AI-powered daily English flashcards automatically generated and synced with Anki.",
+        href: "https://github.com/yanpenalva/anki-lingo",
+    },
+    {
+        id: 21,
+        title: "Fuelwise",
+        category: "Mobile Application",
+        language: "Dart",
+        featured: true,
+        description:
+            "Fuelwise is an offline-first Flutter Android application that compares ethanol and gasoline using prices and vehicle efficiency values provided by the user.",
+        href: "https://github.com/yanpenalva/fuelwise",
+    },
+    {
+        id: 22,
+        title: "Syspeek",
+        category: "CLI Tool",
+        language: "Shell",
+        featured: true,
+        description:
+            "A lightweight and portable Bash script that provides a quick overview of system health, including CPU, memory, disk, swap, inodes, network, and temperature metrics, all presented in a human-readable format. Ideal for terminal-based monitoring.",
+        href: "https://github.com/yanpenalva/syspeek",
     },
     {
         id: 5,
@@ -82,21 +133,6 @@ const projects = [
         href: "https://github.com/yanpenalva/log-anomaly-detector",
     },
     {
-        id: 16,
-        title: "Anki Lingo",
-        category: "AI Applications",
-        language: "Python",
-        description: "AI-powered daily English flashcards automatically generated and synced with Anki.",
-        href: "https://github.com/yanpenalva/anki-lingo",
-    },
-    {
-        id: 17,
-        title: "Context Spec Develop",
-        category: "AI Applications",
-        description: "Installable, agent-neutral context and delivery workflow for AI coding agents.",
-        href: "https://www.npmjs.com/package/@owlcodium/context-spec-develop",
-    },
-    {
         id: 18,
         title: "1º Protesto São Luís",
         category: "Web Application",
@@ -105,13 +141,8 @@ const projects = [
         href: "https://www.1protestodesaoluis.com.br/",
         role: "Developer",
     },
-    {
-        id: 19,
-        title: "NeoNews",
-        category: "Web Application",
-        description: "News portal hosting the Suitability appraisal application.",
-        href: "https://www.neosnews.com.br/",
-    },
 ];
 
 export default projects;
+
+export const featuredProjects = projects.filter((project) => project.featured);

@@ -161,8 +161,6 @@ export default {
     packageLabel: "View package",
     inspectTitle: "Where to look",
     cubeTitle: "A problem, solved step by step",
-    cubeCaption: "A small Rubik’s cube cycles through a scramble and its inverse.",
-    cubeDescription: "The animated model loads only when it reaches the screen. The resolved cube remains visible when motion is reduced or WebGL is unavailable.",
     cubeReplay: "Replay",
     cubeReplayAria: "Replay the cube scramble and solution",
     cubeBrowse: "Browse the project list",
@@ -171,11 +169,13 @@ export default {
       "API Application": "API Application",
       "AI Applications": "AI Applications",
       "Themes": "Themes",
+      "Mobile Application": "Mobile Application",
+      "CLI Tool": "CLI Tool",
     },
     items: {
       "1": {
         title: "PHPenalva",
-        description: "A micro-framework for PHP with MVC pattern and REST API.",
+        description: "PHPenalva is a lightweight PHP framework designed for developing web applications and straightforward APIs. It provides a streamlined structure and essential tools to facilitate rapid development and efficient code management.",
       },
       "5": {
         title: "API Laravel IBGE",
@@ -215,16 +215,24 @@ export default {
       },
       "17": {
         title: "Context Spec Develop",
-        description: "Installable, agent-neutral context and delivery workflow for AI coding agents.",
+        description: "An agent-neutral, conversation-first development kit—from context to verified production change.",
       },
       "18": {
         title: "1º Protesto São Luís",
         description: "Official website for the 1st Protest Notary Office of São Luís, Maranhão, built with Laravel 13, Inertia 3, Vue 3, TypeScript, and Tailwind 4.",
         role: "Developer",
       },
-      "19": {
-        title: "NeoNews",
-        description: "News portal hosting the Suitability appraisal application.",
+      "20": {
+        title: "Starter Kit Laravue",
+        description: "Starter Kit Laravue is a powerful project template designed to jumpstart your development process. It combines Laravel and Vue 3, providing a robust backend and a reactive frontend.",
+      },
+      "21": {
+        title: "Fuelwise",
+        description: "Fuelwise is an offline-first Flutter Android application that compares ethanol and gasoline using prices and vehicle efficiency values provided by the user.",
+      },
+      "22": {
+        title: "Syspeek",
+        description: "A lightweight and portable Bash script that provides a quick overview of system health, including CPU, memory, disk, swap, inodes, network, and temperature metrics, all presented in a human-readable format. Ideal for terminal-based monitoring.",
       },
     },
   },

@@ -161,8 +161,6 @@ export default {
     packageLabel: "Ver pacote",
     inspectTitle: "Onde olhar",
     cubeTitle: "Um problema resolvido passo a passo",
-    cubeCaption: "Um pequeno cubo mágico alterna entre um embaralhamento e sua sequência inversa.",
-    cubeDescription: "O modelo animado só carrega quando chega à tela. O cubo resolvido permanece visível com movimento reduzido ou sem suporte a WebGL.",
     cubeReplay: "Reproduzir novamente",
     cubeReplayAria: "Reproduzir o embaralhamento e a solução do cubo",
     cubeBrowse: "Ver a lista de projetos",
@@ -171,11 +169,13 @@ export default {
       "API Application": "Aplicação API",
       "AI Applications": "Aplicações de IA",
       "Themes": "Temas",
+      "Mobile Application": "Aplicação Mobile",
+      "CLI Tool": "Ferramenta CLI",
     },
     items: {
       "1": {
         title: "PHPenalva",
-        description: "Um micro-framework para PHP com padrão MVC e API REST.",
+        description: "O PHPenalva é um framework PHP leve, pensado para desenvolver aplicações web e APIs diretas. Oferece uma estrutura enxuta e ferramentas essenciais para acelerar o desenvolvimento e organizar o código.",
       },
       "5": {
         title: "API Laravel IBGE",
@@ -215,16 +215,24 @@ export default {
       },
       "17": {
         title: "Context Spec Develop",
-        description: "Fluxo instalável e neutro em relação a agentes para contexto e entrega em agentes de programação com IA.",
+        description: "Kit de desenvolvimento neutro em relação a agentes e centrado em conversa: do contexto à mudança verificada em produção.",
       },
       "18": {
         title: "1º Protesto São Luís",
         description: "Site institucional do 1º Tabelionato de Protesto de São Luís-MA, desenvolvido com Laravel 13, Inertia 3, Vue 3, TypeScript e Tailwind 4.",
         role: "Desenvolvedor",
       },
-      "19": {
-        title: "NeoNews",
-        description: "Portal de notícias que hospeda a aplicação de avaliação Suitability.",
+      "20": {
+        title: "Starter Kit Laravue",
+        description: "O Starter Kit Laravue é um template de projeto que acelera o início do desenvolvimento. Combina Laravel e Vue 3, com um backend robusto e um frontend reativo.",
+      },
+      "21": {
+        title: "Fuelwise",
+        description: "O Fuelwise é um aplicativo Android em Flutter, offline-first, que compara etanol e gasolina a partir dos preços e da eficiência do veículo informados pelo usuário.",
+      },
+      "22": {
+        title: "Syspeek",
+        description: "Script Bash leve e portátil que oferece uma visão rápida da saúde do sistema: CPU, memória, disco, swap, inodes, rede e temperatura, em formato legível. Ideal para monitoramento no terminal.",
       },
     },
   },
