@@ -152,6 +152,8 @@ export default {
     searchPlaceholder: "Search Projects",
     searchAria: "Search Projects",
     empty: "No projects found.",
+    clientTitle: "Client work",
+    clientHint: "Delivered for clients and running in production.",
     allLabel: "All Projects",
     moreLabel: "More projects:",
     filterLabel: "Filter by category",

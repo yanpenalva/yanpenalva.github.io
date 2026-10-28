@@ -79,6 +79,7 @@ const projects = [
             "The Suitability System was developed to run both on the client's website and in the application. It offers a set of questions and answers that, when completed, determine the client's investment profile.",
         href: "https://github.com/Owl-Codium/suitability-system",
         deploy: "https://www.neosnews.com.br/",
+        client: true,
     },
     {
         id: 11,
@@ -140,9 +141,12 @@ const projects = [
             "Official website for the 1st Protest Notary Office of São Luís, Maranhão, built with Laravel 13, Inertia 3, Vue 3, TypeScript, and Tailwind 4.",
         href: "https://www.1protestodesaoluis.com.br/",
         role: "Developer",
+        client: true,
     },
 ];
 
 export default projects;
 
 export const featuredProjects = projects.filter((project) => project.featured);
+
+export const clientProjects = projects.filter((project) => project.client);

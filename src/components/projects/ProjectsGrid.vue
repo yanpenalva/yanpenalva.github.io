@@ -3,7 +3,7 @@ import { computed, defineAsyncComponent, onMounted, onUnmounted, ref } from "vue
 import ProjectsFilter from "@/components/projects/ProjectsFilter.vue";
 import ProjectSingle from "@/components/projects/ProjectSingle.vue";
 import IconSearch from "@/components/icons/IconSearch.vue";
-import { featuredProjects } from "@/data/projects";
+import { clientProjects, featuredProjects } from "@/data/projects";
 import { useLocale } from "@/composables/useLocale";
 
 const { t } = useLocale();
@@ -85,5 +85,14 @@ const filteredProjects = computed(() => {
       </div>
     </div>
     <p v-else role="status" class="py-12 text-center text-muted">{{ t("projects.empty") }}</p>
+    <section class="flex flex-col gap-4 border-t border-border pt-8">
+      <h2 class="text-2xl font-semibold text-text">{{ t("projects.clientTitle") }}</h2>
+      <p class="text-muted">{{ t("projects.clientHint") }}</p>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div v-for="project in clientProjects" :key="project.id" v-reveal class="h-full">
+          <ProjectSingle :project="project" />
+        </div>
+      </div>
+    </section>
   </section>
 </template>

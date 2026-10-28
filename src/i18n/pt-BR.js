@@ -152,6 +152,8 @@ export default {
     searchPlaceholder: "Pesquisar Projetos",
     searchAria: "Pesquisar Projetos",
     empty: "Nenhum projeto encontrado.",
+    clientTitle: "Projetos para clientes",
+    clientHint: "Entregues para clientes e em produção.",
     allLabel: "Todos os Projetos",
     moreLabel: "Mais projetos:",
     filterLabel: "Filtrar por categoria",
