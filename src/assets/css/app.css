@@ -141,6 +141,8 @@ body {
 	font-weight: 600;
 }
 
+.text-pretty { text-wrap: pretty; }
+
 @media (prefers-reduced-motion: reduce) {
 	.chapter-title { scroll-behavior: auto; }
 }
@@ -149,7 +151,7 @@ body {
 	--band-bg: 23 25 23;
 	--band-fg: 245 244 239;
 	--band-muted: 190 196 190;
-	--band-border: 66 72 66;
+	--band-border: 92 98 92;
 	--band-accent: 168 230 107;
 	--band-on-accent: 16 17 16;
 	background-color: rgb(var(--band-bg));
@@ -160,7 +162,7 @@ body {
 	--band-bg: 245 244 239;
 	--band-fg: 23 25 23;
 	--band-muted: 85 91 85;
-	--band-border: 205 209 201;
+	--band-border: 150 156 150;
 	--band-accent: 39 92 55;
 	--band-on-accent: 255 255 255;
 }

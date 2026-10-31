@@ -64,7 +64,8 @@ export default {
       action: "cache Redis/Elasticsearch, otimização de queries, pipelines GitLab CI com SonarQube e Docker",
       result: "+45% desempenho das APIs, +80% deploys",
       metric: "+45%",
-      metricLabel: "desempenho das APIs"
+      metricLabel: "desempenho das APIs",
+      resultRest: "+80% deploys"
     },
     siic: {
       problem: "sistema legado a evoluir",

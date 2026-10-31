@@ -23,17 +23,13 @@ const labels = ["problem", "action", "result"];
       </h2>
       <p class="max-w-3xl leading-relaxed text-muted">{{ t("cases.text") }}</p>
     </div>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div class="grid grid-cols-1 items-start gap-4 md:grid-cols-2">
       <article
         v-for="item in cases"
         :key="item.id"
         v-reveal
         class="card-motion flex h-full flex-col gap-5 rounded-md border border-border bg-surface p-5 sm:p-6"
       >
-        <div v-if="item.id === 'netra'" class="order-first">
-          <p class="text-[clamp(48px,6vw,72px)] font-semibold leading-[.9] tracking-[-.04em] text-accent">{{ t("cases.netra.metric") }}</p>
-          <p class="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">{{ t("cases.netra.metricLabel") }}</p>
-        </div>
         <header class="flex flex-wrap items-center justify-between gap-3">
           <h3 class="text-lg font-semibold tracking-tight text-text">
             {{ t(item.titleKey) }}
@@ -48,11 +44,18 @@ const labels = ["problem", "action", "result"];
             <dt class="font-mono text-xs uppercase tracking-wide text-muted">
               {{ t(`cases.${label}`) }}
             </dt>
-            <dd
-              class="text-sm leading-relaxed"
-              :class="label === 'result' ? 'border-l-2 border-accent pl-3 font-medium text-accent' : 'text-text'"
-            >
+            <dd v-if="label !== 'result'" class="text-sm leading-relaxed text-text">
               {{ t(`cases.${item.id}.${label}`) }}
+            </dd>
+            <template v-else-if="item.id === 'netra'">
+              <dd class="border-l-2 border-accent pl-3">
+                <span class="block text-[clamp(40px,4.5vw,56px)] font-semibold leading-[.9] tracking-[-.04em] text-accent">{{ t("cases.netra.metric") }}</span>
+                <span class="mt-2 block font-mono text-xs uppercase tracking-[0.16em] text-muted">{{ t("cases.netra.metricLabel") }}</span>
+                <span class="mt-3 block text-sm leading-relaxed text-text">{{ t("cases.netra.resultRest") }}</span>
+              </dd>
+            </template>
+            <dd v-else class="border-l-2 border-accent pl-3 text-sm font-medium leading-relaxed text-accent">
+              {{ t(`cases.${item.id}.result`) }}
             </dd>
           </div>
         </dl>

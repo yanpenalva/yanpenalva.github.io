@@ -13,32 +13,36 @@ const jobUrl = computed(() => `${whatsappBaseUrl}${encodeURIComponent(t("home.jo
 </script>
 
 <template>
-  <section v-motion :initial="reducedMotion ? finalMotion : initialMotion" :visible="finalMotion" class="ink-band px-6 py-12 sm:px-10 sm:py-16">
-    <h2 class="text-[clamp(32px,4vw,48px)] font-semibold tracking-[-.03em]">{{ t("home.contactTitle") }}</h2>
-    <p class="band-muted mt-3 max-w-2xl leading-relaxed">{{ t("home.contactText") }}</p>
-    <div class="mt-6 flex flex-wrap gap-3">
-      <a
-        :href="projectUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="band-primary rounded-md px-5 py-3 font-sans text-sm font-medium transition-opacity hover:opacity-90"
-      >
-        {{ t("home.projectButton") }}
-      </a>
-      <a
-        :href="jobUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="band-secondary rounded-md px-5 py-3 font-sans text-sm font-medium transition-opacity hover:opacity-90"
-      >
-        {{ t("home.jobButton") }}
-      </a>
-      <a
-        href="mailto:yanpenabr@gmail.com"
-        class="band-muted rounded-md px-5 py-3 font-sans text-sm font-medium underline decoration-current underline-offset-4 transition-opacity hover:opacity-80"
-      >
-        {{ t("home.emailButton") }}
-      </a>
+  <section v-motion :initial="reducedMotion ? finalMotion : initialMotion" :visible="finalMotion" class="ink-band px-6 py-10 sm:px-10 sm:py-16">
+    <div class="sm:grid sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-10">
+      <div>
+        <h2 class="text-[clamp(32px,4vw,48px)] font-semibold tracking-[-.03em]">{{ t("home.contactTitle") }}</h2>
+        <p class="band-muted mt-3 max-w-2xl leading-relaxed">{{ t("home.contactText") }}</p>
+      </div>
+      <div class="mt-6 flex flex-col gap-3 sm:mt-0 sm:flex-row">
+        <a
+          :href="projectUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="band-primary rounded-md px-5 py-3 font-sans text-sm font-medium transition-opacity hover:opacity-90"
+        >
+          {{ t("home.projectButton") }}
+        </a>
+        <a
+          :href="jobUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="band-secondary rounded-md px-5 py-3 font-sans text-sm font-medium transition-opacity hover:opacity-90"
+        >
+          {{ t("home.jobButton") }}
+        </a>
+        <a
+          href="mailto:yanpenabr@gmail.com"
+          class="band-muted rounded-md px-5 py-3 font-sans text-sm font-medium underline decoration-current underline-offset-4 transition-opacity hover:opacity-80"
+        >
+          {{ t("home.emailButton") }}
+        </a>
+      </div>
     </div>
   </section>
 </template>

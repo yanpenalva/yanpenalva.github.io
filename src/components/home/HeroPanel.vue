@@ -44,7 +44,7 @@ onUnmounted(() => clearTimeout(drawTimer));
         <span class="font-mono text-xs text-accent">trace/01</span>
       </header>
 
-      <svg viewBox="0 0 480 360" class="mt-4 h-auto w-full text-accent" aria-hidden="true" focusable="false">
+      <svg viewBox="0 0 480 360" class="mt-4 h-auto w-full text-accent" :class="{ 'is-tracing': current }" aria-hidden="true" focusable="false">
         <defs>
           <clipPath id="owl-clip">
             <path d="M10 12 23 18h18l13-6-2 19c0 13-8 23-20 23S12 44 12 31l-2-19Z" transform="translate(73.5 46) scale(5.2)" />
@@ -53,28 +53,29 @@ onUnmounted(() => clearTimeout(drawTimer));
 
         <path d="M10 12 23 18h18l13-6-2 19c0 13-8 23-20 23S12 44 12 31l-2-19Z"
               transform="translate(73.5 46) scale(5.2)"
-              fill="rgb(var(--color-accent) / 0.06)" stroke="currentColor" stroke-width="2"
-              vector-effect="non-scaling-stroke" pathLength="1" class="trace trace--outline"
+              fill="rgb(var(--color-accent) / 0.07)" stroke="currentColor" stroke-width="2.5"
+              vector-effect="non-scaling-stroke" class="trace trace--outline"
               :class="{ 'is-drawing': drawing }" />
 
         <g class="trace trace--eyes" fill="none" stroke="currentColor" stroke-width="2" :class="{ 'is-drawing': drawing }">
-          <circle cx="198" cy="192" r="30" pathLength="1" class="trace-ring" />
-          <circle cx="282" cy="192" r="30" pathLength="1" class="trace-ring" />
+          <circle cx="198" cy="192" r="26" class="trace-ring" />
+          <circle cx="282" cy="192" r="26" class="trace-ring" />
           <circle cx="198" cy="192" r="4.5" fill="currentColor" stroke="none" />
           <circle cx="282" cy="192" r="4.5" fill="currentColor" stroke="none" />
         </g>
 
-        <g clip-path="url(#owl-clip)" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <path d="M198 196 C 176 226 162 254 168 280" pathLength="1" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('backend') }" data-track="backend" />
-          <path d="M240 226 L 240 262" pathLength="1" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('infra') }" data-track="infra" />
-          <path d="M282 196 C 304 226 318 254 312 280" pathLength="1" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('ai') }" data-track="ai" />
-          <path d="M168 280 C 196 300 284 300 312 280" pathLength="1" class="trace trace-return" :class="{ 'is-drawing': drawing }" />
+        <path d="M240 224 L254 243 L240 256 L226 243 Z" fill="currentColor" stroke="none" />
+
+        <g clip-path="url(#owl-clip)" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M198 218 C 176 246 168 266 168 286" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('backend') }" data-track="backend" />
+          <path d="M148 300 L 332 300" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('infra') }" data-track="infra" />
+          <path d="M282 218 C 304 246 312 266 312 286" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('ai') }" data-track="ai" />
         </g>
 
         <g fill="currentColor">
-          <circle cx="168" cy="280" r="4.5" class="trace-node" :class="{ 'is-on': isOn('backend') }" data-track="backend" />
-          <circle cx="240" cy="262" r="4.5" class="trace-node" :class="{ 'is-on': isOn('infra') }" data-track="infra" />
-          <circle cx="312" cy="280" r="4.5" class="trace-node" :class="{ 'is-on': isOn('ai') }" data-track="ai" />
+          <circle cx="168" cy="286" r="4.5" class="trace-node" :class="{ 'is-on': isOn('backend') }" data-track="backend" />
+          <circle cx="240" cy="300" r="4.5" class="trace-node" :class="{ 'is-on': isOn('infra') }" data-track="infra" />
+          <circle cx="312" cy="300" r="4.5" class="trace-node" :class="{ 'is-on': isOn('ai') }" data-track="ai" />
         </g>
       </svg>
 
@@ -89,7 +90,7 @@ onUnmounted(() => clearTimeout(drawTimer));
         </button>
       </div>
 
-      <p class="mt-4 max-w-md text-sm leading-relaxed text-muted" aria-live="polite">
+      <p class="mt-4 max-w-md text-pretty text-sm leading-relaxed text-muted" aria-live="polite">
         {{ t(activeOrDefault.textKey) }}
       </p>
     </div>
@@ -97,20 +98,19 @@ onUnmounted(() => clearTimeout(drawTimer));
 </template>
 
 <style scoped>
-.trace { stroke-dasharray: 1; stroke-dashoffset: 0; }
-.trace.is-drawing { animation: trace-draw 520ms cubic-bezier(.22, 1, .36, 1) both; }
+.trace { stroke-dasharray: none; stroke-dashoffset: 0; }
+.trace.is-drawing { stroke-dasharray: 420; animation: trace-draw 520ms cubic-bezier(.22, 1, .36, 1) both; }
 .trace--eyes.is-drawing { animation-delay: 380ms; }
 .trace-line.is-drawing { animation-duration: 380ms; }
 .trace-line[data-track="backend"].is-drawing { animation-delay: 560ms; }
 .trace-line[data-track="infra"].is-drawing { animation-delay: 640ms; }
 .trace-line[data-track="ai"].is-drawing { animation-delay: 720ms; }
-.trace-return.is-drawing { animation-delay: 840ms; animation-duration: 360ms; }
-@keyframes trace-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes trace-draw { from { stroke-dashoffset: 420; } to { stroke-dashoffset: 0; } }
 
 .trace--eyes { opacity: .9; }
-.trace-line, .trace-node { transition: opacity 140ms ease; opacity: .55; }
+.trace-line, .trace-node { transition: opacity 140ms ease; opacity: .7; }
 [data-track].is-on { opacity: 1; }
-.trace-line:not(.is-on), .trace-node:not(.is-on) { opacity: .22; }
+.is-tracing [data-track]:not(.is-on) { opacity: .25; }
 
 .trace-btn {
   border: 1px solid rgb(var(--color-border));
@@ -121,6 +121,10 @@ onUnmounted(() => clearTimeout(drawTimer));
   text-transform: uppercase;
   letter-spacing: .08em;
   color: rgb(var(--color-muted));
+}
+.trace-btn:hover {
+  border-color: rgb(var(--color-accent) / .6);
+  color: rgb(var(--color-text));
 }
 .trace-btn.is-active {
   border-color: rgb(var(--color-accent));
