@@ -21,6 +21,7 @@
 	--color-text: 23 25 23;
 	--color-muted: 85 91 85;
 	--color-accent: 39 92 55;
+	--color-accent-wing: 30 79 47;
 	--color-on-accent: 255 255 255;
 }
 
@@ -31,6 +32,7 @@
 	--color-text: 245 244 239;
 	--color-muted: 180 186 180;
 	--color-accent: 168 230 107;
+	--color-accent-wing: 121 184 75;
 	--color-on-accent: 16 17 16;
 }
 

@@ -2,6 +2,7 @@
 import { computed, onMounted, onUnmounted, ref, watch } from "vue";
 import { useLocale } from "@/composables/useLocale";
 import { useMotionPreference } from "@/composables/useMotionPreference";
+import ArrivalOwl from "@/components/home/ArrivalOwl.vue";
 
 const { t } = useLocale();
 const { reducedMotion } = useMotionPreference();
@@ -65,9 +66,10 @@ onUnmounted(stopDraw);
 <template>
   <section class="relative isolate pt-10 sm:pt-14 lg:pt-20">
     <div class="w-full">
-      <header class="flex items-center justify-between gap-3 border-b border-border pb-3">
+      <header class="relative flex items-center justify-between gap-3 border-b border-border pb-3 pr-14 sm:pr-0">
         <p class="font-mono text-xs uppercase tracking-[0.16em] text-muted">{{ t("home.trace.label") }}</p>
         <span class="font-mono text-xs text-accent" aria-hidden="true">trace/01</span>
+        <ArrivalOwl />
       </header>
 
       <svg ref="svgEl" viewBox="0 0 480 360" class="mx-auto mt-4 h-auto w-full max-w-[420px] text-accent lg:max-w-none" :class="{ 'is-tracing': current }" aria-hidden="true" focusable="false">
@@ -85,8 +87,6 @@ onUnmounted(stopDraw);
         <g fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="198" cy="192" r="26" class="trace" data-delay="380" />
           <circle cx="282" cy="192" r="26" class="trace" data-delay="380" />
-          <circle cx="198" cy="192" r="4.5" fill="currentColor" stroke="none" />
-          <circle cx="282" cy="192" r="4.5" fill="currentColor" stroke="none" />
         </g>
 
         <path d="M240 224 L254 243 L240 256 L226 243 Z" fill="currentColor" stroke="none" />
