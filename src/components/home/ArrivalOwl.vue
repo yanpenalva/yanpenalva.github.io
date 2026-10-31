@@ -74,29 +74,30 @@ onMounted(() => {
 
   animation = el.animate(
     [
-      { transform: "translate(150px, -118px) rotate(-10deg) scale(.9)", opacity: 0 },
-      { transform: "translate(92px, -64px) rotate(-6deg) scale(.97)", opacity: 1, offset: 0.28 },
-      { transform: "translate(18px, -10px) rotate(0deg) scale(1.02)", offset: 0.68 },
-      { transform: "translate(0, 4px) scale(.94)", offset: 0.82 },
-      { transform: "translate(0, 0) scale(1)", offset: 1 }
+      { transform: "translate(340px, -190px) rotate(-14deg) scale(.86)", opacity: 0 },
+      { transform: "translate(250px, -140px) rotate(-12deg) scale(.93)", opacity: 1, offset: 0.22 },
+      { transform: "translate(150px, -86px) rotate(-8deg) scale(1)", offset: 0.5 },
+      { transform: "translate(40px, -22px) rotate(-2deg) scale(1.03)", offset: 0.78 },
+      { transform: "translate(0, 4px) rotate(0deg) scale(.94)", offset: 0.9 },
+      { transform: "translate(0, 0) rotate(0deg) scale(1)", offset: 1 }
     ],
-    { duration: 1150, easing: "cubic-bezier(.22,.9,.24,1)", fill: "both" }
+    { duration: 1350, easing: "cubic-bezier(.22,.9,.24,1)", fill: "both" }
   );
 
   later(() => {
     pose.value = POSE.LAND;
-  }, 620);
+  }, 700);
   later(() => {
     pose.value = POSE.PERCH;
-  }, 980);
+  }, 1150);
   later(() => {
     animation?.cancel();
     animation = null;
     flying.value = false;
-  }, 1200);
-  later(() => blink(), 1260);
-  later(() => blink(), 3000);
-  later(() => blink(), 4700);
+  }, 1420);
+  later(() => blink(), 1460);
+  later(() => blink(), 3200);
+  later(() => blink(), 4900);
 });
 
 onBeforeUnmount(() => {
