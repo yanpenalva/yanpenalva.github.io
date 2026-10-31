@@ -3,15 +3,24 @@ import { onBeforeUnmount, onMounted, ref } from "vue";
 
 const POSE = { GLIDE: "glide", LAND: "land", PERCH: "perch" };
 const SESSION_KEY = "penalva:arrival-owl";
+const MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
 const pose = ref(POSE.PERCH);
 const blinking = ref(false);
+const ready = ref(false);
+const flying = ref(false);
 const host = ref(null);
 const timers = [];
 
 let animation = null;
+let disposed = false;
+let motionQuery = null;
 
 const later = (fn, ms) => timers.push(setTimeout(fn, ms));
+
+const clearTimers = () => {
+  while (timers.length) clearTimeout(timers.pop());
+};
 
 const blink = (ms = 140) => {
   blinking.value = true;
@@ -20,16 +29,33 @@ const blink = (ms = 140) => {
   }, ms);
 };
 
+// Stop wherever the owl is and leave it perched, without motion.
+const settle = () => {
+  clearTimers();
+  if (!disposed) animation?.cancel();
+  animation = null;
+  flying.value = false;
+  blinking.value = false;
+  pose.value = POSE.PERCH;
+};
+
 onMounted(() => {
-  const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+  motionQuery = window.matchMedia?.(MOTION_QUERY) ?? null;
+  const reduce = motionQuery?.matches ?? false;
+  motionQuery?.addEventListener("change", (event) => {
+    if (event.matches) settle();
+  });
+
   let seen = false;
   try {
     seen = sessionStorage.getItem(SESSION_KEY) === "1";
   } catch {
-    seen = true;
+    // Storage blocked (private mode): treat every load as a first visit.
   }
 
-  // Second visit in the same session, reduced motion, or no element: stay perched.
+  ready.value = true;
+
+  // Repeat visit in the session, reduced motion, or no element: stay perched.
   if (reduce || seen || !host.value) {
     pose.value = POSE.PERCH;
     later(() => blink(), 900);
@@ -39,11 +65,12 @@ onMounted(() => {
   try {
     sessionStorage.setItem(SESSION_KEY, "1");
   } catch {
-    // Storage can be blocked in private mode; the flight still plays once per load.
+    // Nothing to persist; the flight still plays on this load.
   }
 
   const el = host.value;
   pose.value = POSE.GLIDE;
+  flying.value = true;
 
   animation = el.animate(
     [
@@ -65,6 +92,7 @@ onMounted(() => {
   later(() => {
     animation?.cancel();
     animation = null;
+    flying.value = false;
   }, 1200);
   later(() => blink(), 1260);
   later(() => blink(), 3000);
@@ -72,8 +100,10 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  timers.forEach(clearTimeout);
+  disposed = true;
+  clearTimers();
   animation?.cancel();
+  motionQuery?.removeEventListener("change", settle);
 });
 </script>
 
@@ -81,6 +111,7 @@ onBeforeUnmount(() => {
   <span
     ref="host"
     class="arrival-owl"
+    :class="{ 'is-ready': ready, 'is-flying': flying }"
     aria-hidden="true"
   >
     <svg
@@ -335,8 +366,18 @@ onBeforeUnmount(() => {
   height: 44px;
   color: rgb(var(--color-accent));
   transform-origin: 50% 94%;
-  will-change: transform;
   pointer-events: none;
+  opacity: 0;
+}
+
+/* Hidden until the component knows whether it will fly, so the perched pose
+   never flashes before the arrival starts. */
+.arrival-owl.is-ready {
+  opacity: 1;
+}
+
+.arrival-owl.is-flying {
+  will-change: transform;
 }
 
 @media (max-width: 640px) {
