@@ -38,7 +38,7 @@ const cards = computed(() =>
           :href="card.href"
           target="_blank"
           rel="noopener noreferrer"
-          class="group grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 gap-y-1 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          class="group grid grid-cols-1 items-baseline gap-x-4 gap-y-2 py-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           <span class="min-w-0">
             <span class="block text-base font-semibold text-text group-hover:underline group-hover:underline-offset-4">{{ card.title }}</span>

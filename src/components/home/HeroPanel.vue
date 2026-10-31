@@ -44,7 +44,7 @@ onUnmounted(() => clearTimeout(drawTimer));
         <span class="font-mono text-xs text-accent">trace/01</span>
       </header>
 
-      <svg viewBox="0 0 480 360" class="mt-4 h-auto w-full text-accent" :class="{ 'is-tracing': current }" aria-hidden="true" focusable="false">
+      <svg viewBox="0 0 480 360" class="mx-auto mt-4 h-auto w-full max-w-[420px] text-accent lg:max-w-none" :class="{ 'is-tracing': current }" aria-hidden="true" focusable="false">
         <defs>
           <clipPath id="owl-clip">
             <path d="M10 12 23 18h18l13-6-2 19c0 13-8 23-20 23S12 44 12 31l-2-19Z" transform="translate(73.5 46) scale(5.2)" />
