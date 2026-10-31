@@ -32,20 +32,26 @@ onMounted(() => {
     const length = el.getTotalLength();
     if (!length) return;
     const dash = `${length}px`;
-    animations.push(
-      el.animate(
-        [
-          { strokeDasharray: dash, strokeDashoffset: dash },
-          { strokeDasharray: dash, strokeDashoffset: "0px" }
-        ],
-        {
-          duration: 520,
-          delay: Number(el.dataset.delay || 0),
-          easing: "cubic-bezier(.22, 1, .36, 1)",
-          fill: "both"
-        }
-      )
+    const animation = el.animate(
+      [
+        { strokeDasharray: dash, strokeDashoffset: dash },
+        { strokeDasharray: dash, strokeDashoffset: "0px" }
+      ],
+      {
+        duration: 520,
+        delay: Number(el.dataset.delay || 0),
+        easing: "cubic-bezier(.22, 1, .36, 1)",
+        fill: "both"
+      }
     );
+    animations.push(animation);
+    animation.finished
+      .then(() => {
+        animation.cancel();
+        const index = animations.indexOf(animation);
+        if (index >= 0) animations.splice(index, 1);
+      })
+      .catch(() => {});
   });
 });
 
