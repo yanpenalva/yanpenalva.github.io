@@ -77,7 +77,7 @@ const cards = computed(() =>
         v-for="(card, index) in cards"
         :key="card.key"
         v-reveal
-        :class="spans[index]"
+        :class="spans[index % spans.length]"
       >
         <ProofCard
           class="h-full"

@@ -14,37 +14,57 @@ const tracks = [
 
 const active = ref(null);
 const hovered = ref(null);
-const drawing = ref(false);
-let drawTimer;
+const svgEl = ref(null);
+const animations = [];
 
 const current = computed(() => hovered.value || active.value);
 const activeOrDefault = computed(() => tracks.find((track) => track.id === active.value) ?? { textKey: "home.trace.summary" });
 const isOn = (id) => current.value === id;
 
+const stopDraw = () => {
+  while (animations.length) animations.pop().cancel();
+};
+
 onMounted(() => {
-  if (reducedMotion.value) return;
-  drawing.value = true;
-  drawTimer = setTimeout(() => { drawing.value = false; }, 1300);
+  if (reducedMotion.value || !svgEl.value) return;
+  svgEl.value.querySelectorAll(".trace").forEach((el) => {
+    if (!el.getTotalLength) return;
+    const length = el.getTotalLength();
+    if (!length) return;
+    const dash = `${length}px`;
+    animations.push(
+      el.animate(
+        [
+          { strokeDasharray: dash, strokeDashoffset: dash },
+          { strokeDasharray: dash, strokeDashoffset: "0px" }
+        ],
+        {
+          duration: 520,
+          delay: Number(el.dataset.delay || 0),
+          easing: "cubic-bezier(.22, 1, .36, 1)",
+          fill: "both"
+        }
+      )
+    );
+  });
 });
 
 watch(reducedMotion, (reduced) => {
-  if (!reduced) return;
-  clearTimeout(drawTimer);
-  drawing.value = false;
+  if (reduced) stopDraw();
 });
 
-onUnmounted(() => clearTimeout(drawTimer));
+onUnmounted(stopDraw);
 </script>
 
 <template>
   <section class="relative isolate pt-10 sm:pt-14 lg:pt-20">
     <div class="w-full">
-      <header class="flex items-center justify-between gap-3 border-b border-border pb-3 text-center">
+      <header class="flex items-center justify-between gap-3 border-b border-border pb-3">
         <p class="font-mono text-xs uppercase tracking-[0.16em] text-muted">{{ t("home.trace.label") }}</p>
-        <span class="font-mono text-xs text-accent">trace/01</span>
+        <span class="font-mono text-xs text-accent" aria-hidden="true">trace/01</span>
       </header>
 
-      <svg viewBox="0 0 480 360" class="mx-auto mt-4 h-auto w-full max-w-[420px] text-accent lg:max-w-none" :class="{ 'is-tracing': current }" aria-hidden="true" focusable="false">
+      <svg ref="svgEl" viewBox="0 0 480 360" class="mx-auto mt-4 h-auto w-full max-w-[420px] text-accent lg:max-w-none" :class="{ 'is-tracing': current }" aria-hidden="true" focusable="false">
         <defs>
           <clipPath id="owl-clip">
             <path d="M10 12 23 18h18l13-6-2 19c0 13-8 23-20 23S12 44 12 31l-2-19Z" transform="translate(73.5 46) scale(5.2)" />
@@ -53,13 +73,12 @@ onUnmounted(() => clearTimeout(drawTimer));
 
         <path d="M10 12 23 18h18l13-6-2 19c0 13-8 23-20 23S12 44 12 31l-2-19Z"
               transform="translate(73.5 46) scale(5.2)"
-              fill="rgb(var(--color-accent) / 0.07)" stroke="currentColor" stroke-width="2.5"
-              vector-effect="non-scaling-stroke" class="trace trace--outline"
-              :class="{ 'is-drawing': drawing }" />
+              fill="rgb(var(--color-accent) / 0.07)" stroke="currentColor" stroke-width="0.48"
+              class="trace" data-delay="0" />
 
-        <g class="trace trace--eyes" fill="none" stroke="currentColor" stroke-width="2" :class="{ 'is-drawing': drawing }">
-          <circle cx="198" cy="192" r="26" class="trace-ring" />
-          <circle cx="282" cy="192" r="26" class="trace-ring" />
+        <g fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="198" cy="192" r="26" class="trace" data-delay="380" />
+          <circle cx="282" cy="192" r="26" class="trace" data-delay="380" />
           <circle cx="198" cy="192" r="4.5" fill="currentColor" stroke="none" />
           <circle cx="282" cy="192" r="4.5" fill="currentColor" stroke="none" />
         </g>
@@ -67,9 +86,9 @@ onUnmounted(() => clearTimeout(drawTimer));
         <path d="M240 224 L254 243 L240 256 L226 243 Z" fill="currentColor" stroke="none" />
 
         <g clip-path="url(#owl-clip)" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <path d="M198 218 C 176 246 168 266 168 286" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('backend') }" data-track="backend" />
-          <path d="M170 292 L 310 292" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('infra') }" data-track="infra" />
-          <path d="M282 218 C 304 246 312 266 312 286" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('ai') }" data-track="ai" />
+          <path d="M198 218 C 176 246 168 266 168 286" class="trace trace-line" data-delay="560" :class="{ 'is-on': isOn('backend') }" data-track="backend" />
+          <path d="M170 292 L 310 292" class="trace trace-line" data-delay="640" :class="{ 'is-on': isOn('infra') }" data-track="infra" />
+          <path d="M282 218 C 304 246 312 266 312 286" class="trace trace-line" data-delay="720" :class="{ 'is-on': isOn('ai') }" data-track="ai" />
         </g>
 
         <g fill="currentColor">
@@ -81,7 +100,7 @@ onUnmounted(() => clearTimeout(drawTimer));
 
       <div class="mt-4 flex flex-wrap justify-center gap-2">
         <button v-for="track in tracks" :key="track.id" type="button"
-          class="trace-btn" :class="{ 'is-active': active === track.id }"
+          class="trace-btn min-h-[44px]" :class="{ 'is-active': active === track.id }"
           :aria-pressed="active === track.id"
           @click="active = active === track.id ? null : track.id"
           @mouseenter="hovered = track.id" @mouseleave="hovered = null"
@@ -98,16 +117,6 @@ onUnmounted(() => clearTimeout(drawTimer));
 </template>
 
 <style scoped>
-.trace { stroke-dasharray: none; stroke-dashoffset: 0; }
-.trace.is-drawing { stroke-dasharray: 420; animation: trace-draw 520ms cubic-bezier(.22, 1, .36, 1) both; }
-.trace--eyes.is-drawing { animation-delay: 380ms; }
-.trace-line.is-drawing { animation-duration: 380ms; }
-.trace-line[data-track="backend"].is-drawing { animation-delay: 560ms; }
-.trace-line[data-track="infra"].is-drawing { animation-delay: 640ms; }
-.trace-line[data-track="ai"].is-drawing { animation-delay: 720ms; }
-@keyframes trace-draw { from { stroke-dashoffset: 420; } to { stroke-dashoffset: 0; } }
-
-.trace--eyes { opacity: .9; }
 .trace-line, .trace-node { transition: opacity 140ms ease; opacity: .7; }
 [data-track].is-on { opacity: 1; }
 .is-tracing [data-track]:not(.is-on) { opacity: .25; }
@@ -129,9 +138,5 @@ onUnmounted(() => clearTimeout(drawTimer));
 .trace-btn.is-active {
   border-color: rgb(var(--color-accent));
   color: rgb(var(--color-accent));
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .trace { animation: none; }
 }
 </style>

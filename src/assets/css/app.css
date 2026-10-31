@@ -141,11 +141,6 @@ body {
 	font-weight: 600;
 }
 
-.text-pretty { text-wrap: pretty; }
-
-@media (prefers-reduced-motion: reduce) {
-	.chapter-title { scroll-behavior: auto; }
-}
 
 .ink-band {
 	--band-bg: 23 25 23;

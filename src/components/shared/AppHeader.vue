@@ -27,7 +27,7 @@ function updateTheme(value) {
 <template>
   <header class="border-b border-border">
     <nav
-      class="mx-auto flex w-full max-w-[1160px] flex-wrap items-center justify-between gap-x-6 px-4 py-4 sm:flex-nowrap sm:px-8 lg:px-6"
+      class="mx-auto flex w-full max-w-[1160px] flex-wrap items-center justify-between gap-x-6 px-4 py-4 sm:flex-nowrap sm:px-6 lg:px-6"
     >
       <router-link
         to="/"
