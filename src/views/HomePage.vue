@@ -11,7 +11,7 @@ import ContactCTA from "@/components/home/ContactCTA.vue";
 
 <template>
   <main id="main-content" class="mx-auto w-full max-w-[1160px] px-4 py-8 sm:px-6 sm:py-12">
-    <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+    <div class="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
       <AppBanner />
       <HeroPanel />
     </div>

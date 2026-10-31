@@ -14,7 +14,7 @@ const jobUrl = computed(() => `${whatsappBaseUrl}${encodeURIComponent(t("home.jo
 
 <template>
   <section v-motion :initial="reducedMotion ? finalMotion : initialMotion" :visible="finalMotion" class="ink-band px-6 py-10 sm:px-10 sm:py-16">
-    <div class="sm:grid sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-10">
+    <div class="sm:grid sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center sm:gap-10">
       <div>
         <h2 class="text-[clamp(32px,4vw,48px)] font-semibold tracking-[-.03em]">{{ t("home.contactTitle") }}</h2>
         <p class="band-muted mt-3 max-w-2xl leading-relaxed">{{ t("home.contactText") }}</p>

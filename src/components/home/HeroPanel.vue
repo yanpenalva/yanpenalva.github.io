@@ -37,9 +37,9 @@ onUnmounted(() => clearTimeout(drawTimer));
 </script>
 
 <template>
-  <section class="relative isolate flex items-center">
+  <section class="relative isolate pt-10 sm:pt-14 lg:pt-20">
     <div class="w-full">
-      <header class="flex items-center justify-between gap-3 border-b border-border pb-3">
+      <header class="flex items-center justify-between gap-3 border-b border-border pb-3 text-center">
         <p class="font-mono text-xs uppercase tracking-[0.16em] text-muted">{{ t("home.trace.label") }}</p>
         <span class="font-mono text-xs text-accent">trace/01</span>
       </header>
@@ -68,18 +68,18 @@ onUnmounted(() => clearTimeout(drawTimer));
 
         <g clip-path="url(#owl-clip)" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <path d="M198 218 C 176 246 168 266 168 286" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('backend') }" data-track="backend" />
-          <path d="M148 300 L 332 300" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('infra') }" data-track="infra" />
+          <path d="M170 292 L 310 292" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('infra') }" data-track="infra" />
           <path d="M282 218 C 304 246 312 266 312 286" class="trace trace-line" :class="{ 'is-drawing': drawing, 'is-on': isOn('ai') }" data-track="ai" />
         </g>
 
         <g fill="currentColor">
           <circle cx="168" cy="286" r="4.5" class="trace-node" :class="{ 'is-on': isOn('backend') }" data-track="backend" />
-          <circle cx="240" cy="300" r="4.5" class="trace-node" :class="{ 'is-on': isOn('infra') }" data-track="infra" />
-          <circle cx="312" cy="300" r="4.5" class="trace-node" :class="{ 'is-on': isOn('ai') }" data-track="ai" />
+          <circle cx="240" cy="292" r="4.5" class="trace-node" :class="{ 'is-on': isOn('infra') }" data-track="infra" />
+          <circle cx="312" cy="286" r="4.5" class="trace-node" :class="{ 'is-on': isOn('ai') }" data-track="ai" />
         </g>
       </svg>
 
-      <div class="mt-4 flex flex-wrap gap-2">
+      <div class="mt-4 flex flex-wrap justify-center gap-2">
         <button v-for="track in tracks" :key="track.id" type="button"
           class="trace-btn" :class="{ 'is-active': active === track.id }"
           :aria-pressed="active === track.id"
@@ -90,7 +90,7 @@ onUnmounted(() => clearTimeout(drawTimer));
         </button>
       </div>
 
-      <p class="mt-4 max-w-md text-pretty text-sm leading-relaxed text-muted" aria-live="polite">
+      <p class="mx-auto mt-4 max-w-md text-pretty text-center text-sm leading-relaxed text-muted" aria-live="polite">
         {{ t(activeOrDefault.textKey) }}
       </p>
     </div>

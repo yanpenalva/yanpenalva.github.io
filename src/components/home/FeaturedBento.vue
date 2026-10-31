@@ -11,10 +11,10 @@ import OwlAccent from "./OwlAccent.vue";
 const { t } = useLocale();
 
 const spans = [
-  "md:col-span-12 lg:col-span-7 lg:row-span-2",
+  "md:col-span-12 lg:col-span-7",
   "md:col-span-6 lg:col-span-5",
   "md:col-span-6 lg:col-span-5",
-  "md:col-span-6 lg:col-span-5"
+  "md:col-span-12 lg:col-span-7"
 ];
 
 const hostOf = (href) => {

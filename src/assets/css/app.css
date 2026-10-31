@@ -151,7 +151,7 @@ body {
 	--band-bg: 23 25 23;
 	--band-fg: 245 244 239;
 	--band-muted: 190 196 190;
-	--band-border: 92 98 92;
+	--band-border: 128 132 128;
 	--band-accent: 168 230 107;
 	--band-on-accent: 16 17 16;
 	background-color: rgb(var(--band-bg));
@@ -162,7 +162,7 @@ body {
 	--band-bg: 245 244 239;
 	--band-fg: 23 25 23;
 	--band-muted: 85 91 85;
-	--band-border: 150 156 150;
+	--band-border: 136 140 136;
 	--band-accent: 39 92 55;
 	--band-on-accent: 255 255 255;
 }
