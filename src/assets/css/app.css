@@ -133,3 +133,14 @@ body {
 		transform: perspective(700px) rotateX(1deg) rotateY(-1deg) translateY(-2px);
 	}
 }
+
+.chapter-title {
+	font-size: clamp(36px, 4.5vw, 56px);
+	line-height: 1.02;
+	letter-spacing: -0.03em;
+	font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.chapter-title { scroll-behavior: auto; }
+}

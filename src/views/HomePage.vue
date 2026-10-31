@@ -10,16 +10,16 @@ import ContactCTA from "@/components/home/ContactCTA.vue";
 </script>
 
 <template>
-  <main id="main-content" class="mx-auto w-full max-w-[1160px] space-y-14 px-4 py-8 sm:space-y-20 sm:px-6 sm:py-12 lg:space-y-24">
+  <main id="main-content" class="mx-auto w-full max-w-[1160px] px-4 py-8 sm:px-6 sm:py-12">
     <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
       <AppBanner />
       <HeroPanel />
     </div>
-    <HomeMetrics />
-    <FeaturedBento />
-    <ResultCases />
-    <AIOSSStrip />
-    <ExperienceTimeline />
-    <ContactCTA />
+    <HomeMetrics class="mt-6 sm:mt-8" />
+    <FeaturedBento class="mt-16 sm:mt-24" />
+    <ResultCases class="mt-20 sm:mt-28" />
+    <AIOSSStrip class="mt-16 sm:mt-24" />
+    <ExperienceTimeline class="mt-20 sm:mt-28" />
+    <ContactCTA class="mt-16 sm:mt-24" />
   </main>
 </template>

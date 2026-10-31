@@ -6,11 +6,12 @@ const { t } = useLocale();
 </script>
 
 <template>
-  <section class="border-b border-border py-12 sm:py-16 lg:py-24" aria-labelledby="home-heading">
+  <section class="py-10 sm:py-14 lg:py-20" aria-labelledby="home-heading">
     <div class="max-w-4xl">
       <p class="font-mono text-sm uppercase tracking-[0.16em] text-muted">{{ t("home.role") }}</p>
-      <h1 id="home-heading" class="mt-5 text-[clamp(44px,7vw,88px)] font-semibold leading-[1.05] tracking-[-0.06em] text-text">
-        Yan Penalva
+      <h1 id="home-heading" class="mt-5 block text-[clamp(64px,9vw,120px)] font-semibold leading-[.92] tracking-[-.045em] text-text">
+        <span class="block">Yan</span>
+        <span class="block">Penalva</span>
       </h1>
       <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
         {{ t("home.heroStatement") }}

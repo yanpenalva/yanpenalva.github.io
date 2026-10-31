@@ -1,16 +1,14 @@
 <script setup>
-import { computed, defineAsyncComponent } from "vue";
+import { computed } from "vue";
 import { useLocale } from "@/composables/useLocale";
 import featured from "@/data/featured";
 import projects from "@/data/projects";
 import business from "@/data/business";
 import ProofCard from "@/components/reusable/ProofCard.vue";
 import { isValidHttpUrl, normalizePublicUrl } from "@/utils/urls";
+import OwlAccent from "./OwlAccent.vue";
 
 const { t } = useLocale();
-const BlueprintDots = defineAsyncComponent(() => import("./BlueprintDots.vue"));
-import OwlAccent from "./OwlAccent.vue";
-import TechBackdrop from "./TechBackdrop.vue";
 
 const hostOf = (href) => {
   return isValidHttpUrl(href) ? new URL(href).host : "";
@@ -63,12 +61,9 @@ const cards = computed(() =>
 
 <template>
   <section v-reveal class="space-y-6">
-    <div class="blueprint relative isolate overflow-hidden rounded-md border border-border px-5 py-8 sm:py-12">
-      <TechBackdrop />
-      <BlueprintDots />
-      <div class="relative flex items-center justify-between gap-4">
-        <div class="flex items-center gap-3"><OwlAccent /><h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.featuredTitle") }}</h2></div>
-      </div>
+    <div class="flex items-center gap-3">
+      <OwlAccent />
+      <h2 class="chapter-title text-text">{{ t("home.featuredTitle") }}</h2>
     </div>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div
@@ -90,10 +85,3 @@ const cards = computed(() =>
     </div>
   </section>
 </template>
-
-<style scoped>
-.blueprint {
-  background-image: linear-gradient(rgb(var(--color-accent) / 0.09) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--color-accent) / 0.09) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-</style>
