@@ -30,6 +30,10 @@ const labels = ["problem", "action", "result"];
         v-reveal
         class="card-motion flex h-full flex-col gap-5 rounded-md border border-border bg-surface p-5 sm:p-6"
       >
+        <div v-if="item.id === 'netra'" class="order-first">
+          <p class="text-[clamp(48px,6vw,72px)] font-semibold leading-[.9] tracking-[-.04em] text-accent">{{ t("cases.netra.metric") }}</p>
+          <p class="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">{{ t("cases.netra.metricLabel") }}</p>
+        </div>
         <header class="flex flex-wrap items-center justify-between gap-3">
           <h3 class="text-lg font-semibold tracking-tight text-text">
             {{ t(item.titleKey) }}

@@ -59,7 +59,9 @@ export default {
     netra: {
       problem: "Slow APIs and manual deploys",
       action: "Redis/Elasticsearch caching, query optimization, GitLab CI pipelines with SonarQube and Docker",
-      result: "+45% API performance, +80% deployments"
+      result: "+45% API performance, +80% deployments",
+      metric: "+45%",
+      metricLabel: "API performance"
     },
     siic: {
       problem: "legacy system to evolve",

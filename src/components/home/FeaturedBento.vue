@@ -10,6 +10,13 @@ import OwlAccent from "./OwlAccent.vue";
 
 const { t } = useLocale();
 
+const spans = [
+  "md:col-span-12 lg:col-span-7",
+  "md:col-span-6 lg:col-span-5",
+  "md:col-span-6 lg:col-span-6",
+  "md:col-span-6 lg:col-span-6"
+];
+
 const hostOf = (href) => {
   return isValidHttpUrl(href) ? new URL(href).host : "";
 };
@@ -65,15 +72,16 @@ const cards = computed(() =>
       <OwlAccent />
       <h2 class="chapter-title text-text">{{ t("home.featuredTitle") }}</h2>
     </div>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div class="grid grid-cols-1 items-stretch gap-4 md:grid-cols-12">
       <div
-        v-for="card in cards"
+        v-for="(card, index) in cards"
         :key="card.key"
         v-reveal
-        class="min-h-48"
+        :class="spans[index]"
       >
         <ProofCard
           class="h-full"
+          :lead="index === 0"
           :title="card.title"
           :problem="card.problem"
           :contribution="card.contribution"

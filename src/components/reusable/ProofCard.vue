@@ -10,7 +10,8 @@ defineProps({
   contribution: { type: String, default: "" },
   tags: { type: Array, default: () => [] },
   href: { type: String, default: "" },
-  evidenceLabel: { type: String, default: "" }
+  evidenceLabel: { type: String, default: "" },
+  lead: { type: Boolean, default: false }
 });
 </script>
 
@@ -20,10 +21,11 @@ defineProps({
     :href="href"
     target="_blank"
     rel="noopener noreferrer"
-    class="card-motion flex h-full flex-col rounded-md border border-border bg-surface p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:p-6"
+    class="card-motion flex h-full flex-col rounded-md border border-border bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+    :class="lead ? 'p-6 sm:p-8' : 'p-5 sm:p-6'"
   >
-    <h3 class="text-lg font-semibold tracking-tight text-text">{{ title }}</h3>
-    <p v-if="problem" class="mt-3 leading-relaxed text-muted">{{ problem }}</p>
+    <h3 class="font-semibold tracking-tight text-text" :class="lead ? 'text-2xl sm:text-3xl' : 'text-lg'">{{ title }}</h3>
+    <p v-if="problem" class="mt-3 leading-relaxed text-muted" :class="{ 'text-base sm:text-lg': lead }">{{ problem }}</p>
     <p v-if="contribution" class="mt-3 text-sm text-muted">{{ contribution }}</p>
     <div class="mt-auto pt-5">
       <ul v-if="tags.length" class="flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs uppercase tracking-wide text-muted">
@@ -36,10 +38,11 @@ defineProps({
   </a>
   <div
     v-else
-    class="card-motion flex h-full flex-col rounded-md border border-border bg-surface p-5 sm:p-6"
+    class="card-motion flex h-full flex-col rounded-md border border-border bg-surface"
+    :class="lead ? 'p-6 sm:p-8' : 'p-5 sm:p-6'"
   >
-    <h3 class="text-lg font-semibold tracking-tight text-text">{{ title }}</h3>
-    <p v-if="problem" class="mt-3 leading-relaxed text-muted">{{ problem }}</p>
+    <h3 class="font-semibold tracking-tight text-text" :class="lead ? 'text-2xl sm:text-3xl' : 'text-lg'">{{ title }}</h3>
+    <p v-if="problem" class="mt-3 leading-relaxed text-muted" :class="{ 'text-base sm:text-lg': lead }">{{ problem }}</p>
     <p v-if="contribution" class="mt-3 text-sm text-muted">{{ contribution }}</p>
     <div class="mt-auto pt-5">
       <ul v-if="tags.length" class="flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs uppercase tracking-wide text-muted">
