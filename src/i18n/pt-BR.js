@@ -25,11 +25,16 @@ export default {
   home: {
     role: "Engenheiro de Software Sênior",
     heroStatement: "Desenvolvo sistemas web e soluções de IA e contribuo com software de código aberto.",
-    heroPanelTitle: "Console de entrega",
-    heroPanelReady: "PRONTO PARA ENTREGAR",
-    heroPanelSignal1: "Sistemas web confiáveis",
-    heroPanelSignal2: "IA aplicada na prática",
-    heroPanelSignal3: "Contribuições open source",
+    trace: {
+      label: "Modelo conceitual de entrega",
+      summary: "Uma requisição entra, o sistema executa e a observação fecha o ciclo.",
+      backend: "Backend",
+      infra: "Infraestrutura",
+      ai: "IA",
+      backendText: "Requisição, API e persistência — o caminho que faz o trabalho.",
+      infraText: "Deploy, runtime e observabilidade condicionando cada etapa.",
+      aiText: "IA aplicada dentro do caminho de processamento, não num chat."
+    },
     resumePt: "Currículo (PT-BR)",
     resumeEn: "Currículo (EN-US)",
     featuredTitle: "Trabalhos selecionados",

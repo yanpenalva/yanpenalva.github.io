@@ -25,11 +25,16 @@ export default {
   home: {
     role: "Senior Software Engineer",
     heroStatement: "I build web systems and applied AI, and contribute to open-source software.",
-    heroPanelTitle: "Delivery console",
-    heroPanelReady: "READY TO SHIP",
-    heroPanelSignal1: "Reliable web systems",
-    heroPanelSignal2: "Practical applied AI",
-    heroPanelSignal3: "Open-source contributions",
+    trace: {
+      label: "Conceptual delivery model",
+      summary: "A request enters, the system executes, and observation closes the loop.",
+      backend: "Backend",
+      infra: "Infra",
+      ai: "AI",
+      backendText: "Request, API and persistence — the path that does the work.",
+      infraText: "Deploy, runtime and observability constraints on every hop.",
+      aiText: "Applied AI inside the processing path, not in a chat box."
+    },
     resumePt: "Resume (PT-BR)",
     resumeEn: "Resume (EN-US)",
     featuredTitle: "Selected work",
