@@ -34,8 +34,6 @@ export default {
     resumeEn: "Currículo (EN-US)",
     featuredTitle: "Trabalhos selecionados",
     aiOssTitle: "IA e código aberto",
-    pauseMarquee: "Pausar movimento",
-    resumeMarquee: "Retomar movimento",
     openProject: "Ver projeto",
     metricsAriaLabel: "Indicadores de experiência e projetos",
     experienceTitle: "Experiência",

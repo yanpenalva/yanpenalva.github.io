@@ -34,8 +34,6 @@ export default {
     resumeEn: "Resume (EN-US)",
     featuredTitle: "Selected work",
     aiOssTitle: "AI & open source",
-    pauseMarquee: "Pause motion",
-    resumeMarquee: "Resume motion",
     openProject: "View project",
     metricsAriaLabel: "Experience and project metrics",
     experienceTitle: "Experience",

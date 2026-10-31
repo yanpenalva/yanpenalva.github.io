@@ -13,31 +13,29 @@ const jobUrl = computed(() => `${whatsappBaseUrl}${encodeURIComponent(t("home.jo
 </script>
 
 <template>
-  <section v-motion :initial="reducedMotion ? finalMotion : initialMotion" :visible="finalMotion" class="rounded-md border border-border bg-surface p-6 sm:p-10">
-    <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.contactTitle") }}</h2>
-    <p class="mt-3 max-w-2xl leading-relaxed text-muted">{{ t("home.contactText") }}</p>
+  <section v-motion :initial="reducedMotion ? finalMotion : initialMotion" :visible="finalMotion" class="ink-band px-6 py-12 sm:px-10 sm:py-16">
+    <h2 class="text-[clamp(32px,4vw,48px)] font-semibold tracking-[-.03em]">{{ t("home.contactTitle") }}</h2>
+    <p class="band-muted mt-3 max-w-2xl leading-relaxed">{{ t("home.contactText") }}</p>
     <div class="mt-6 flex flex-wrap gap-3">
-      <span class="orbit-cta inline-flex rounded-md">
-        <a
-          :href="projectUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="rounded-md bg-accent px-5 py-3 font-sans text-sm font-medium text-on-accent transition-colors hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-        >
-          {{ t("home.projectButton") }}
-        </a>
-      </span>
+      <a
+        :href="projectUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="band-primary rounded-md px-5 py-3 font-sans text-sm font-medium transition-opacity hover:opacity-90"
+      >
+        {{ t("home.projectButton") }}
+      </a>
       <a
         :href="jobUrl"
         target="_blank"
         rel="noopener noreferrer"
-        class="rounded-md border border-border bg-surface px-5 py-3 font-sans text-sm font-medium text-text transition-colors hover:border-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        class="band-secondary rounded-md px-5 py-3 font-sans text-sm font-medium transition-opacity hover:opacity-90"
       >
         {{ t("home.jobButton") }}
       </a>
       <a
         href="mailto:yanpenabr@gmail.com"
-        class="rounded-md px-5 py-3 font-sans text-sm font-medium text-muted underline decoration-border underline-offset-4 transition-colors hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        class="band-muted rounded-md px-5 py-3 font-sans text-sm font-medium underline decoration-current underline-offset-4 transition-opacity hover:opacity-80"
       >
         {{ t("home.emailButton") }}
       </a>

@@ -1,13 +1,11 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import { useLocale } from "@/composables/useLocale";
 import projects from "@/data/projects";
-import ProofCard from "@/components/reusable/ProofCard.vue";
 import { isValidHttpUrl } from "@/utils/urls";
 
 const { t } = useLocale();
 const projectIds = [14, 12, 15, 16, 17];
-const paused = ref(false);
 
 const cards = computed(() =>
   projectIds
@@ -23,8 +21,7 @@ const cards = computed(() =>
           t(`projects.categories.${project.category}`),
           ...(project.language ? [project.language] : [])
         ],
-        href: isValidHttpUrl(project.href) ? project.href : "",
-        evidenceLabel: isValidHttpUrl(project.href) ? new URL(project.href).host : ""
+        href: isValidHttpUrl(project.href) ? project.href : ""
       };
     })
     .filter(Boolean)
@@ -33,30 +30,30 @@ const cards = computed(() =>
 
 <template>
   <section v-reveal class="space-y-6">
-    <div class="flex items-center justify-between gap-4">
-      <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.aiOssTitle") }}</h2>
-      <button type="button" class="shrink-0 rounded border border-border px-3 py-2 text-sm text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" :aria-pressed="paused" @click="paused = !paused">{{ paused ? t("home.resumeMarquee") : t("home.pauseMarquee") }}</button>
-    </div>
-    <div class="marquee-viewport overflow-hidden" @focusin="paused = true">
-      <div class="marquee-track flex gap-4" :class="{ 'is-paused': paused }">
-        <div v-for="card in cards" :key="card.key" v-reveal class="w-[min(78vw,20rem)] shrink-0">
-          <ProofCard :title="card.title" :problem="card.description" :tags="card.tags" :href="card.href" :evidence-label="card.evidenceLabel" />
+    <h2 class="text-2xl font-semibold tracking-tight text-text sm:text-3xl">{{ t("home.aiOssTitle") }}</h2>
+    <ul class="border-y border-border">
+      <li v-for="card in cards" :key="card.key" class="border-b border-border last:border-b-0">
+        <a
+          v-if="card.href"
+          :href="card.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 gap-y-1 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          <span class="min-w-0">
+            <span class="block text-base font-semibold text-text group-hover:underline group-hover:underline-offset-4">{{ card.title }}</span>
+            <span class="mt-1 block text-sm leading-relaxed text-muted">{{ card.description }}</span>
+          </span>
+          <span class="flex items-center gap-3 font-mono text-xs uppercase tracking-wide text-muted">
+            <span>{{ card.tags.join(" · ") }}</span>
+            <span class="text-accent transition-transform duration-150 group-hover:-translate-y-0.5">↗</span>
+          </span>
+        </a>
+        <div v-else class="grid grid-cols-1 gap-1 py-5">
+          <span class="text-base font-semibold text-text">{{ card.title }}</span>
+          <span class="text-sm leading-relaxed text-muted">{{ card.description }}</span>
         </div>
-        <div v-for="card in cards" :key="`duplicate-${card.key}`" aria-hidden="true" inert class="marquee-duplicate w-[min(78vw,20rem)] shrink-0">
-          <ProofCard :title="card.title" :problem="card.description" :tags="card.tags" :href="card.href" :evidence-label="card.evidenceLabel" />
-        </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
 </template>
-
-<style scoped>
-.marquee-track { width: max-content; animation: marquee 48s linear infinite; }
-.marquee-track.is-paused, .overflow-hidden:focus-within .marquee-track { animation-play-state: paused; }
-@keyframes marquee { to { transform: translateX(calc(-50% - .5rem)); } }
-@media (prefers-reduced-motion: reduce) {
-  .marquee-viewport { overflow: visible; }
-  .marquee-track { animation: none; flex-wrap: wrap; width: 100%; }
-  .marquee-duplicate { display: none; }
-}
-</style>
