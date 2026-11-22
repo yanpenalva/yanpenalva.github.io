@@ -143,6 +143,32 @@ const projects = [
         role: "Developer",
         client: true,
     },
+    {
+        id: 23,
+        title: "ai-usagebar — GNOME Shell 42–44",
+        category: "Open Source",
+        reach: "798★",
+        description:
+            "Legacy extension tree for the ai-usagebar Waybar widget; fixed a crash that restarted the shell on every refresh.",
+        href: "https://github.com/akitaonrails/ai-usagebar/pull/663",
+    },
+    {
+        id: 24,
+        title: "laravel-acl — access control",
+        category: "Open Source",
+        reach: "145k downloads",
+        description: "Permission bug fixed upstream and shipped in v11.1.1.",
+        href: "https://github.com/yajra/laravel-acl/pull/54",
+    },
+    {
+        id: 25,
+        title: "Universidade Livre — DevOps track",
+        category: "Open Source",
+        reach: "21k★",
+        description:
+            "Authored the DevOps track of the Universidade Livre computer science curriculum.",
+        href: "https://github.com/Universidade-Livre/ciencia-da-computacao/blob/main/specializations/devops.md",
+    },
 ];
 
 export default projects;

@@ -5,7 +5,7 @@ import projects from "@/data/projects";
 import { isValidHttpUrl } from "@/utils/urls";
 
 const { t } = useLocale();
-const projectIds = [14, 12, 15, 16, 17];
+const projectIds = [23, 24, 25, 17, 14, 12, 15];
 
 const cards = computed(() =>
   projectIds
@@ -19,7 +19,7 @@ const cards = computed(() =>
         description: t(`projects.items.${id}.description`),
         tags: [
           t(`projects.categories.${project.category}`),
-          ...(project.language ? [project.language] : [])
+          ...(project.reach || project.language ? [project.reach || project.language] : [])
         ],
         href: isValidHttpUrl(project.href) ? project.href : ""
       };

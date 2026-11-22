@@ -178,6 +178,7 @@ export default {
       "Themes": "Themes",
       "Mobile Application": "Mobile Application",
       "CLI Tool": "CLI Tool",
+      "Open Source": "Open Source",
     },
     items: {
       "1": {
@@ -240,6 +241,18 @@ export default {
       "22": {
         title: "Syspeek",
         description: "A lightweight and portable Bash script that provides a quick overview of system health, including CPU, memory, disk, swap, inodes, network, and temperature metrics, all presented in a human-readable format. Ideal for terminal-based monitoring.",
+      },
+      "23": {
+        title: "ai-usagebar — GNOME Shell 42–44",
+        description: "Legacy extension tree for the ai-usagebar Waybar widget; fixed a crash that restarted the shell on every refresh.",
+      },
+      "24": {
+        title: "laravel-acl — access control",
+        description: "Permission bug fixed upstream and shipped in v11.1.1.",
+      },
+      "25": {
+        title: "Universidade Livre — DevOps track",
+        description: "Authored the DevOps track of the Universidade Livre computer science curriculum.",
       },
     },
   },
