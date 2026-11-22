@@ -3,7 +3,7 @@ import profileImage from "@/assets/images/profile.jpeg";
 import { useLocale } from "@/composables/useLocale";
 
 const { t } = useLocale();
-const bioParagraphs = [1, 2, 3];
+const bioParagraphs = [1, 2, 3, 4];
 </script>
 
 <template>

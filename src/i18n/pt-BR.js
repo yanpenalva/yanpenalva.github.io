@@ -77,7 +77,8 @@ export default {
     metricsProjects: "Projetos concluídos",
     bio1: "Sou engenheiro de software com 6 anos de experiência construindo e evoluindo sistemas corporativos, da arquitetura e infraestrutura ao desempenho, à manutenibilidade e à qualidade de software.",
     bio2: "Hoje sou Engenheiro de Software Sênior na PRODEB, liderando a arquitetura e evolução do SIIC v2 para a SECULT Bahia, com design modular, qualidade automatizada e fluxos de desenvolvimento assistido por IA.",
-    bio3: "Antes de voltar à PRODEB, passei três anos na Netra Tecnologia construindo APIs em Laravel e Vue, e antes entreguei sete sistemas universitários em produção na UEFS, além de trabalho DevOps com Docker, Kubernetes e GNU/Linux. Também mantenho starter kits open source e estudo IA aplicada, de detecção de anomalias em logs a ferramentas de contexto para agentes.",
+    bio3: "Antes de voltar à PRODEB, passei três anos na Netra Tecnologia construindo APIs em Laravel e Vue, e antes entreguei sete sistemas universitários em produção na UEFS, além de trabalho DevOps com Docker, Kubernetes e GNU/Linux.",
+    bio4: "Também contribuo upstream — suporte a GNOME Shell no ai-usagebar, correção de controle de acesso no laravel-acl, a trilha de DevOps do currículo da Universidade Livre — e mantenho starter kits open source com contrato de API fixado. Em paralelo, estudo IA aplicada, de detecção de anomalias em logs a ferramentas de contexto para agentes.",
   },
   creds: {
     title: "Formação e certificações",
