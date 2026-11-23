@@ -78,7 +78,7 @@ export default {
     bio1: "Sou engenheiro de software com 6 anos de experiência construindo e evoluindo sistemas corporativos, da arquitetura e infraestrutura ao desempenho, à manutenibilidade e à qualidade de software.",
     bio2: "Hoje sou Engenheiro de Software Sênior na PRODEB, liderando a arquitetura e evolução do SIIC v2 para a SECULT Bahia, com design modular, qualidade automatizada e fluxos de desenvolvimento assistido por IA.",
     bio3: "Antes de voltar à PRODEB, passei três anos na Netra Tecnologia construindo APIs em Laravel e Vue, e antes entreguei sete sistemas universitários em produção na UEFS, além de trabalho DevOps com Docker, Kubernetes e GNU/Linux.",
-    bio4: "Também contribuo upstream — suporte a GNOME Shell no ai-usagebar, correção de controle de acesso no laravel-acl, a trilha de DevOps do currículo da Universidade Livre — e mantenho starter kits open source com contrato de API fixado. Em paralelo, estudo IA aplicada, de detecção de anomalias em logs a ferramentas de contexto para agentes.",
+    bio4: "Também contribuo upstream — suporte a GNOME Shell e previsão de uso no ai-usagebar, correção de controle de acesso no laravel-acl, a trilha de DevOps do currículo da Universidade Livre — e mantenho starter kits open source com contrato de API fixado. Em paralelo, estudo IA aplicada, de detecção de anomalias em logs a ferramentas de contexto para agentes.",
   },
   creds: {
     title: "Formação e certificações",
@@ -244,8 +244,8 @@ export default {
         description: "Script Bash leve e portátil que oferece uma visão rápida da saúde do sistema: CPU, memória, disco, swap, inodes, rede e temperatura, em formato legível. Ideal para monitoramento no terminal.",
       },
       "23": {
-        title: "ai-usagebar — GNOME Shell 42–44",
-        description: "Árvore de extensão legada para o widget ai-usagebar no Waybar; corrigi um crash que reiniciava o shell a cada atualização.",
+        title: "ai-usagebar — GNOME Shell e previsão",
+        description: "Dois PRs mesclados no widget ai-usagebar do Waybar: a árvore legada do GNOME Shell 42–44 e o ritmo projetado com sparklines de tendência.",
       },
       "24": {
         title: "laravel-acl — controle de acesso",

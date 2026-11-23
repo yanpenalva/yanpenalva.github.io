@@ -78,7 +78,7 @@ export default {
     bio1: "I’m a software engineer with 6 years of experience building and evolving enterprise systems, from architecture and infrastructure to performance, maintainability, and software quality.",
     bio2: "Today I’m a Senior Software Engineer at PRODEB, leading the architecture and evolution of SIIC v2 for SECULT Bahia, with modular design, automated quality, and AI-assisted development workflows.",
     bio3: "Before returning to PRODEB, I spent three years at Netra Tecnologia building Laravel and Vue APIs, and earlier shipped seven production university systems at UEFS, alongside DevOps work with Docker, Kubernetes and GNU/Linux.",
-    bio4: "I also contribute upstream — GNOME Shell support for ai-usagebar, an access-control fix in laravel-acl, the DevOps track of the Universidade Livre curriculum — and maintain open-source starter kits built on pinned API contracts. Alongside that I study applied AI, from log anomaly detection to agent context tooling.",
+    bio4: "I also contribute upstream — GNOME Shell support and usage forecasting for ai-usagebar, an access-control fix in laravel-acl, the DevOps track of the Universidade Livre curriculum — and maintain open-source starter kits built on pinned API contracts. Alongside that I study applied AI, from log anomaly detection to agent context tooling.",
   },
   creds: {
     title: "Credentials",
@@ -244,8 +244,8 @@ export default {
         description: "A lightweight and portable Bash script that provides a quick overview of system health, including CPU, memory, disk, swap, inodes, network, and temperature metrics, all presented in a human-readable format. Ideal for terminal-based monitoring.",
       },
       "23": {
-        title: "ai-usagebar — GNOME Shell 42–44",
-        description: "Legacy extension tree for the ai-usagebar Waybar widget; fixed a crash that restarted the shell on every refresh.",
+        title: "ai-usagebar — GNOME Shell & forecast",
+        description: "Two merged PRs on the ai-usagebar Waybar widget: the GNOME Shell 42–44 legacy tree, and projected pace with trend sparklines.",
       },
       "24": {
         title: "laravel-acl — access control",

@@ -145,12 +145,12 @@ const projects = [
     },
     {
         id: 23,
-        title: "ai-usagebar — GNOME Shell 42–44",
+        title: "ai-usagebar — GNOME Shell & forecast",
         category: "Open Source",
-        reach: "798★",
+        reach: "801★",
         description:
-            "Legacy extension tree for the ai-usagebar Waybar widget; fixed a crash that restarted the shell on every refresh.",
-        href: "https://github.com/akitaonrails/ai-usagebar/pull/663",
+            "Two merged PRs on the ai-usagebar Waybar widget: the GNOME Shell 42–44 legacy tree, and projected pace with trend sparklines.",
+        href: "https://github.com/akitaonrails/ai-usagebar/pulls?q=is%3Apr+author%3Ayanpenalva",
     },
     {
         id: 24,
