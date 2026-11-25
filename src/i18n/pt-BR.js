@@ -78,7 +78,7 @@ export default {
     bio1: "Sou engenheiro de software com 6 anos de experiência construindo e evoluindo sistemas corporativos, da arquitetura e infraestrutura ao desempenho, à manutenibilidade e à qualidade de software.",
     bio2: "Hoje sou Engenheiro de Software Sênior na PRODEB, liderando a arquitetura e evolução do SIIC v2 para a SECULT Bahia, com design modular, qualidade automatizada e fluxos de desenvolvimento assistido por IA.",
     bio3: "Antes de voltar à PRODEB, passei três anos na Netra Tecnologia construindo APIs em Laravel e Vue, e antes entreguei sete sistemas universitários em produção na UEFS, além de trabalho DevOps com Docker, Kubernetes e GNU/Linux.",
-    bio4: "Também contribuo upstream — suporte a GNOME Shell e previsão de uso no ai-usagebar, correção de controle de acesso no laravel-acl, a trilha de DevOps do currículo da Universidade Livre — e mantenho starter kits open source com contrato de API fixado. Em paralelo, estudo IA aplicada, de detecção de anomalias em logs a ferramentas de contexto para agentes.",
+    bio4: "Também contribuo upstream — suporte a GNOME Shell e previsão de uso no ai-usagebar, captura de hooks e backup de assets no ai-memory, correção de controle de acesso no laravel-acl, a trilha de DevOps do currículo da Universidade Livre — e mantenho starter kits open source com contrato de API fixado. Em paralelo, estudo IA aplicada, de detecção de anomalias em logs a ferramentas de contexto para agentes.",
   },
   creds: {
     title: "Formação e certificações",
@@ -250,6 +250,10 @@ export default {
       "24": {
         title: "laravel-acl — controle de acesso",
         description: "Bug de permissão corrigido upstream e publicado na v11.1.1.",
+      },
+      "26": {
+        title: "ai-memory — memória de agentes",
+        description: "Quatro PRs mesclados na ferramenta de memória para agentes: assets de OpenCode e Gemini CLI no backup e um orçamento de retry que sobrevive a deadlines curtos.",
       },
       "25": {
         title: "Universidade Livre — trilha DevOps",

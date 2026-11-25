@@ -5,7 +5,7 @@ import projects from "@/data/projects";
 import { isValidHttpUrl } from "@/utils/urls";
 
 const { t } = useLocale();
-const projectIds = [23, 24, 25, 17, 14, 12, 15];
+const projectIds = [26, 23, 24, 25, 17, 14, 12, 15];
 
 const cards = computed(() =>
   projectIds

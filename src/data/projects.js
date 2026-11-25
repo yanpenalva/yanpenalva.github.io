@@ -161,6 +161,15 @@ const projects = [
         href: "https://github.com/yajra/laravel-acl/pull/54",
     },
     {
+        id: 26,
+        title: "ai-memory — agent memory",
+        category: "Open Source",
+        reach: "16k★",
+        description:
+            "Four merged PRs on the agent memory tool: OpenCode and Gemini CLI assets in agent backups, and a hook retry budget that survives short request deadlines.",
+        href: "https://github.com/akitaonrails/ai-memory/pulls?q=is%3Apr+author%3Ayanpenalva",
+    },
+    {
         id: 25,
         title: "Universidade Livre — DevOps track",
         category: "Open Source",
