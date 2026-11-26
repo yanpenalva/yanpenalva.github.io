@@ -166,7 +166,7 @@ const projects = [
         category: "Open Source",
         reach: "16k★",
         description:
-            "Seven merged PRs on the agent memory tool: agent-asset backups, a hook retry budget that survives short deadlines, ledger paging and search filters.",
+            "Six merged PRs on the agent memory tool: agent-asset backups, a hook retry budget that survives short deadlines, ledger paging and search filters.",
         href: "https://github.com/akitaonrails/ai-memory/pulls?q=is%3Apr+author%3Ayanpenalva",
     },
     {

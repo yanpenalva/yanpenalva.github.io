@@ -253,7 +253,7 @@ export default {
       },
       "26": {
         title: "ai-memory — agent memory",
-        description: "Seven merged PRs on the agent memory tool: agent-asset backups, a hook retry budget that survives short deadlines, ledger paging and search filters.",
+        description: "Six merged PRs on the agent memory tool: agent-asset backups, a hook retry budget that survives short deadlines, ledger paging and search filters.",
       },
       "25": {
         title: "Universidade Livre — DevOps track",
