@@ -253,7 +253,7 @@ export default {
       },
       "26": {
         title: "ai-memory — memória de agentes",
-        description: "Quatro PRs mesclados na ferramenta de memória para agentes: assets de OpenCode e Gemini CLI no backup e um orçamento de retry que sobrevive a deadlines curtos.",
+        description: "Sete PRs mesclados na ferramenta de memória para agentes: backup de assets, orçamento de retry que sobrevive a deadlines curtos, paginação do ledger e filtros de busca.",
       },
       "25": {
         title: "Universidade Livre — trilha DevOps",
